@@ -240,6 +240,9 @@
   .step h4{font-family:'Saira Condensed';text-transform:uppercase;font-size:22px;letter-spacing:.03em;margin-bottom:8px}
   .step p{color:var(--muted);font-size:14.5px}
   .step .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(30,167,255,.15);margin-bottom:20px}
+  .step .ico{width:50px;height:50px;border-radius:13px;display:grid;place-items:center;margin-bottom:22px;background:linear-gradient(145deg,rgba(30,167,255,.16),rgba(0,224,198,.08));border:1px solid rgba(30,167,255,.3);transition:.35s}
+  .step:hover .ico{transform:translateY(-3px);border-color:rgba(30,167,255,.6);box-shadow:0 10px 26px -10px rgba(30,167,255,.5)}
+  .step:hover{border-color:var(--line-2)}
 
   /* ===== Testimonials ===== */
   .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -264,6 +267,14 @@
   .socials{display:flex;gap:12px;margin-top:30px}
   .socials a{width:46px;height:46px;border:1px solid var(--line-2);border-radius:12px;display:grid;place-items:center;color:var(--muted);transition:.25s}
   .socials a:hover{color:#fff;border-color:#fff;transform:translateY(-3px)}
+  /* brand-colored social icons */
+  .socials a.ig{border-color:rgba(214,41,118,.5)}
+  .socials a.fb{border-color:rgba(24,119,242,.55)}
+  .socials a.ig:hover{background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);border-color:transparent}
+  .socials a.ig:hover svg rect,.socials a.ig:hover svg circle{stroke:#fff}
+  .socials a.ig:hover svg circle[fill]{fill:#fff}
+  .socials a.fb:hover{background:#1877f2;border-color:transparent}
+  .socials a.fb:hover svg{fill:#fff}
 
   form.qform{background:var(--bg-3);border:1px solid var(--line);border-radius:18px;padding:34px}
   form.qform .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -533,10 +544,22 @@
       <p>A simple, no-pressure process designed to get your vehicle dialed in right.</p>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="dot"></div><h4>Consult</h4><p>Tell us your vehicle and vision. We talk options, colors, films, and budget.</p></div>
-      <div class="step reveal"><div class="dot"></div><h4>Quote</h4><p>You get a clear, honest quote and timeline — no hidden fees, no pressure.</p></div>
-      <div class="step reveal"><div class="dot"></div><h4>Install</h4><p>Careful prep and a precision in-house install using premium films only.</p></div>
-      <div class="step reveal"><div class="dot"></div><h4>Reveal</h4><p>Final inspection, care tips, and you roll out looking better than ever.</p></div>
+      <div class="step reveal">
+        <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1ea7ff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2C6.5 2 2 6 2 11a5 5 0 0 0 5 5h1.8a1.7 1.7 0 0 1 1.7 2.1l-.2.7a1.7 1.7 0 0 0 1.7 2.2C17.5 23 22 18.5 22 12.5 22 6.7 17.5 2 12 2z"/></svg></span>
+        <h4>Consult &amp; Color</h4><p>We talk vehicles, finishes, and film — matte, satin, gloss, or color-shift — and match the right wrap, PPF, or tint to your goals.</p>
+      </div>
+      <div class="step reveal">
+        <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1ea7ff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2A2 2 0 0 1 2.8 12V4a1.2 1.2 0 0 1 1.2-1.2h8a2 2 0 0 1 1.4.6l7.2 7.2a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></span>
+        <h4>Lock In Your Quote</h4><p>A clear, upfront price and install date — no hidden fees, no pressure. Drop your deposit and we save your slot.</p>
+      </div>
+      <div class="step reveal">
+        <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1ea7ff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/><path d="m3 18 9 5 9-5"/></svg></span>
+        <h4>Prep &amp; Wrap</h4><p>Full paint decontamination, then a precise, panel-by-panel install with premium films — edges tucked, lines clean, zero shortcuts.</p>
+      </div>
+      <div class="step reveal">
+        <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1ea7ff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.3"/><path d="m11.3 11.7 9.4-9.4"/><path d="m15.5 7.5 3 3L21.5 7l-3-3"/></svg></span>
+        <h4>Keys Back</h4><p>Final inspection together, a care kit and aftercare rundown, and you roll out turning heads.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -592,8 +615,8 @@
       </div>
 
       <div class="socials">
-        <a href="https://www.instagram.com/alx_wrapsss/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://www.facebook.com/p/ALX-Wraps-100050027354303/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a class="ig" href="https://www.instagram.com/alx_wrapsss/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2"><defs><linearGradient id="igGrad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".35" stop-color="#fa7e1e"/><stop offset=".6" stop-color="#d62976"/><stop offset=".8" stop-color="#962fbf"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="url(#igGrad)"/><circle cx="12" cy="12" r="4.2" stroke="url(#igGrad)"/><circle cx="17.6" cy="6.4" r="1.1" fill="url(#igGrad)" stroke="none"/></svg></a>
+        <a class="fb" href="https://www.facebook.com/p/ALX-Wraps-100050027354303/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="#1877f2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
       </div>
     </div>
 
