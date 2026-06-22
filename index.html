@@ -128,9 +128,15 @@
   .nav-links{display:flex;align-items:center;gap:34px}
   .nav-links a.link{
     font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;
-    font-size:15px;font-weight:600;color:var(--muted);transition:color .2s;
+    font-size:15px;font-weight:600;color:#fff;transition:color .2s;
+    text-shadow:0 1px 10px rgba(0,0,0,.5);
   }
-  .nav-links a.link:hover{color:#fff}
+  .nav-links a.link:hover{
+    background:linear-gradient(120deg,var(--accent-2),var(--accent));
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+    text-shadow:none;
+  }
   .nav-cta{display:flex;align-items:center;gap:18px}
   .nav-phone{font-family:'Saira Condensed',sans-serif;font-weight:600;letter-spacing:.06em;color:#fff;font-size:16px;display:flex;align-items:center;gap:8px}
   .nav-phone svg{stroke:var(--accent)}
