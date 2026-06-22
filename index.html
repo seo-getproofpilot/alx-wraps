@@ -85,8 +85,10 @@
   }
   /* real ALX Wraps logo image */
   .logo img{height:24px;width:auto;display:block;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6))}
-  .nav .logo img{height:22px}
-  .foot-brand .logo img{height:30px}
+  .nav .logo img{height:40px}
+  header.nav.scrolled .logo img{height:34px;transition:height .3s ease}
+  .foot-brand .logo img{height:34px}
+  @media(max-width:560px){ .nav .logo img{height:32px} }
 
   /* ===== Buttons ===== */
   .btn{
