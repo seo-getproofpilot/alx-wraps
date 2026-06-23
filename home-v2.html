@@ -300,25 +300,19 @@
     margin-top:28px;
     color:#fff;
   }
-  .hero-review-label{
-    color:#e7e9ed;
-    font-family:var(--font-display);
-    font-size:21px;
-    font-style:italic;
-    font-weight:900;
-    text-transform:uppercase;
-  }
   .review-link{
     display:inline-flex;
     align-items:center;
-    gap:10px;
+    gap:14px;
     min-height:46px;
-    padding:0 16px;
+    padding:0 18px;
     color:#fff;
     border:1px solid rgba(255,255,255,.18);
-    background:rgba(255,255,255,.045);
+    background:
+      linear-gradient(90deg,rgba(99,226,191,.12),transparent 28%),
+      rgba(255,255,255,.045);
     font-family:var(--font-display);
-    font-size:19px;
+    font-size:18px;
     font-weight:900;
     text-transform:uppercase;
     transition:transform .2s ease,border-color .2s ease,background .2s ease;
@@ -328,20 +322,46 @@
     border-color:rgba(231,55,41,.74);
     background:rgba(231,55,41,.12);
   }
-  .review-mark{
-    width:32px;
-    height:32px;
-    display:grid;
-    place-items:center;
-    flex:none;
-    color:#fff;
-    background:var(--red);
+  .review-logo{
+    display:inline-block;
+    align-items:center;
+    min-width:82px;
     font-family:var(--font-body);
-    font-size:15px;
+    font-size:18px;
     font-weight:900;
     line-height:1;
+    text-transform:none;
   }
-  .review-link.yelp .review-mark{background:var(--film-dark)}
+  .review-logo.google span:nth-child(1){color:#4285f4}
+  .review-logo.google span:nth-child(2){color:#ea4335}
+  .review-logo.google span:nth-child(3){color:#fbbc05}
+  .review-logo.google span:nth-child(4){color:#4285f4}
+  .review-logo.google span:nth-child(5){color:#34a853}
+  .review-logo.google span:nth-child(6){color:#ea4335}
+  .review-logo.yelp{
+    display:inline-flex;
+    align-items:center;
+    color:#fff;
+    font-family:var(--font-display);
+    font-size:19px;
+    letter-spacing:0;
+  }
+  .review-logo.yelp::before{
+    content:"";
+    width:19px;
+    height:19px;
+    margin-right:8px;
+    background:#d32323;
+    clip-path:polygon(50% 0,62% 33%,98% 18%,72% 50%,98% 82%,62% 67%,50% 100%,38% 67%,2% 82%,28% 50%,2% 18%,38% 33%);
+  }
+  .review-stars{
+    display:inline-flex;
+    gap:3px;
+    color:#ffb340;
+    font-size:16px;
+    line-height:1;
+    text-shadow:0 0 12px rgba(255,179,64,.22);
+  }
   .services{
     padding:106px 0 118px;
     overflow:hidden;
@@ -1457,15 +1477,14 @@
           <a href="#quote" class="btn btn-primary">Request A Quote <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
           <a href="#services" class="btn btn-secondary">View Services</a>
         </div>
-        <div class="hero-reviews" aria-label="Review links for ALX Wraps">
-          <span class="hero-review-label">Read ALX Reviews:</span>
-          <a class="review-link google" href="https://www.google.com/search?q=ALX+Wraps+Queen+Creek+reviews" target="_blank" rel="noopener">
-            <span class="review-mark" aria-hidden="true">G</span>
-            <span>Google Reviews</span>
+        <div class="hero-reviews" aria-label="ALX Wraps review ratings">
+          <a class="review-link google" href="https://www.google.com/search?q=ALX+Wraps+Queen+Creek+reviews" target="_blank" rel="noopener" aria-label="ALX Wraps Google five star reviews">
+            <span class="review-logo google" aria-hidden="true"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span>
+            <span class="review-stars" aria-hidden="true">★★★★★</span>
           </a>
-          <a class="review-link yelp" href="https://www.yelp.com/search?find_desc=ALX+Wraps&find_loc=Queen+Creek%2C+AZ" target="_blank" rel="noopener">
-            <span class="review-mark" aria-hidden="true">Y</span>
-            <span>Yelp Reviews</span>
+          <a class="review-link yelp" href="https://www.yelp.com/search?find_desc=ALX+Wraps&find_loc=Queen+Creek%2C+AZ" target="_blank" rel="noopener" aria-label="ALX Wraps Yelp five star reviews">
+            <span class="review-logo yelp" aria-hidden="true">Yelp</span>
+            <span class="review-stars" aria-hidden="true">★★★★★</span>
           </a>
         </div>
       </div>
