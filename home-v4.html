@@ -1434,10 +1434,11 @@
     overflow:hidden;
     border-bottom:1px solid rgba(30,167,255,.55);
     background:
-      linear-gradient(90deg,rgba(3,5,8,.96) 0%,rgba(3,5,8,.74) 40%,rgba(3,5,8,.42) 70%,rgba(3,5,8,.85) 100%),
-      radial-gradient(58% 78% at 16% 26%,rgba(30,167,255,.26),transparent 60%),
-      radial-gradient(54% 72% at 90% 78%,rgba(0,224,198,.2),transparent 62%),
-      url("assets/generated/alx-v2-hero-scene.webp") center / cover no-repeat,
+      linear-gradient(90deg,rgba(4,6,9,.97) 0%,rgba(4,6,9,.82) 32%,rgba(4,6,9,.3) 60%,rgba(4,6,9,.46) 100%),
+      radial-gradient(52% 72% at 12% 22%,rgba(30,167,255,.26),transparent 60%),
+      radial-gradient(50% 66% at 90% 82%,rgba(0,224,198,.2),transparent 62%),
+      radial-gradient(125% 140% at 72% 46%,transparent 36%,rgba(3,4,6,.74) 100%),
+      url("assets/work/wrap-1283.png") 74% center / cover no-repeat,
       #05070a;
   }
   .hero-neon::before{
@@ -1539,6 +1540,92 @@
     .neon-h1{font-size:clamp(42px,11vw,60px)}
     .neon-ctas .btn{flex:1}
   }
+
+  /* ===== Unified Quote Box (v4) ===== */
+  .quote-head{max-width:700px;margin:0 auto 40px;text-align:center}
+  .quote-head .qhead-eyebrow{
+    display:inline-block;font-family:var(--font-display);font-weight:800;font-size:15px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--cyan);margin-bottom:14px;
+  }
+  .quote-head .quote-heading{transform:skewX(-5deg);max-width:none;margin:0 auto}
+  .quote-head .section-copy{margin:16px auto 0;color:#e6ebf0}
+
+  .quote-box{
+    position:relative;max-width:980px;margin:0 auto;border-radius:18px;overflow:hidden;
+    background:linear-gradient(165deg,rgba(20,27,36,.82),rgba(6,9,13,.92));
+    border:1px solid rgba(30,167,255,.4);
+    box-shadow:0 40px 100px rgba(0,0,0,.55),0 0 0 1px rgba(0,224,198,.1),inset 0 1px 0 rgba(255,255,255,.07);
+    backdrop-filter:blur(12px) saturate(140%);
+  }
+  .quote-box::before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,var(--cyan),var(--red));z-index:2}
+
+  .qbox-contact{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid rgba(255,255,255,.1)}
+  .qbox-contact-item{
+    display:flex;align-items:center;gap:14px;padding:22px 24px;color:#f0f1f4;
+    border-right:1px solid rgba(255,255,255,.08);transition:background .2s;
+  }
+  .qbox-contact-item:last-child{border-right:0}
+  a.qbox-contact-item:hover{background:rgba(30,167,255,.08)}
+  .qci-ic{
+    width:46px;height:46px;flex:none;display:grid;place-items:center;color:#fff;
+    background:linear-gradient(140deg,var(--red),var(--film-dark));
+    box-shadow:0 0 18px rgba(30,167,255,.35);
+    clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px);
+  }
+  .qci-ic svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
+  .qci-tx{display:flex;flex-direction:column;min-width:0}
+  .qci-tx em{font-family:var(--font-display);font-style:normal;font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--cyan)}
+  .qci-tx strong{font-size:14.5px;font-weight:700;color:#fff;line-height:1.3;margin-top:3px}
+
+  .qbox-form{padding:30px clamp(22px,3.5vw,40px) 34px}
+  .qbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .qbox-form .field{margin:0;position:relative;display:block}
+  .qbox-form .field.field-full{grid-column:1 / -1}
+  .qbox-form .field > span{
+    display:block;position:static;width:auto;height:auto;clip:auto;overflow:visible;
+    font-family:var(--font-display);font-weight:800;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:#aeb8c2;margin-bottom:7px;
+  }
+  .qbox-form input,.qbox-form select,.qbox-form textarea{
+    width:100%;min-height:50px;padding:13px 15px;border-radius:9px;
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.18);color:#fff;
+    font-family:var(--font-body);font-size:15px;font-weight:600;transition:border-color .2s,box-shadow .2s;
+  }
+  .qbox-form input::placeholder,.qbox-form textarea::placeholder{color:#8b95a0}
+  .qbox-form select{
+    color:#cfd6dd;appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:42px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2300e0c6' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 15px center;
+  }
+  .qbox-form select option{background:#0c1117;color:#fff}
+  .qbox-form textarea{min-height:120px;resize:vertical}
+  .qbox-form input:focus,.qbox-form select:focus,.qbox-form textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,224,198,.16)}
+  .qbox-form .form-consent{display:flex;gap:11px;align-items:flex-start;margin:18px 0 20px;color:#cfd6dd;font-size:14px;line-height:1.45;font-weight:600}
+  .qbox-form .form-consent input{width:18px;height:18px;margin-top:2px;accent-color:var(--cyan);flex:none}
+  .qbox-form .btn{width:100%;min-height:56px}
+  .qbox-form .form-note{margin-top:13px;text-align:center;color:#9aa6b2;font-size:13px}
+
+  /* custom footer links */
+  .footer-menu a{
+    position:relative;display:flex;align-items:center;gap:0;
+    padding:9px 0 9px 24px;color:#c9ced6;font-family:var(--font-display);font-weight:700;
+    font-size:15px;letter-spacing:.04em;text-transform:uppercase;line-height:1.1;
+    transition:color .2s,padding .2s;
+  }
+  .footer-menu a .line-mark{display:none}
+  .footer-menu a::before{
+    content:"";position:absolute;left:2px;top:50%;
+    width:7px;height:7px;border-right:2px solid var(--cyan);border-top:2px solid var(--cyan);
+    transform:translateY(-50%) rotate(45deg);transition:border-color .2s,left .2s;
+  }
+  .footer-menu a:hover{color:#fff;padding-left:30px}
+  .footer-menu a:hover::before{border-color:var(--red);left:8px}
+
+  @media(max-width:720px){
+    .qbox-contact{grid-template-columns:1fr}
+    .qbox-contact-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .qbox-grid{grid-template-columns:1fr}
+  }
 </style>
 </head>
 <body>
@@ -1582,12 +1669,6 @@
     <div class="wrap">
       <div class="neon-grid">
         <div class="neon-copy reveal">
-          <div class="neon-tagstrip">
-            <span>Vehicle Wraps</span>
-            <span>PPF &amp; Color PPF</span>
-            <span>Ceramic Tint</span>
-            <span>Fleet &amp; Performance</span>
-          </div>
           <h1 class="neon-h1"><span class="chrome">The East Valley's</span><br><span class="glow">Custom Wrap Shop</span></h1>
           <p class="neon-sub">Color-change wraps, paint protection film, and ceramic tint installed to a show-quality standard — for daily drivers, custom builds, and business fleets across Queen Creek and the Phoenix East Valley.</p>
           <div class="neon-ctas">
@@ -1850,52 +1931,52 @@
   </section>
 
   <section class="quote-section" id="quote">
-    <div class="wrap quote-layout">
-      <div class="quote-info reveal">
-        <div class="quote-kicker">Request A Quote</div>
-        <h2 class="display quote-heading">Request a Wrap, PPF or Tint Quote</h2>
-        <p class="section-copy">Send the vehicle, service, finish, timeline, and photos. ALX will follow up with practical next steps.</p>
-        <div class="contact-list">
-          <a href="tel:+14807400428">
-            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg></span>
-            <span class="contact-copy"><em>Call ALX</em><strong>(480) 740-0428</strong></span>
-          </a>
-          <a href="mailto:info@alxwraps.com">
-            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-            <span class="contact-copy"><em>Email ALX</em><strong>info@alxwraps.com</strong></span>
-          </a>
-          <div>
-            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5l3 3"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg></span>
-            <span class="contact-copy"><em>Shop Hours</em><strong>By appointment in the Phoenix metro</strong></span>
-          </div>
-        </div>
+    <div class="wrap">
+      <div class="quote-head reveal">
+        <span class="qhead-eyebrow">Request A Quote</span>
+        <h2 class="display quote-heading">Start Your Quote With ALX</h2>
+        <p class="section-copy">Tell us the vehicle, the service, and what you want done — we'll follow up with options, pricing, and next steps.</p>
       </div>
-      <form class="quote-form reveal" id="quoteForm">
-        <h3 class="display">Start Your ALX Quote</h3>
-        <div class="form-grid">
-          <label class="field" for="vehicle"><span>Vehicle</span><input id="vehicle" name="vehicle" type="text" placeholder="Year, Make, Model*" required /></label>
-          <label class="field" for="name"><span>Full Name</span><input id="name" name="name" type="text" autocomplete="name" placeholder="Full Name*" required /></label>
-        </div>
-        <div class="form-grid">
-          <label class="field" for="email"><span>Email</span><input id="email" name="email" type="email" autocomplete="email" placeholder="Email*" required /></label>
-          <label class="field" for="phone"><span>Phone</span><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone*" required /></label>
-        </div>
-        <fieldset class="service-checks">
-          <legend>Service needed:</legend>
-          <div class="service-options">
-            <label><input type="checkbox" name="services" value="Vehicle Wrap" />Vehicle Wraps</label>
-            <label><input type="checkbox" name="services" value="Paint Protection Film" />Paint Protection Film</label>
-            <label><input type="checkbox" name="services" value="Color PPF" />Color PPF</label>
-            <label><input type="checkbox" name="services" value="Window Tint" />Window Tint</label>
-            <label><input type="checkbox" name="services" value="Fleet Graphics" />Fleet Graphics</label>
-            <label><input type="checkbox" name="services" value="Not Sure Yet" />Not Sure Yet</label>
+      <div class="quote-box reveal">
+        <div class="qbox-contact">
+          <a class="qbox-contact-item" href="tel:+14807400428">
+            <span class="qci-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg></span>
+            <span class="qci-tx"><em>Call or Text</em><strong>(480) 740-0428</strong></span>
+          </a>
+          <a class="qbox-contact-item" href="mailto:info@alxwraps.com">
+            <span class="qci-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <span class="qci-tx"><em>Email Us</em><strong>info@alxwraps.com</strong></span>
+          </a>
+          <div class="qbox-contact-item">
+            <span class="qci-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5l3 3"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg></span>
+            <span class="qci-tx"><em>Shop Hours</em><strong>Mon–Fri 8a–6p · Sat 9a–3p · Sun Closed</strong></span>
           </div>
-        </fieldset>
-        <label class="field" for="details"><span>Project Details</span><textarea id="details" name="details" placeholder="Finish, coverage, timeline, photos, or questions."></textarea></label>
-        <label class="form-consent"><input type="checkbox" name="consent" required />I agree to be contacted by ALX Wraps about this quote request by phone, text, or email.</label>
-        <button class="btn btn-primary" type="submit">Request My Quote</button>
-        <p class="form-note" id="formNote">Submitting opens an email draft with your project details.</p>
-      </form>
+        </div>
+        <form class="qbox-form" id="quoteForm">
+          <div class="qbox-grid">
+            <label class="field" for="vehicle"><span>Make &amp; Model</span><input id="vehicle" name="vehicle" type="text" placeholder="Year / Make / Model" required /></label>
+            <label class="field" for="name"><span>Your Name</span><input id="name" name="name" type="text" autocomplete="name" placeholder="Full name" required /></label>
+            <label class="field" for="email"><span>Email</span><input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required /></label>
+            <label class="field" for="phone"><span>Phone</span><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(480) 000-0000" required /></label>
+            <label class="field field-full" for="service"><span>What Service Do You Need?</span>
+              <select id="service" name="service" required>
+                <option value="">Select a service…</option>
+                <option>Vehicle Wrap / Color Change</option>
+                <option>Paint Protection Film (PPF)</option>
+                <option>Color PPF</option>
+                <option>Ceramic Window Tint</option>
+                <option>Fleet Graphics</option>
+                <option>Decals &amp; Lettering</option>
+                <option>Not sure yet — need advice</option>
+              </select>
+            </label>
+            <label class="field field-full" for="details"><span>What Would You Like Done?</span><textarea id="details" name="details" placeholder="Tell us about the project — finish, coverage, timeline — and any questions you have."></textarea></label>
+          </div>
+          <label class="form-consent"><input type="checkbox" name="consent" required /><span>I agree to be contacted by ALX Wraps about this quote request by phone, text, or email.</span></label>
+          <button class="btn btn-primary" type="submit">Request My Quote</button>
+          <p class="form-note" id="formNote">Submitting opens an email to ALX with your project details.</p>
+        </form>
+      </div>
     </div>
     <footer class="site-footer">
       <div class="wrap footer-main">
@@ -2016,15 +2097,15 @@
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
-    const services = data.getAll('services').join(', ') || 'Not specified';
+    const service = data.get('service') || 'Not specified';
     const subject = encodeURIComponent('ALX Wraps quote request');
     const body = encodeURIComponent(
       `Name: ${data.get('name') || ''}\n` +
       `Phone: ${data.get('phone') || ''}\n` +
       `Email: ${data.get('email') || ''}\n` +
-      `Service: ${services}\n` +
+      `Service: ${service}\n` +
       `Vehicle: ${data.get('vehicle') || ''}\n\n` +
-      `Project Details:\n${data.get('details') || ''}`
+      `What they'd like done:\n${data.get('details') || ''}`
     );
     window.location.href = `mailto:info@alxwraps.com?subject=${subject}&body=${body}`;
     document.getElementById('formNote').textContent = 'Email draft opened. You can also call or text ALX at (480) 740-0428.';
