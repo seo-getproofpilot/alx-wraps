@@ -1045,7 +1045,7 @@
     gap:18px;
     color:#fff;
     font-family:var(--font-display);
-    font-size:18px;
+    font-size:16px;
     font-weight:900;
     text-transform:uppercase;
     line-height:1;
@@ -1058,11 +1058,11 @@
   .quote-heading{
     margin-top:24px;
     color:#fff;
-    font-size:clamp(36px,4.2vw,58px);
+    font-size:clamp(32px,3.25vw,46px);
     font-style:italic;
     transform:skewX(-6deg);
     transform-origin:left center;
-    max-width:580px;
+    max-width:min(540px,calc(100% - 10px));
   }
   .quote-info .section-copy{
     max-width:520px;
@@ -1078,7 +1078,7 @@
     display:flex;
     gap:14px;
     align-items:center;
-    min-height:92px;
+    min-height:86px;
     padding:18px 4px;
     color:#f0f1f4;
     font-weight:700;
@@ -1086,8 +1086,8 @@
   }
   .contact-list a:last-child,.contact-list div:last-child{border-bottom:0}
   .contact-icon{
-    width:60px;
-    height:60px;
+    width:56px;
+    height:56px;
     display:grid;
     place-items:center;
     flex:none;
@@ -1096,12 +1096,12 @@
     box-shadow:12px 0 0 rgba(99,226,191,.14);
     clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px);
   }
-  .contact-icon svg{width:28px;height:28px;stroke:currentColor;stroke-width:2.1}
+  .contact-icon svg{width:26px;height:26px;stroke:currentColor;stroke-width:2.1}
   .contact-copy em{
     display:block;
     color:#fff;
     font-family:var(--font-display);
-    font-size:25px;
+    font-size:21px;
     font-style:italic;
     font-weight:900;
     text-transform:uppercase;
@@ -1112,7 +1112,7 @@
     margin-top:7px;
     color:#f8f8f6;
     font-family:var(--font-body);
-    font-size:16px;
+    font-size:15px;
     font-weight:800;
   }
   .quote-form{
@@ -1136,7 +1136,7 @@
   .quote-form h3{
     margin-bottom:30px;
     text-align:center;
-    font-size:clamp(32px,3.3vw,48px);
+    font-size:clamp(28px,2.45vw,38px);
     font-style:italic;
     transform:skewX(-6deg);
     color:#fff;
@@ -1210,7 +1210,7 @@
       linear-gradient(135deg,var(--copper),var(--red-dark));
     box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 46px rgba(231,55,41,.28);
     font-family:var(--font-display);
-    font-size:18px;
+    font-size:16px;
     font-weight:800;
   }
   .form-note{margin-top:13px;color:#aeb4bd;font-size:13px;text-align:center}
@@ -1414,13 +1414,15 @@
     .area-cities{grid-template-columns:1fr;gap:12px;margin-top:22px}
     .area-cities li{font-size:16px}
     .form-grid{grid-template-columns:1fr}
-    .quote-heading{font-size:36px}
-    .contact-list a,.contact-list div{min-height:82px;padding:15px 0}
-    .contact-icon{width:52px;height:52px;box-shadow:8px 0 0 rgba(99,226,191,.14)}
-    .contact-copy em{font-size:20px}
-    .contact-copy strong{font-size:14px;line-height:1.35}
+    .quote-kicker{font-size:15px}
+    .quote-heading{font-size:30px}
+    .contact-list a,.contact-list div{min-height:76px;padding:13px 0}
+    .contact-icon{width:48px;height:48px;box-shadow:7px 0 0 rgba(99,226,191,.14)}
+    .contact-icon svg{width:23px;height:23px}
+    .contact-copy em{font-size:18px}
+    .contact-copy strong{font-size:13px;line-height:1.35}
     .quote-form{padding:30px 20px 32px}
-    .quote-form h3{text-align:left;font-size:32px}
+    .quote-form h3{text-align:left;font-size:28px}
     .service-options{grid-template-columns:1fr}
     .site-footer{margin-top:58px}
     .footer-main{grid-template-columns:1fr;gap:30px;padding:38px 0 32px}
