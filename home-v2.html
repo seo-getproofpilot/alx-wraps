@@ -503,11 +503,10 @@
     content:"";
     position:absolute;
     right:14px;
-    top:50%;
+    bottom:15px;
     width:34px;
     height:3px;
     background:linear-gradient(90deg,var(--copper),var(--red));
-    transform:translateY(-50%);
   }
   .service-card:hover .service-titlebar,
   .service-card:focus-visible .service-titlebar{
@@ -1366,12 +1365,12 @@
     .services-divider{margin-left:0;width:190px}
     .service-card{min-height:420px}
     .service-card .service-bg{inset:8px;width:calc(100% - 16px);height:calc(100% - 16px)}
-    .service-titlebar{width:calc(100% - 16px);margin:0 8px;min-height:54px;padding:11px 54px 11px 15px}
+    .service-titlebar{width:calc(100% - 16px);margin:0 8px;min-height:58px;padding:11px 70px 13px 15px}
     .service-card h3{font-size:26px}
     .service-titlebar,
     .service-card:hover .service-titlebar,
     .service-card:focus-visible .service-titlebar{transform:none}
-    .service-titlebar::after{width:26px}
+    .service-titlebar::after{right:15px;bottom:17px;width:30px}
     .service-hover{
       position:relative;
       width:calc(100% - 16px);
