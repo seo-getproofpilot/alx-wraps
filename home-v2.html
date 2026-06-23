@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ALX Wraps V2 - Queen Creek Vehicle Wraps, PPF & Ceramic Tint</title>
 <meta name="description" content="ALX Wraps installs vehicle wraps, paint protection film, color PPF, ceramic window tint, decals, and fleet graphics for Queen Creek and the Phoenix East Valley." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23050504'/%3E%3Cpath d='M10 46 24 18h10l-14 28H10Zm24 0 8-16 12 16H43l-5-7-3 7h-1Z' fill='%23e83c28'/%3E%3Cpath d='M42 18h11L39 46H28l14-28Z' fill='%2363e2bf'/%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23050504'/%3E%3Cpath d='M10 46 24 18h10l-14 28H10Zm24 0 8-16 12 16H43l-5-7-3 7h-1Z' fill='%23e83c28'/%3E%3Cpath d='M42 18h11L39 46H28l14-28Z' fill='%23ff9c3d'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -24,13 +24,11 @@
     --red:#e83c28;
     --red-dark:#78190f;
     --orange:#ff9c3d;
-    --cyan:#63e2bf;
     --ember:#e83c28;
     --ember-dark:#78190f;
     --copper:#ff9c3d;
-    --film:#63e2bf;
-    --film-dark:#168d7d;
-    --chrome:#d9ded8;
+    --film:#ff9c3d;
+    --film-dark:#9d2818;
     --max:1180px;
     --radius:8px;
     --font-display:"Oxanium","Rajdhani",system-ui,sans-serif;
@@ -245,7 +243,7 @@
     transform:skewX(-18deg);
     background:
       linear-gradient(90deg,transparent 0 22%,rgba(231,55,41,.68) 23% 24%,transparent 25% 47%,rgba(255,106,23,.42) 48% 49%,transparent 50%),
-      linear-gradient(180deg,rgba(255,255,255,.13),transparent 34%,rgba(99,226,191,.1));
+      linear-gradient(180deg,rgba(255,255,255,.13),transparent 34%,rgba(255,156,61,.1));
     mix-blend-mode:screen;
     opacity:.62;
     pointer-events:none;
@@ -271,7 +269,7 @@
     color:#fff;
     border:1px solid var(--red);
     background:rgba(3,3,4,.58);
-    box-shadow:10px 0 0 rgba(99,226,191,.14);
+    box-shadow:10px 0 0 rgba(255,156,61,.14);
     font-family:var(--font-display);
     font-size:18px;
     font-weight:900;
@@ -309,7 +307,7 @@
     color:#fff;
     border:1px solid rgba(255,255,255,.18);
     background:
-      linear-gradient(90deg,rgba(99,226,191,.12),transparent 28%),
+      linear-gradient(90deg,rgba(255,156,61,.12),transparent 28%),
       rgba(255,255,255,.045);
     font-family:var(--font-display);
     font-size:18px;
@@ -368,7 +366,7 @@
     background:
       linear-gradient(90deg,rgba(3,3,4,.82),rgba(3,3,4,.94)),
       radial-gradient(70% 60% at 100% 0%,rgba(231,55,41,.13),transparent 58%),
-      radial-gradient(65% 58% at 0% 100%,rgba(99,226,191,.08),transparent 62%),
+      radial-gradient(65% 58% at 0% 100%,rgba(255,156,61,.08),transparent 62%),
       url("assets/generated/alx-v2-contact-texture.webp") center / cover no-repeat,
       repeating-linear-gradient(135deg,rgba(255,255,255,.03) 0 1px,transparent 1px 18px);
   }
@@ -409,7 +407,7 @@
     width:240px;
     height:2px;
     margin:22px auto 0;
-    background:linear-gradient(90deg,transparent,var(--copper) 14% 34%,var(--red) 35% 74%,transparent);
+    background:linear-gradient(90deg,transparent 0%,var(--copper) 15%,var(--red) 58%,rgba(120,25,15,.55) 82%,transparent 100%);
   }
   .service-grid{
     position:relative;
@@ -582,7 +580,7 @@
     padding:110px 0;
     overflow:hidden;
     background:
-      radial-gradient(62% 80% at 100% 18%,rgba(99,226,191,.08),transparent 58%),
+      radial-gradient(62% 80% at 100% 18%,rgba(255,156,61,.08),transparent 58%),
       radial-gradient(44% 70% at 0% 86%,rgba(231,55,41,.12),transparent 62%),
       linear-gradient(180deg,#08090b,#030304);
     border-block:1px solid rgba(255,255,255,.12);
@@ -633,7 +631,7 @@
     width:220px;
     height:2px;
     margin:28px 0 26px 8px;
-    background:linear-gradient(90deg,var(--film) 0 28%,var(--chrome) 29% 39%,var(--red) 40% 72%,transparent);
+    background:linear-gradient(90deg,var(--copper) 0%,var(--red) 56%,rgba(120,25,15,.5) 82%,transparent 100%);
     box-shadow:0 0 20px rgba(231,55,41,.22);
   }
   .why-list{list-style:none;display:grid;gap:24px;margin-top:0}
@@ -650,7 +648,7 @@
     place-items:center;
     color:#fff;
     background:var(--red);
-    box-shadow:10px 0 0 rgba(99,226,191,.13);
+    box-shadow:10px 0 0 rgba(255,156,61,.13);
     clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
   }
   .why-icon svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2}
@@ -800,7 +798,7 @@
       linear-gradient(90deg,rgba(3,3,4,.98),rgba(3,3,4,.9)),
       url("assets/generated/alx-v2-contact-texture.webp") center / cover no-repeat;
     border-top:1px solid rgba(255,255,255,.1);
-    border-bottom:1px solid rgba(99,226,191,.28);
+    border-bottom:1px solid rgba(255,156,61,.28);
   }
   .service-area::before{
     content:"";
@@ -808,7 +806,7 @@
     inset:0;
     background:
       radial-gradient(55% 80% at 0% 50%,rgba(231,55,41,.12),transparent 62%),
-      radial-gradient(55% 80% at 100% 50%,rgba(99,226,191,.11),transparent 58%),
+      radial-gradient(55% 80% at 100% 50%,rgba(255,156,61,.11),transparent 58%),
       repeating-linear-gradient(135deg,rgba(255,255,255,.02) 0 1px,transparent 1px 18px);
     pointer-events:none;
   }
@@ -824,10 +822,12 @@
     position:relative;
     min-height:520px;
     padding:12px;
-    border:1px solid var(--red);
-    border-right-color:var(--film);
+    border:1px solid rgba(231,55,41,.92);
+    border-top-color:rgba(231,55,41,.86);
+    border-right-color:rgba(231,55,41,.5);
+    border-bottom-color:rgba(255,156,61,.22);
     background:#030304;
-    box-shadow:0 34px 90px rgba(0,0,0,.52);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.045),0 34px 90px rgba(0,0,0,.52);
     overflow:hidden;
     isolation:isolate;
   }
@@ -835,7 +835,7 @@
     content:"";
     position:absolute;
     inset:0;
-    border-top:1px solid rgba(255,255,255,.38);
+    border-top:1px solid rgba(255,210,160,.16);
     border-left:1px solid rgba(255,255,255,.16);
     pointer-events:none;
     z-index:3;
@@ -870,7 +870,7 @@
     height:3px;
     width:130%;
     left:-15%;
-    background:rgba(99,226,191,.38);
+    background:rgba(255,156,61,.38);
     transform:rotate(-17deg);
   }
   .map-fallback::before{top:35%}
@@ -907,7 +907,7 @@
     color:#030304;
     font-size:14px;
   }
-  .map-city.primary::before{width:11px;height:11px;background:var(--film);box-shadow:0 0 0 5px rgba(99,226,191,.18)}
+  .map-city.primary::before{width:11px;height:11px;background:var(--film);box-shadow:0 0 0 5px rgba(255,156,61,.18)}
   .map-city.gilbert{left:22%;top:25%}
   .map-city.chandler{left:16%;top:37%}
   .map-city.mesa{left:42%;top:18%}
@@ -949,7 +949,7 @@
     padding:12px 14px;
     background:rgba(3,3,4,.9);
     border-left:3px solid var(--red);
-    box-shadow:12px 0 0 rgba(99,226,191,.2),0 14px 30px rgba(0,0,0,.38);
+    box-shadow:12px 0 0 rgba(255,156,61,.2),0 14px 30px rgba(0,0,0,.38);
   }
   .map-frame-tag b,
   .map-frame-tag span{
@@ -986,7 +986,7 @@
     width:230px;
     height:2px;
     margin:22px 0 22px 8px;
-    background:linear-gradient(90deg,var(--film) 0 28%,var(--chrome) 29% 39%,var(--red) 40% 72%,transparent);
+    background:linear-gradient(90deg,var(--copper) 0%,var(--red) 56%,rgba(120,25,15,.5) 82%,transparent 100%);
   }
   .area-copy{color:#e8eaee;font-size:15px;max-width:640px}
   .area-cities{
@@ -1023,7 +1023,7 @@
     position:absolute;
     inset:0;
     background:
-      linear-gradient(90deg,rgba(231,55,41,.11),transparent 28%,transparent 72%,rgba(99,226,191,.11)),
+      linear-gradient(90deg,rgba(231,55,41,.11),transparent 28%,transparent 72%,rgba(255,156,61,.11)),
       repeating-linear-gradient(135deg,rgba(255,255,255,.022) 0 1px,transparent 1px 18px);
     pointer-events:none;
     opacity:.9;
@@ -1092,7 +1092,7 @@
     flex:none;
     background:var(--red);
     color:#fff;
-    box-shadow:12px 0 0 rgba(99,226,191,.14);
+    box-shadow:12px 0 0 rgba(255,156,61,.14);
     clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px);
   }
   .contact-icon svg{width:26px;height:26px;stroke:currentColor;stroke-width:2.1}
@@ -1118,18 +1118,21 @@
     position:relative;
     overflow:hidden;
     background:rgba(3,3,4,.92);
-    border:1px solid var(--red);
-    border-right-color:rgba(99,226,191,.72);
+    border:1px solid rgba(231,55,41,.92);
+    border-top-color:rgba(231,55,41,.86);
+    border-right-color:rgba(231,55,41,.5);
+    border-bottom-color:rgba(255,156,61,.22);
     border-radius:0;
     padding:38px clamp(26px,4vw,56px) 42px;
-    box-shadow:0 36px 90px rgba(0,0,0,.52);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.045),0 36px 90px rgba(0,0,0,.52);
   }
   .quote-form::before{
     content:"";
     position:absolute;
     inset:0;
-    border-top:2px solid rgba(231,55,41,.8);
-    border-right:2px solid rgba(99,226,191,.62);
+    border-top:1px solid rgba(255,210,160,.18);
+    border-right:1px solid rgba(231,55,41,.34);
+    border-bottom:1px solid rgba(255,156,61,.14);
     pointer-events:none;
   }
   .quote-form h3{
@@ -1163,7 +1166,7 @@
   }
   .field input::placeholder,.field textarea::placeholder{color:#fff;opacity:.92}
   .field textarea{min-height:108px;resize:vertical}
-  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid rgba(99,226,191,.32);border-color:#fff}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid rgba(255,156,61,.32);border-color:#fff}
   .service-checks{
     border:0;
     margin:20px 0 24px;
@@ -1250,7 +1253,7 @@
     content:"";
     width:34px;
     height:4px;
-    background:linear-gradient(90deg,var(--red),var(--film),var(--chrome));
+    background:linear-gradient(90deg,var(--copper),var(--red),transparent);
   }
   .footer-col h3{
     display:inline-block;
@@ -1266,7 +1269,7 @@
     right:-18px;
     bottom:-10px;
     height:2px;
-    background:linear-gradient(90deg,var(--film),var(--red),transparent);
+    background:linear-gradient(90deg,var(--copper),var(--red),transparent);
   }
   .footer-menu{list-style:none;display:grid;gap:12px}
   .footer-menu a,
@@ -1389,7 +1392,7 @@
     .story-divider{width:170px;margin:18px 0 22px 4px}
     .why-list{gap:20px}
     .why-item{grid-template-columns:48px 1fr;gap:14px}
-    .why-icon{width:42px;height:42px;box-shadow:7px 0 0 rgba(99,226,191,.13)}
+    .why-icon{width:42px;height:42px;box-shadow:7px 0 0 rgba(255,156,61,.13)}
     .why-icon svg{width:23px;height:23px}
     .why-item h3{font-size:18px}
     .why-item p{font-size:14px}
@@ -1416,7 +1419,7 @@
     .quote-kicker{font-size:15px}
     .quote-heading{font-size:30px}
     .contact-list a,.contact-list div{min-height:76px;padding:13px 0}
-    .contact-icon{width:48px;height:48px;box-shadow:7px 0 0 rgba(99,226,191,.14)}
+    .contact-icon{width:48px;height:48px;box-shadow:7px 0 0 rgba(255,156,61,.14)}
     .contact-icon svg{width:23px;height:23px}
     .contact-copy em{font-size:18px}
     .contact-copy strong{font-size:13px;line-height:1.35}
@@ -1666,7 +1669,7 @@
             <path d="M40 160 C160 140 210 210 300 210 C410 210 440 130 560 120" fill="none" stroke="#16191f" stroke-width="8" stroke-linecap="round" opacity=".2"/>
             <path d="M120 420 C190 310 270 285 350 260 C435 234 495 200 560 95" fill="none" stroke="#16191f" stroke-width="6" stroke-linecap="round" opacity=".22"/>
             <path d="M70 80 C180 170 290 160 380 250 C440 310 505 338 575 330" fill="none" stroke="#e83c28" stroke-width="4" stroke-linecap="round" opacity=".34"/>
-            <path d="M88 360 C170 310 220 322 310 252 C380 198 440 190 525 220" fill="none" stroke="#63e2bf" stroke-width="4" stroke-linecap="round" opacity=".34"/>
+            <path d="M88 360 C170 310 220 322 310 252 C380 198 440 190 525 220" fill="none" stroke="#ff9c3d" stroke-width="4" stroke-linecap="round" opacity=".34"/>
           </svg>
           <span class="map-chip">East Valley Coverage</span>
           <span class="map-city mesa">Mesa</span>
