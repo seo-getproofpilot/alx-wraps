@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ALX Wraps V4 - Queen Creek Vehicle Wraps, PPF & Ceramic Tint</title>
+<meta name="description" content="ALX Wraps installs vehicle wraps, paint protection film, color PPF, ceramic window tint, decals, and fleet graphics for Queen Creek and the Phoenix East Valley." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23050504'/%3E%3Cpath d='M10 46 24 18h10l-14 28H10Zm24 0 8-16 12 16H43l-5-7-3 7h-1Z' fill='%231ea7ff'/%3E%3Cpath d='M42 18h11L39 46H28l14-28Z' fill='%2300e0c6'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --black:#050504;
+    --ink:#090908;
+    --charcoal:#11110f;
+    --panel:#171714;
+    --panel-2:#1d1c18;
+    --line:rgba(255,255,255,.12);
+    --line-strong:rgba(255,255,255,.22);
+    --text:#f8f8f6;
+    --muted:#b0b3b8;
+    --soft:#777d86;
+    --red:#1ea7ff;
+    --red-dark:#0a5c99;
+    --orange:#00e0c6;
+    --cyan:#00e0c6;
+    --ember:#1ea7ff;
+    --ember-dark:#0a5c99;
+    --copper:#00e0c6;
+    --film:#00e0c6;
+    --film-dark:#0f9b8a;
+    --chrome:#d9ded8;
+    --max:1180px;
+    --radius:8px;
+    --font-display:"Saira","Rajdhani",system-ui,sans-serif;
+    --font-body:"Rajdhani",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    min-width:320px;
+    background:var(--black);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.55;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  button,input,select,textarea{font:inherit}
+  img{display:block;max-width:100%}
+  section{position:relative}
+  section[id]{scroll-margin-top:88px}
+
+  .wrap{width:min(100% - 40px,var(--max));margin-inline:auto}
+  .display,h1,h2,h3,h4{
+    font-family:var(--font-display);
+    text-transform:uppercase;
+    line-height:.98;
+    font-weight:900;
+    letter-spacing:0;
+  }
+  .section-kicker{
+    color:var(--red);
+    font-family:var(--font-display);
+    font-size:16px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0;
+  }
+  .section-title{font-size:52px;margin-top:8px}
+  .section-copy{color:var(--muted);font-size:17px;max-width:650px;margin-top:16px}
+  .split-head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:36px}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    min-height:52px;
+    padding:0 26px;
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+    border-radius:0;
+    border:1px solid rgba(255,255,255,.18);
+    clip-path:polygon(0 0,calc(100% - 13px) 0,100% 13px,100% 100%,13px 100%,0 calc(100% - 13px));
+    cursor:pointer;
+    color:#fff;
+    background:
+      linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.015)),
+      #101115;
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:18px;
+    text-transform:uppercase;
+    letter-spacing:0;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 16px 34px rgba(0,0,0,.28);
+    transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease,color .2s ease;
+    white-space:nowrap;
+  }
+  .btn::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    background:linear-gradient(112deg,transparent 0 38%,rgba(255,255,255,.22) 40%,transparent 43% 100%);
+    transform:translateX(-130%);
+    transition:transform .42s ease;
+  }
+  .btn::after{
+    content:"";
+    position:absolute;
+    inset:0 auto 0 0;
+    width:5px;
+    background:var(--cyan);
+    box-shadow:12px 0 0 rgba(255,255,255,.06);
+  }
+  .btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.42);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 20px 44px rgba(0,0,0,.38)}
+  .btn:hover::before{transform:translateX(125%)}
+  .btn:active{transform:translateY(0)}
+  .btn:focus-visible{
+    outline:3px solid rgba(0,224,198,.72);
+    outline-offset:3px;
+  }
+  .btn svg{position:relative;width:18px;height:18px;stroke:currentColor;stroke-width:2.2}
+  .btn-primary{
+    border-color:rgba(255,255,255,.2);
+    background:
+      linear-gradient(90deg,rgba(255,255,255,.18),transparent 18%),
+      linear-gradient(135deg,var(--copper) 0%,var(--red) 48%,var(--red-dark) 100%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.24),0 18px 44px rgba(30,167,255,.3);
+  }
+  .btn-primary::after{background:var(--film)}
+  .btn-primary:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 22px 52px rgba(30,167,255,.42)}
+  .btn-secondary{
+    border-color:rgba(255,255,255,.22);
+    background:
+      linear-gradient(90deg,rgba(0,224,198,.18),transparent 18%),
+      linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.018));
+  }
+  .btn-secondary::after{background:var(--red)}
+  .btn-secondary:hover{border-color:rgba(255,255,255,.58);background:linear-gradient(90deg,rgba(0,224,198,.26),transparent 18%),linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.035))}
+  .btn-sm{min-height:44px;padding-inline:20px;font-size:16px}
+
+  .nav{
+    position:fixed;
+    inset:0 0 auto;
+    z-index:40;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    background:rgba(3,3,4,.78);
+    backdrop-filter:blur(16px);
+  }
+  .nav.scrolled{background:rgba(3,3,4,.93)}
+  .nav-inner{
+    width:min(100% - 36px,var(--max));
+    min-height:72px;
+    margin-inline:auto;
+    display:flex;
+    flex-wrap:nowrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  .brand{display:flex;align-items:center;flex:none}
+  .brand img{width:196px;height:auto}
+  .nav-links{display:flex;align-items:center;gap:18px;flex-wrap:nowrap}
+  .nav-links a{
+    color:#d8d9dc;
+    font-family:var(--font-display);
+    font-size:15px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0;
+    white-space:nowrap;
+    transition:color .18s ease;
+  }
+  .nav-links a:hover{color:#fff}
+  .nav-actions{display:flex;flex-wrap:nowrap;align-items:center;gap:10px}
+  .phone-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#fff;
+    font-weight:800;
+    font-size:14px;
+    white-space:nowrap;
+  }
+  .phone-link svg{width:16px;height:16px;stroke:var(--red);stroke-width:2.2}
+  .nav-location{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    min-height:42px;
+    padding:0 4px;
+    color:#f0f1f4;
+    font-family:var(--font-display);
+    font-size:15px;
+    font-weight:800;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+  .nav-location svg{width:16px;height:16px;stroke:var(--red);stroke-width:2.2}
+  .menu-btn{
+    display:none;
+    width:42px;
+    height:42px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    background:rgba(255,255,255,.05);
+    color:#fff;
+    align-items:center;
+    justify-content:center;
+  }
+  .menu-btn svg{width:22px;height:22px;stroke:currentColor;stroke-width:2}
+  .mobile-panel{
+    position:fixed;
+    inset:72px 0 auto;
+    z-index:39;
+    display:none;
+    background:rgba(3,3,4,.98);
+    border-bottom:1px solid var(--line);
+    padding:22px;
+  }
+  .mobile-panel.open{display:block}
+  .mobile-panel a{display:block;padding:14px 0;font-family:var(--font-display);font-size:24px;font-weight:800;text-transform:uppercase}
+
+  .hero{
+    min-height:690px;
+    padding:122px 0 54px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    border-bottom:1px solid rgba(30,167,255,.45);
+    background:
+      linear-gradient(90deg,rgba(3,3,4,.9) 0%,rgba(3,3,4,.64) 38%,rgba(3,3,4,.3) 68%,rgba(3,3,4,.72) 100%),
+      url("assets/generated/alx-v2-hero-scene.webp") center / cover no-repeat;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-14%;
+    right:-10%;
+    width:54%;
+    height:128%;
+    transform:skewX(-18deg);
+    background:
+      linear-gradient(90deg,transparent 0 22%,rgba(30,167,255,.68) 23% 24%,transparent 25% 47%,rgba(0,224,198,.42) 48% 49%,transparent 50%),
+      linear-gradient(180deg,rgba(255,255,255,.13),transparent 34%,rgba(0,224,198,.1));
+    mix-blend-mode:screen;
+    opacity:.62;
+    pointer-events:none;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:auto 0 0;
+    height:180px;
+    background:linear-gradient(0deg,var(--black),transparent);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;
+    z-index:2;
+    display:block;
+  }
+  .hero-kicker{
+    display:inline-flex;
+    align-items:center;
+    min-height:34px;
+    padding:0 18px;
+    color:#fff;
+    border:1px solid var(--red);
+    background:rgba(3,3,4,.58);
+    box-shadow:10px 0 0 rgba(0,224,198,.14);
+    font-family:var(--font-display);
+    font-size:18px;
+    font-weight:900;
+    text-transform:uppercase;
+    line-height:1;
+  }
+  .hero h1{
+    max-width:860px;
+    margin-top:24px;
+    font-size:clamp(54px,7vw,96px);
+    font-style:oblique 10deg;
+  }
+  .hero h1 span{color:var(--red)}
+  .hero-copy{
+    max-width:760px;
+    margin-top:24px;
+    color:#d8d9dc;
+    font-size:18px;
+  }
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .hero-reviews{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    align-items:center;
+    margin-top:28px;
+    color:#fff;
+  }
+  .hero-review-label{
+    color:#e7e9ed;
+    font-family:var(--font-display);
+    font-size:21px;
+    font-style:italic;
+    font-weight:900;
+    text-transform:uppercase;
+  }
+  .review-link{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    min-height:46px;
+    padding:0 16px;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.045);
+    font-family:var(--font-display);
+    font-size:19px;
+    font-weight:900;
+    text-transform:uppercase;
+    transition:transform .2s ease,border-color .2s ease,background .2s ease;
+  }
+  .review-link:hover{
+    transform:translateY(-2px);
+    border-color:rgba(30,167,255,.74);
+    background:rgba(30,167,255,.12);
+  }
+  .review-mark{
+    width:32px;
+    height:32px;
+    display:grid;
+    place-items:center;
+    flex:none;
+    color:#fff;
+    background:var(--red);
+    font-family:var(--font-body);
+    font-size:15px;
+    font-weight:900;
+    line-height:1;
+  }
+  .review-link.yelp .review-mark{background:var(--film-dark)}
+  .services{
+    padding:106px 0 118px;
+    overflow:hidden;
+    background:
+      linear-gradient(90deg,rgba(3,3,4,.82),rgba(3,3,4,.94)),
+      radial-gradient(70% 60% at 100% 0%,rgba(30,167,255,.13),transparent 58%),
+      radial-gradient(65% 58% at 0% 100%,rgba(0,224,198,.08),transparent 62%),
+      url("assets/generated/alx-v2-contact-texture.webp") center / cover no-repeat,
+      repeating-linear-gradient(135deg,rgba(255,255,255,.03) 0 1px,transparent 1px 18px);
+  }
+  .services .wrap{width:min(100% - 48px,1240px)}
+  .services::before{
+    content:none;
+    position:absolute;
+    left:max(18px,calc((100vw - 1240px) / 2 - 98px));
+    top:210px;
+    color:transparent;
+    -webkit-text-stroke:1px rgba(30,167,255,.32);
+    font-family:var(--font-display);
+    font-size:112px;
+    font-weight:900;
+    line-height:1;
+    text-transform:uppercase;
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    opacity:.65;
+    pointer-events:none;
+  }
+  .services-head{
+    position:relative;
+    z-index:1;
+    max-width:820px;
+    margin:0 auto 46px;
+    text-align:center;
+  }
+  .services-head .section-kicker{color:#fff}
+  .services-head .section-title{
+    margin-top:6px;
+    font-size:clamp(44px,5vw,68px);
+    font-style:italic;
+    transform:skewX(-5deg);
+  }
+  .services-head .section-copy{margin:16px auto 0;color:#d9dde2}
+  .services-divider{
+    width:240px;
+    height:2px;
+    margin:22px auto 0;
+    background:linear-gradient(90deg,transparent,var(--film) 15% 32%,var(--chrome) 33% 40%,var(--red) 41% 74%,transparent);
+  }
+  .service-grid{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+    counter-reset:service;
+  }
+  .service-card{
+    position:relative;
+    min-height:448px;
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:0;
+    overflow:hidden;
+    background:#07080a;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    box-shadow:0 18px 45px rgba(0,0,0,.3);
+    transition:transform .32s cubic-bezier(.22,1,.36,1),border-color .32s ease,box-shadow .32s ease;
+  }
+  .service-card::before{
+    content:none;
+    counter-increment:service;
+    position:absolute;
+    left:18px;
+    top:18px;
+    z-index:3;
+    color:rgba(255,255,255,.76);
+    font-family:var(--font-display);
+    font-size:42px;
+    font-weight:900;
+    line-height:1;
+    opacity:.26;
+    text-shadow:0 8px 20px rgba(0,0,0,.45);
+  }
+  .service-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:
+      linear-gradient(0deg,rgba(5,5,4,.3) 0 24%,rgba(5,5,4,.05) 48%,rgba(5,5,4,.26)),
+      linear-gradient(120deg,rgba(30,167,255,.1),transparent 38%,rgba(0,224,198,.06));
+    transition:background .32s ease;
+    pointer-events:none;
+  }
+  .service-card:hover,
+  .service-card:focus-visible{
+    transform:translateY(-8px);
+    border-color:rgba(30,167,255,.95);
+    box-shadow:0 30px 70px rgba(0,0,0,.48),0 0 0 1px rgba(0,224,198,.22);
+    outline:0;
+  }
+  .service-card .service-bg{
+    position:absolute;
+    inset:12px;
+    width:calc(100% - 24px);
+    height:calc(100% - 24px);
+    object-fit:cover;
+    opacity:.9;
+    filter:saturate(1) contrast(1.04);
+    transition:transform .65s cubic-bezier(.22,1,.36,1),opacity .32s ease,filter .32s ease;
+  }
+  .service-card:hover .service-bg,
+  .service-card:focus-visible .service-bg{
+    transform:scale(1.07);
+    opacity:1;
+    filter:saturate(1.1) contrast(1.08);
+  }
+  .service-titlebar{
+    position:relative;
+    z-index:3;
+    width:calc(100% - 24px);
+    margin:0 12px 12px;
+    min-height:58px;
+    display:flex;
+    align-items:center;
+    padding:12px 18px;
+    border-top:1px solid rgba(255,255,255,.18);
+    border-left:4px solid var(--film);
+    background:
+      linear-gradient(90deg,rgba(0,224,198,.18),transparent 24%),
+      linear-gradient(135deg,rgba(15,15,13,.92),rgba(5,5,4,.98));
+    box-shadow:0 -18px 40px rgba(0,0,0,.3);
+    transform:translateY(0);
+    transition:transform .32s cubic-bezier(.22,1,.36,1),background .32s ease;
+  }
+  .service-titlebar::after{
+    content:"";
+    position:absolute;
+    right:14px;
+    top:50%;
+    width:34px;
+    height:3px;
+    background:linear-gradient(90deg,var(--copper),var(--red));
+    transform:translateY(-50%);
+  }
+  .service-card:hover .service-titlebar,
+  .service-card:focus-visible .service-titlebar{
+    transform:translateY(-104px);
+    border-left-color:var(--copper);
+    background:
+      linear-gradient(90deg,rgba(0,224,198,.22),transparent 26%),
+      linear-gradient(135deg,rgba(12,16,22,.96),rgba(9,9,8,.98));
+  }
+  .service-card h3{
+    color:#fff;
+    font-size:clamp(28px,2.6vw,38px);
+    font-style:italic;
+    line-height:.95;
+    transform:skewX(-5deg);
+  }
+  .service-hover{
+    position:absolute;
+    left:12px;
+    right:12px;
+    bottom:12px;
+    z-index:3;
+    min-height:116px;
+    padding:18px 20px 20px;
+    color:#fff;
+    background:
+      linear-gradient(90deg,rgba(0,224,198,.1),transparent 30%),
+      linear-gradient(180deg,rgba(8,8,7,.94),rgba(5,5,4,.99));
+    border-top:1px solid rgba(255,255,255,.12);
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .28s ease,transform .32s cubic-bezier(.22,1,.36,1);
+  }
+  .service-card:hover .service-hover,
+  .service-card:focus-visible .service-hover{
+    opacity:1;
+    transform:translateY(0);
+  }
+  .service-hover p{color:#e7e9ed;font-size:15px;line-height:1.45}
+  .service-hover span{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:14px;
+    color:#fff;
+    font-family:var(--font-display);
+    font-size:19px;
+    font-style:italic;
+    font-weight:900;
+    text-transform:uppercase;
+  }
+  .service-hover span::before{
+    content:"";
+    width:34px;
+    height:2px;
+    background:linear-gradient(90deg,var(--film),var(--red));
+  }
+  .text-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:14px;
+    color:var(--red);
+    font-family:var(--font-display);
+    font-size:16px;
+    font-weight:800;
+    text-transform:uppercase;
+  }
+  .text-link svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.2}
+
+  .shop-story{
+    padding:110px 0;
+    overflow:hidden;
+    background:
+      radial-gradient(62% 80% at 100% 18%,rgba(0,224,198,.08),transparent 58%),
+      radial-gradient(44% 70% at 0% 86%,rgba(30,167,255,.12),transparent 62%),
+      linear-gradient(180deg,#08090b,#030304);
+    border-block:1px solid rgba(255,255,255,.12);
+  }
+  .shop-story::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(120deg,transparent 0 56%,rgba(30,167,255,.08) 57% 58%,transparent 59%),
+      repeating-linear-gradient(135deg,rgba(255,255,255,.022) 0 1px,transparent 1px 18px);
+    pointer-events:none;
+  }
+  .why-shell{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:minmax(360px,.86fr) minmax(440px,1fr);
+    gap:62px;
+    align-items:center;
+  }
+  .story-panel{position:relative;max-width:620px}
+  .story-bg-word{
+    display:none;
+    position:absolute;
+    left:-12px;
+    top:-58px;
+    z-index:-1;
+    color:transparent;
+    -webkit-text-stroke:1px rgba(30,167,255,.2);
+    text-stroke:1px rgba(30,167,255,.2);
+    font-family:var(--font-display);
+    font-size:clamp(92px,13vw,180px);
+    font-weight:900;
+    line-height:.8;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    opacity:.72;
+  }
+  .story-title{
+    font-size:clamp(44px,5.4vw,74px);
+    font-style:italic;
+    transform:skewX(-6deg);
+    transform-origin:left center;
+    max-width:620px;
+  }
+  .story-divider{
+    width:220px;
+    height:2px;
+    margin:28px 0 26px 8px;
+    background:linear-gradient(90deg,var(--film) 0 28%,var(--chrome) 29% 39%,var(--red) 40% 72%,transparent);
+    box-shadow:0 0 20px rgba(30,167,255,.22);
+  }
+  .why-list{list-style:none;display:grid;gap:28px;margin-top:0}
+  .why-item{
+    display:grid;
+    grid-template-columns:54px 1fr;
+    gap:18px;
+    align-items:start;
+  }
+  .why-icon{
+    width:48px;
+    height:48px;
+    display:grid;
+    place-items:center;
+    color:#fff;
+    background:var(--red);
+    box-shadow:10px 0 0 rgba(0,224,198,.13);
+    clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+  }
+  .why-icon svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2}
+  .why-item h3{
+    font-size:27px;
+    font-style:italic;
+    transform:skewX(-4deg);
+    transform-origin:left center;
+  }
+  .why-item p{margin-top:6px;color:#d7dae0;font-size:16px;max-width:560px}
+  .story-panel .btn{margin-top:34px}
+  .story-media{
+    position:relative;
+    min-height:620px;
+  }
+  .story-photo{
+    position:absolute;
+    inset:18px 0 0 72px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:0 20px 20px 0;
+    clip-path:polygon(12% 0,100% 0,100% calc(100% - 28px),calc(100% - 28px) 100%,0 100%,0 14%);
+    box-shadow:0 34px 90px rgba(0,0,0,.55);
+  }
+  .story-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(1.04) contrast(1.03)}
+  .story-photo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,rgba(3,3,4,.04),rgba(3,3,4,.18));
+    pointer-events:none;
+  }
+  .story-stat{
+    position:absolute;
+    z-index:2;
+    display:grid;
+    align-content:center;
+    color:#fff;
+    font-family:var(--font-display);
+    font-weight:900;
+    text-transform:uppercase;
+    line-height:1;
+    box-shadow:0 20px 50px rgba(0,0,0,.28);
+  }
+  .story-stat strong{font-size:36px}
+  .story-stat span{display:block;margin-top:8px;font-size:16px}
+  .story-stat.red{
+    top:58px;
+    right:-8px;
+    width:128px;
+    height:124px;
+    padding:22px 18px;
+    background:var(--red);
+    clip-path:polygon(0 0,100% 0,100% 72%,76% 100%,0 100%);
+  }
+  .story-stat.blue{
+    left:0;
+    bottom:42px;
+    width:140px;
+    height:140px;
+    padding:28px 24px;
+    background:var(--film-dark);
+    clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  }
+
+  .work{
+    padding:92px 0 88px;
+    overflow:hidden;
+    background:
+      linear-gradient(180deg,#030304 0%,#060708 100%),
+      repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 1px,transparent 1px 18px);
+  }
+  .work::before{
+    content:none;
+    position:absolute;
+    left:max(18px,calc((100vw - var(--max)) / 2 - 74px));
+    top:120px;
+    color:transparent;
+    -webkit-text-stroke:1px rgba(30,167,255,.16);
+    font-family:var(--font-display);
+    font-size:110px;
+    font-weight:900;
+    writing-mode:vertical-rl;
+    line-height:.8;
+    opacity:.75;
+    pointer-events:none;
+  }
+  .work .wrap{position:relative;z-index:1}
+  .filter-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;padding-left:12px;border-left:3px solid var(--red)}
+  .filter-row button{
+    min-height:42px;
+    padding:0 19px;
+    position:relative;
+    border-radius:0;
+    border:1px solid var(--line);
+    background:
+      linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.018)),
+      #0d0e11;
+    color:#d8d9dc;
+    cursor:pointer;
+    font-family:var(--font-display);
+    font-size:16px;
+    font-weight:800;
+    text-transform:uppercase;
+    clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);
+    transition:transform .18s ease,border-color .18s ease,background .18s ease,color .18s ease;
+  }
+  .filter-row button:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.38)}
+  .filter-row button:focus-visible{outline:3px solid rgba(0,224,198,.72);outline-offset:3px}
+  .filter-row button.active{
+    background:linear-gradient(135deg,var(--copper),var(--red-dark));
+    border-color:rgba(255,255,255,.25);
+    color:#fff;
+    box-shadow:10px 0 0 rgba(0,224,198,.26);
+  }
+  .work-grid{
+    display:grid;
+    grid-template-columns:repeat(12,minmax(0,1fr));
+    gap:18px;
+    align-items:stretch;
+  }
+  .work-tile{
+    position:relative;
+    grid-column:span 4;
+    min-height:330px;
+    border:1px solid var(--line);
+    border-radius:0;
+    overflow:hidden;
+    background:#111216;
+    clip-path:polygon(0 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%);
+    margin-left:0;
+    box-shadow:0 26px 60px rgba(0,0,0,.32);
+  }
+  .work-tile.wide{grid-column:span 5;min-height:380px}
+  .work-tile:nth-child(2),.work-tile:nth-child(6){grid-column:span 3}
+  .work-tile img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s ease}
+  .work-tile:hover img{transform:scale(1.05)}
+  .work-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.88),transparent 58%),linear-gradient(135deg,rgba(30,167,255,.22),transparent 36%)}
+  .work-meta{position:absolute;z-index:2;left:20px;right:20px;bottom:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.16)}
+  .work-meta b{display:block;font-family:var(--font-display);font-size:27px;text-transform:uppercase;line-height:1}
+  .work-meta span{display:block;color:var(--copper);font-size:13px;font-weight:800;margin-bottom:6px;text-transform:uppercase}
+
+  .service-area{
+    padding:104px 0;
+    overflow:hidden;
+    background:
+      linear-gradient(90deg,rgba(3,3,4,.98),rgba(3,3,4,.9)),
+      url("assets/generated/alx-v2-contact-texture.webp") center / cover no-repeat;
+    border-top:1px solid rgba(255,255,255,.1);
+    border-bottom:1px solid rgba(0,224,198,.28);
+  }
+  .service-area::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(55% 80% at 0% 50%,rgba(30,167,255,.12),transparent 62%),
+      radial-gradient(55% 80% at 100% 50%,rgba(0,224,198,.11),transparent 58%),
+      repeating-linear-gradient(135deg,rgba(255,255,255,.02) 0 1px,transparent 1px 18px);
+    pointer-events:none;
+  }
+  .service-area-shell{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:minmax(420px,.95fr) minmax(420px,.85fr);
+    gap:70px;
+    align-items:center;
+  }
+  .service-map-frame{
+    position:relative;
+    min-height:520px;
+    padding:12px;
+    border:1px solid var(--red);
+    border-right-color:var(--film);
+    background:#030304;
+    box-shadow:0 34px 90px rgba(0,0,0,.52);
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .service-map-frame::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-top:1px solid rgba(255,255,255,.38);
+    border-left:1px solid rgba(255,255,255,.16);
+    pointer-events:none;
+    z-index:3;
+  }
+  .service-map-frame::after{
+    content:"";
+    position:absolute;
+    right:12px;
+    bottom:12px;
+    width:72px;
+    height:72px;
+    background:var(--red);
+    clip-path:polygon(100% 0,100% 100%,0 100%);
+    pointer-events:none;
+    z-index:4;
+  }
+  .map-fallback{
+    position:absolute;
+    inset:12px;
+    z-index:0;
+    overflow:hidden;
+    background:
+      linear-gradient(180deg,rgba(250,251,252,.86),rgba(211,216,220,.82)),
+      repeating-linear-gradient(0deg,rgba(3,3,4,.08) 0 1px,transparent 1px 34px),
+      repeating-linear-gradient(90deg,rgba(3,3,4,.08) 0 1px,transparent 1px 42px);
+    transition:opacity .5s ease;
+  }
+  .map-fallback::before,
+  .map-fallback::after{
+    content:"";
+    position:absolute;
+    height:3px;
+    width:130%;
+    left:-15%;
+    background:rgba(0,224,198,.38);
+    transform:rotate(-17deg);
+  }
+  .map-fallback::before{top:35%}
+  .map-fallback::after{top:61%;background:rgba(30,167,255,.36);transform:rotate(12deg)}
+  .map-route{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    opacity:.62;
+  }
+  .map-city{
+    position:absolute;
+    z-index:2;
+    color:#16191f;
+    font-size:12px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.02em;
+  }
+  .map-city::before{
+    content:"";
+    display:inline-block;
+    width:8px;
+    height:8px;
+    margin-right:5px;
+    border-radius:50%;
+    background:var(--red);
+    box-shadow:0 0 0 4px rgba(30,167,255,.15);
+  }
+  .map-city.primary{
+    left:47%;
+    top:46%;
+    color:#030304;
+    font-size:14px;
+  }
+  .map-city.primary::before{width:11px;height:11px;background:var(--film);box-shadow:0 0 0 5px rgba(0,224,198,.18)}
+  .map-city.gilbert{left:22%;top:25%}
+  .map-city.chandler{left:16%;top:37%}
+  .map-city.mesa{left:42%;top:18%}
+  .map-city.santan{left:58%;top:59%}
+  .map-city.aj{right:14%;top:30%}
+  .map-chip{
+    position:absolute;
+    left:18px;
+    top:18px;
+    z-index:2;
+    padding:12px 14px;
+    color:#16191f;
+    background:rgba(255,255,255,.9);
+    box-shadow:0 14px 34px rgba(0,0,0,.18);
+    font-size:13px;
+    font-weight:900;
+    text-transform:uppercase;
+  }
+  .service-map-frame iframe{
+    position:relative;
+    z-index:1;
+    width:100%;
+    height:100%;
+    min-height:496px;
+    border:0;
+    display:block;
+    opacity:0;
+    filter:grayscale(1) contrast(1.05) brightness(.82);
+    transition:opacity .55s ease;
+  }
+  .service-map-frame.map-loaded iframe{opacity:.92}
+  .service-map-frame.map-loaded .map-fallback{opacity:.16}
+  .map-frame-tag{
+    position:absolute;
+    left:28px;
+    bottom:28px;
+    z-index:5;
+    max-width:250px;
+    padding:12px 14px;
+    background:rgba(3,3,4,.9);
+    border-left:3px solid var(--red);
+    box-shadow:12px 0 0 rgba(0,224,198,.2),0 14px 30px rgba(0,0,0,.38);
+  }
+  .map-frame-tag b,
+  .map-frame-tag span{
+    display:block;
+    font-family:var(--font-display);
+    font-style:italic;
+    font-weight:900;
+    text-transform:uppercase;
+    line-height:1;
+  }
+  .map-frame-tag b{font-size:24px;color:#fff}
+  .map-frame-tag span{margin-top:5px;color:#d9dde2;font-size:15px}
+  .area-kicker{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    align-items:center;
+    gap:18px;
+    color:#fff;
+    font-family:var(--font-display);
+    font-size:18px;
+    font-weight:900;
+    text-transform:uppercase;
+  }
+  .area-kicker::after{content:"";height:1px;background:linear-gradient(90deg,var(--red),transparent)}
+  .area-title{
+    margin-top:26px;
+    font-size:clamp(42px,4.8vw,66px);
+    font-style:italic;
+    transform:skewX(-6deg);
+    transform-origin:left center;
+    max-width:640px;
+  }
+  .area-divider{
+    width:230px;
+    height:2px;
+    margin:26px 0 26px 8px;
+    background:linear-gradient(90deg,var(--film) 0 28%,var(--chrome) 29% 39%,var(--red) 40% 72%,transparent);
+  }
+  .area-copy{color:#e8eaee;font-size:17px;max-width:680px}
+  .area-cities{
+    list-style:none;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px 34px;
+    margin-top:34px;
+  }
+  .area-cities li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#fff;
+    font-family:var(--font-display);
+    font-size:25px;
+    font-style:italic;
+    font-weight:900;
+    text-transform:uppercase;
+  }
+  .area-cities svg{width:22px;height:22px;stroke:var(--red);stroke-width:2.2;fill:none;flex:none}
+  .service-area .btn{margin-top:32px}
+
+  .quote-section{
+    padding:108px 0 0;
+    overflow:hidden;
+    background:
+      linear-gradient(180deg,rgba(3,3,4,.8),rgba(3,3,4,.95) 54%,#030304 100%),
+      url("assets/generated/alx-v2-contact-texture.webp") center top / cover no-repeat;
+    border-top:1px solid rgba(30,167,255,.5);
+  }
+  .quote-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(90deg,rgba(30,167,255,.11),transparent 28%,transparent 72%,rgba(0,224,198,.11)),
+      repeating-linear-gradient(135deg,rgba(255,255,255,.022) 0 1px,transparent 1px 18px);
+    pointer-events:none;
+    opacity:.9;
+  }
+  .quote-layout{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:minmax(320px,.78fr) minmax(520px,1.1fr);
+    gap:38px;
+    align-items:start;
+  }
+  .quote-info{padding-top:24px}
+  .quote-kicker{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    align-items:center;
+    gap:18px;
+    color:#fff;
+    font-family:var(--font-display);
+    font-size:18px;
+    font-weight:900;
+    text-transform:uppercase;
+    line-height:1;
+  }
+  .quote-kicker::after{
+    content:"";
+    height:1px;
+    background:linear-gradient(90deg,var(--red),transparent);
+  }
+  .quote-heading{
+    margin-top:24px;
+    color:#fff;
+    font-size:clamp(42px,5vw,70px);
+    font-style:italic;
+    transform:skewX(-6deg);
+    transform-origin:left center;
+    max-width:580px;
+  }
+  .quote-info .section-copy{
+    max-width:520px;
+    color:#f0f1f4;
+  }
+  .contact-list{
+    display:grid;
+    gap:0;
+    margin-top:36px;
+    border-block:1px solid rgba(30,167,255,.75);
+  }
+  .contact-list a,.contact-list div{
+    display:flex;
+    gap:14px;
+    align-items:center;
+    min-height:92px;
+    padding:18px 4px;
+    color:#f0f1f4;
+    font-weight:700;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .contact-list a:last-child,.contact-list div:last-child{border-bottom:0}
+  .contact-icon{
+    width:60px;
+    height:60px;
+    display:grid;
+    place-items:center;
+    flex:none;
+    background:var(--red);
+    color:#fff;
+    box-shadow:12px 0 0 rgba(0,224,198,.14);
+    clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px);
+  }
+  .contact-icon svg{width:28px;height:28px;stroke:currentColor;stroke-width:2.1}
+  .contact-copy em{
+    display:block;
+    color:#fff;
+    font-family:var(--font-display);
+    font-size:25px;
+    font-style:italic;
+    font-weight:900;
+    text-transform:uppercase;
+    line-height:1;
+  }
+  .contact-copy strong{
+    display:block;
+    margin-top:7px;
+    color:#f8f8f6;
+    font-family:var(--font-body);
+    font-size:16px;
+    font-weight:800;
+  }
+  .quote-form{
+    position:relative;
+    overflow:hidden;
+    background:rgba(3,3,4,.92);
+    border:1px solid var(--red);
+    border-right-color:rgba(0,224,198,.72);
+    border-radius:0;
+    padding:38px clamp(26px,4vw,56px) 42px;
+    box-shadow:0 36px 90px rgba(0,0,0,.52);
+  }
+  .quote-form::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-top:2px solid rgba(30,167,255,.8);
+    border-right:2px solid rgba(0,224,198,.62);
+    pointer-events:none;
+  }
+  .quote-form h3{
+    margin-bottom:30px;
+    text-align:center;
+    font-size:clamp(36px,4vw,58px);
+    font-style:italic;
+    transform:skewX(-6deg);
+    color:#fff;
+  }
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .field{position:relative;display:block;margin-bottom:14px}
+  .field span{
+    position:absolute;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    clip:rect(0 0 0 0);
+    white-space:nowrap;
+  }
+  .field input,.field select,.field textarea{
+    width:100%;
+    border:2px solid rgba(255,255,255,.86);
+    border-radius:5px;
+    background:#272727;
+    color:#fff;
+    min-height:52px;
+    padding:13px 16px;
+    font-size:15px;
+    font-weight:800;
+  }
+  .field input::placeholder,.field textarea::placeholder{color:#fff;opacity:.92}
+  .field textarea{min-height:108px;resize:vertical}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid rgba(0,224,198,.32);border-color:#fff}
+  .service-checks{
+    border:0;
+    margin:20px 0 24px;
+    padding:0;
+  }
+  .service-checks legend{
+    margin-bottom:15px;
+    color:var(--red);
+    font-size:20px;
+    font-weight:800;
+  }
+  .service-options{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+  .service-options label,
+  .form-consent{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    color:#f3f4f6;
+    font-size:15px;
+    font-weight:700;
+  }
+  .service-options input,
+  .form-consent input{
+    width:16px;
+    height:16px;
+    margin-top:4px;
+    accent-color:var(--red);
+    flex:none;
+  }
+  .form-consent{
+    margin:2px 0 28px;
+    color:#dfe1e5;
+    line-height:1.45;
+  }
+  .quote-form .btn{
+    width:100%;
+    min-height:58px;
+    margin-top:2px;
+    border-color:rgba(255,255,255,.42);
+    border-radius:0;
+    background:
+      linear-gradient(90deg,rgba(0,224,198,.18),transparent 20%),
+      linear-gradient(135deg,var(--copper),var(--red-dark));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 46px rgba(30,167,255,.28);
+    font-family:var(--font-display);
+    font-size:18px;
+    font-weight:800;
+  }
+  .form-note{margin-top:13px;color:#aeb4bd;font-size:13px;text-align:center}
+
+  .site-footer{
+    position:relative;
+    z-index:1;
+    margin-top:88px;
+    border-top:1px solid rgba(255,255,255,.14);
+    background:rgba(3,3,4,.9);
+  }
+  .footer-main{
+    display:grid;
+    grid-template-columns:1.15fr 1fr 1fr 1.2fr;
+    gap:48px;
+    padding:48px 0 42px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .footer-brand img{width:210px;height:auto}
+  .footer-brand p{
+    max-width:280px;
+    margin-top:20px;
+    color:#d7dae0;
+    font-size:15px;
+  }
+  .footer-cert{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:20px;
+    color:#fff;
+    font-family:var(--font-display);
+    font-size:22px;
+    font-weight:900;
+    text-transform:uppercase;
+  }
+  .footer-cert::before{
+    content:"";
+    width:34px;
+    height:4px;
+    background:linear-gradient(90deg,var(--red),var(--film),var(--chrome));
+  }
+  .footer-col h3{
+    display:inline-block;
+    position:relative;
+    margin-bottom:24px;
+    color:#fff;
+    font-size:28px;
+  }
+  .footer-col h3::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:-18px;
+    bottom:-10px;
+    height:2px;
+    background:linear-gradient(90deg,var(--film),var(--red),transparent);
+  }
+  .footer-menu{list-style:none;display:grid;gap:12px}
+  .footer-menu a,
+  .footer-contact a,
+  .footer-contact div{
+    color:#e9ebee;
+    font-size:15px;
+    font-weight:700;
+  }
+  .footer-menu a{display:flex;align-items:center;gap:12px}
+  .line-mark{
+    width:18px;
+    height:14px;
+    display:inline-grid;
+    gap:3px;
+    flex:none;
+  }
+  .line-mark::before,
+  .line-mark::after{
+    content:"";
+    height:3px;
+    background:var(--film);
+  }
+  .footer-menu li:nth-child(even) .line-mark::before,
+  .footer-menu li:nth-child(even) .line-mark::after{background:var(--red)}
+  .footer-contact{display:grid;gap:16px}
+  .footer-contact a,
+  .footer-contact div{display:flex;align-items:flex-start;gap:12px}
+  .footer-contact svg{width:21px;height:21px;stroke:var(--red);stroke-width:2.1;flex:none;margin-top:2px}
+  .footer-social{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+  .footer-social a{
+    width:34px;
+    height:34px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:var(--red);
+    color:#fff;
+    font-family:var(--font-display);
+    font-size:15px;
+    font-weight:900;
+  }
+  .footer-social a:nth-child(even){background:var(--film-dark)}
+  .footer-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:24px 0;
+    color:#c2c6cc;
+    font-size:13px;
+  }
+  .footer-bottom a{color:#fff}
+
+  .reveal{opacity:1;transform:none;transition:opacity .65s ease,transform .65s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:1080px){
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .service-grid{grid-template-columns:repeat(2,1fr)}
+    .service-card{min-height:430px}
+    .services::before{left:12px;font-size:82px;opacity:.32}
+    .story-media{min-height:560px}
+    .story-photo{inset:0 0 0 60px}
+    .story-stat.red{right:18px}
+    .quote-layout{gap:34px}
+    .quote-info{padding-top:0}
+    .service-map-frame{min-height:430px}
+    .service-map-frame iframe{min-height:406px}
+    .footer-main{grid-template-columns:1fr 1fr;gap:34px}
+  }
+  /* collapse the nav to a menu button before the bar gets crowded */
+  @media(max-width:1180px){
+    .nav-links,.phone-link,.nav-location{display:none}
+    .menu-btn{display:flex}
+  }
+  /* keep Why ALX, Service Area, and the Contact/quote columns side-by-side on laptops */
+  @media(max-width:1024px){
+    .why-shell{grid-template-columns:minmax(0,.92fr) minmax(0,1fr);gap:36px}
+    .service-area-shell{grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:40px}
+    .quote-layout{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:30px}
+    .story-media{min-height:480px}
+  }
+  @media(max-width:820px){
+    .why-shell{grid-template-columns:1fr;gap:34px}
+    .service-area-shell{grid-template-columns:1fr;gap:34px}
+    .quote-layout{grid-template-columns:1fr;gap:30px}
+  }
+  @media(max-width:720px){
+    .wrap{width:min(100% - 28px,var(--max))}
+    .nav-inner{width:min(100% - 24px,var(--max));min-height:66px}
+    .brand img{width:158px}
+    .mobile-panel{inset:66px 0 auto}
+    .hero{min-height:auto;padding:104px 0 48px}
+    .hero h1{font-size:50px}
+    .hero-kicker{font-size:16px;min-height:32px;padding:0 14px}
+    .hero-copy{font-size:16px}
+    .hero-reviews{display:grid;gap:10px}
+    .review-link{width:100%;justify-content:flex-start}
+    .section-title{font-size:40px}
+    .split-head{display:block}
+    .split-head .btn{margin-top:20px}
+    .service-grid{grid-template-columns:1fr}
+    .services .wrap{width:min(100% - 28px,var(--max))}
+    .services::before{display:none}
+    .services-head{margin-bottom:28px;text-align:left}
+    .services-head .section-title{font-size:42px;transform:none}
+    .services-head .section-copy{margin-inline:0}
+    .services-divider{margin-left:0;width:190px}
+    .service-card{min-height:420px}
+    .service-card .service-bg{inset:8px;width:calc(100% - 16px);height:calc(100% - 16px)}
+    .service-titlebar{width:calc(100% - 16px);margin:0 8px 8px;min-height:54px;padding:11px 15px}
+    .service-card h3{font-size:30px}
+    .service-titlebar,
+    .service-card:hover .service-titlebar,
+    .service-card:focus-visible .service-titlebar{transform:none}
+    .service-titlebar::after{width:26px}
+    .service-hover{
+      position:relative;
+      left:auto;
+      right:auto;
+      bottom:auto;
+      width:calc(100% - 16px);
+      margin:0 8px 8px;
+      min-height:auto;
+      padding:16px;
+      opacity:1;
+      transform:none;
+    }
+    .service-hover p{font-size:14px}
+    .services,.work,.quote-section,.shop-story{padding-block:64px}
+    .story-bg-word{left:0;right:0;top:-34px;max-width:100%;overflow:hidden;font-size:82px}
+    .story-title{font-size:44px}
+    .story-divider{width:190px;margin:22px 0 24px 4px}
+    .why-list{gap:24px}
+    .why-item{grid-template-columns:48px 1fr;gap:14px}
+    .why-icon{width:42px;height:42px;box-shadow:7px 0 0 rgba(0,224,198,.13)}
+    .why-icon svg{width:23px;height:23px}
+    .why-item h3{font-size:23px}
+    .why-item p{font-size:15px}
+    .story-media{min-height:420px}
+    .story-photo{inset:0;clip-path:polygon(10% 0,100% 0,100% calc(100% - 20px),calc(100% - 20px) 100%,0 100%,0 12%);border-radius:0 14px 14px 0}
+    .story-stat strong{font-size:28px}
+    .story-stat span{font-size:13px}
+    .story-stat.red{top:18px;right:12px;width:100px;height:98px;padding:18px 14px}
+    .story-stat.blue{left:12px;bottom:12px;width:104px;height:104px;padding:20px 16px}
+    .quote-section{padding:70px 0 0}
+    .work::before{display:none}
+    .work-grid{grid-template-columns:1fr}
+    .work-tile,.work-tile.wide{grid-column:auto;min-height:245px;clip-path:polygon(0 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%);margin-left:0}
+    .work-tile:nth-child(2),.work-tile:nth-child(6){grid-column:auto}
+    .service-area{padding:68px 0}
+    .service-map-frame{min-height:360px;padding:8px}
+    .service-map-frame iframe{min-height:344px}
+    .area-title{font-size:42px}
+    .area-divider{width:190px;margin-left:4px}
+    .area-copy{font-size:15px}
+    .area-cities{grid-template-columns:1fr;gap:14px;margin-top:26px}
+    .area-cities li{font-size:22px}
+    .form-grid{grid-template-columns:1fr}
+    .quote-heading{font-size:46px}
+    .contact-list a,.contact-list div{min-height:82px;padding:15px 0}
+    .contact-icon{width:52px;height:52px;box-shadow:8px 0 0 rgba(0,224,198,.14)}
+    .contact-copy em{font-size:22px}
+    .contact-copy strong{font-size:14px;line-height:1.35}
+    .quote-form{padding:30px 20px 32px}
+    .quote-form h3{text-align:left;font-size:38px}
+    .service-options{grid-template-columns:1fr}
+    .site-footer{margin-top:58px}
+    .footer-main{grid-template-columns:1fr;gap:30px;padding:38px 0 32px}
+    .footer-brand img{width:176px}
+    .footer-bottom{display:grid;gap:10px}
+    .hero-ctas .btn{width:100%}
+  }
+
+  /* ===== Neon Garage Hero (v4) ===== */
+  .hero-neon{
+    position:relative;
+    min-height:780px;
+    padding:130px 0 72px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    border-bottom:1px solid rgba(30,167,255,.55);
+    background:
+      linear-gradient(90deg,rgba(3,5,8,.96) 0%,rgba(3,5,8,.74) 40%,rgba(3,5,8,.42) 70%,rgba(3,5,8,.85) 100%),
+      radial-gradient(58% 78% at 16% 26%,rgba(30,167,255,.26),transparent 60%),
+      radial-gradient(54% 72% at 90% 78%,rgba(0,224,198,.2),transparent 62%),
+      url("assets/generated/alx-v2-hero-scene.webp") center / cover no-repeat,
+      #05070a;
+  }
+  .hero-neon::before{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:0;
+    height:46%;
+    pointer-events:none;
+    mix-blend-mode:screen;
+    background:
+      linear-gradient(0deg,rgba(30,167,255,.2),transparent 72%),
+      linear-gradient(0deg,rgba(0,224,198,.12),transparent 84%);
+    animation:neonPulse 4.5s ease-in-out infinite;
+  }
+  .hero-neon::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+      linear-gradient(115deg,transparent 0 58%,rgba(30,167,255,.12) 61% 62%,transparent 64%),
+      linear-gradient(115deg,transparent 0 70%,rgba(0,224,198,.1) 72% 73%,transparent 75%),
+      repeating-linear-gradient(135deg,rgba(255,255,255,.022) 0 1px,transparent 1px 22px);
+  }
+  @keyframes neonPulse{0%,100%{opacity:.78}50%{opacity:1}}
+  .hero-neon .wrap{position:relative;z-index:2}
+  .neon-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:52px;align-items:center}
+
+  .neon-tagstrip{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+  .neon-tagstrip span{
+    font-family:var(--font-display);font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    color:#c4ecff;padding:7px 13px;border:1px solid rgba(30,167,255,.42);
+    background:rgba(30,167,255,.09);border-radius:50px;
+  }
+  .neon-h1{
+    font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-style:italic;
+    font-size:clamp(46px,5.7vw,84px);line-height:.92;letter-spacing:0;transform:skewX(-4deg);transform-origin:left;
+  }
+  .neon-h1 .chrome{
+    background:linear-gradient(180deg,#ffffff 0%,#e2e9f0 34%,#9eaab6 60%,#ffffff 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .neon-h1 .glow{
+    background:linear-gradient(118deg,var(--cyan),var(--red));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 20px rgba(30,167,255,.55));
+  }
+  .neon-sub{max-width:52ch;margin-top:22px;color:#d9e3ed;font-size:18px}
+  .neon-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+
+  .proof-row{display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;margin-top:30px}
+  .proof-link{
+    display:inline-flex;align-items:center;gap:11px;min-height:54px;padding:0 17px;
+    border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.045);
+    color:#fff;font-family:var(--font-display);font-weight:800;font-size:15px;text-transform:uppercase;line-height:1;
+    transition:transform .2s,border-color .2s,background .2s,box-shadow .2s;
+    clip-path:polygon(0 0,calc(100% - 11px) 0,100% 11px,100% 100%,11px 100%,0 calc(100% - 11px));
+  }
+  .proof-link .pi{width:24px;height:24px;flex:none;display:grid;place-items:center}
+  .proof-link small{display:block;margin-top:4px;font-size:11px;font-weight:700;color:#aeb8c2;letter-spacing:.06em}
+  .proof-link .proof-stars{color:#ffc83d;letter-spacing:1.5px}
+  .proof-link.google:hover{border-color:#4285f4;background:rgba(66,133,244,.14);box-shadow:0 0 24px rgba(66,133,244,.32);transform:translateY(-2px)}
+  .proof-link.ig:hover{border-color:#d62976;background:linear-gradient(45deg,rgba(254,218,117,.2),rgba(214,41,118,.2),rgba(150,47,191,.2));box-shadow:0 0 24px rgba(214,41,118,.34);transform:translateY(-2px)}
+  .proof-link.fb:hover{border-color:#1877f2;background:rgba(24,119,242,.16);box-shadow:0 0 24px rgba(24,119,242,.34);transform:translateY(-2px)}
+
+  .quote-card{
+    position:relative;border-radius:16px;padding:30px 28px 26px;
+    background:linear-gradient(160deg,rgba(20,27,36,.76),rgba(6,9,13,.84));
+    border:1px solid rgba(30,167,255,.42);
+    box-shadow:0 34px 80px rgba(0,0,0,.55),0 0 0 1px rgba(0,224,198,.12),inset 0 1px 0 rgba(255,255,255,.08);
+    backdrop-filter:blur(14px) saturate(140%);
+    overflow:hidden;
+  }
+  .quote-card::before{content:"";position:absolute;left:0;top:0;width:5px;height:100%;background:linear-gradient(180deg,var(--cyan),var(--red))}
+  .quote-card .qc-flag{
+    display:inline-flex;align-items:center;gap:9px;color:#c4ecff;font-family:var(--font-display);
+    font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:9px;
+  }
+  .quote-card .qc-flag::before{content:"";width:26px;height:2px;background:linear-gradient(90deg,var(--cyan),var(--red))}
+  .quote-card h3{font-family:var(--font-display);font-style:italic;text-transform:uppercase;color:#fff;font-size:clamp(27px,2.6vw,35px);line-height:1;margin-bottom:7px;transform:skewX(-5deg)}
+  .quote-card p{color:#aeb8c2;font-size:14px;margin-bottom:18px}
+  .quote-card .qc-field{margin-bottom:11px}
+  .quote-card input,.quote-card select{
+    width:100%;min-height:48px;padding:12px 14px;border-radius:8px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);color:#fff;
+    font-family:var(--font-body);font-size:15px;font-weight:600;
+  }
+  .quote-card input::placeholder{color:#9aa6b2}
+  .quote-card select{color:#cfd6dd}
+  .quote-card input:focus,.quote-card select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,224,198,.18)}
+  .quote-card .btn{width:100%;min-height:54px;margin-top:6px}
+  .quote-card .qc-or{margin-top:13px;text-align:center;color:#aeb8c2;font-size:13px}
+  .quote-card .qc-or a{color:#fff;font-weight:800}
+
+  @media(max-width:1024px){.neon-grid{gap:34px}}
+  @media(max-width:880px){
+    .hero-neon{min-height:auto;padding:104px 0 56px}
+    .neon-grid{grid-template-columns:1fr;gap:30px}
+    .neon-h1{font-size:clamp(42px,11vw,60px)}
+    .neon-ctas .btn{flex:1}
+  }
+</style>
+</head>
+<body>
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="ALX Wraps home"><img src="alxlogo.png" alt="ALX Wraps" /></a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#services">Services</a>
+      <a href="#why">Why ALX</a>
+      <a href="#work">Our Work</a>
+      <a href="#service-area">Service Area</a>
+      <a href="#quote">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="phone-link" href="tel:+14807400428" aria-label="Call ALX Wraps">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg>
+        (480) 740-0428
+      </a>
+      <a class="nav-location" href="#service-area" aria-label="ALX Wraps service area">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+        East Valley
+      </a>
+      <a class="btn btn-primary btn-sm" href="#quote">Start Your Quote</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#services">Services</a>
+  <a href="#why">Why ALX</a>
+  <a href="#work">Our Work</a>
+  <a href="#service-area">Service Area</a>
+  <a href="#quote">Contact</a>
+</div>
+
+<main id="top">
+  <section class="hero-neon">
+    <div class="wrap">
+      <div class="neon-grid">
+        <div class="neon-copy reveal">
+          <div class="neon-tagstrip">
+            <span>Vehicle Wraps</span>
+            <span>PPF &amp; Color PPF</span>
+            <span>Ceramic Tint</span>
+            <span>Fleet &amp; Performance</span>
+          </div>
+          <h1 class="neon-h1"><span class="chrome">The East Valley's</span><br><span class="glow">Custom Wrap Shop</span></h1>
+          <p class="neon-sub">Color-change wraps, paint protection film, and ceramic tint installed to a show-quality standard — for daily drivers, custom builds, and business fleets across Queen Creek and the Phoenix East Valley.</p>
+          <div class="neon-ctas">
+            <a href="#quote" class="btn btn-primary">Request A Quote <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a href="#services" class="btn btn-secondary">View Services</a>
+          </div>
+          <div class="proof-row" aria-label="See ALX Wraps reviews and work">
+            <a class="proof-link google" href="https://www.google.com/search?q=ALX+Wraps+Queen+Creek+reviews" target="_blank" rel="noopener">
+              <span class="pi"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg></span>
+              <span>Google<small class="proof-stars">★★★★★ Reviews</small></span>
+            </a>
+            <a class="proof-link ig" href="https://www.instagram.com/alx_wrapsss/" target="_blank" rel="noopener">
+              <span class="pi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2"><defs><linearGradient id="igHero" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".35" stop-color="#fa7e1e"/><stop offset=".6" stop-color="#d62976"/><stop offset=".8" stop-color="#962fbf"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="url(#igHero)"/><circle cx="12" cy="12" r="4.2" stroke="url(#igHero)"/><circle cx="17.6" cy="6.4" r="1.1" fill="url(#igHero)" stroke="none"/></svg></span>
+              <span>Instagram<small>See The Work</small></span>
+            </a>
+            <a class="proof-link fb" href="https://www.facebook.com/p/ALX-Wraps-100050027354303/" target="_blank" rel="noopener">
+              <span class="pi"><svg width="22" height="22" viewBox="0 0 24 24" fill="#1877f2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>
+              <span>Facebook<small>See The Work</small></span>
+            </a>
+          </div>
+        </div>
+        <div class="neon-side reveal">
+          <form class="quote-card" id="heroQuoteForm">
+            <span class="qc-flag">Fast Free Quote</span>
+            <h3>Get A Free Quote</h3>
+            <p>Tell us the vehicle and what you're after — we'll follow up with options and pricing.</p>
+            <div class="qc-field"><input type="text" name="vehicle" placeholder="Year / Make / Model" required></div>
+            <div class="qc-field"><input type="tel" name="phone" placeholder="Phone number" required></div>
+            <div class="qc-field">
+              <select name="service" required>
+                <option value="">Service needed…</option>
+                <option>Vehicle Wrap</option>
+                <option>Paint Protection Film</option>
+                <option>Color PPF</option>
+                <option>Ceramic Window Tint</option>
+                <option>Fleet Graphics</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Request My Quote</button>
+            <div class="qc-or">or call <a href="tel:+14807400428">(480) 740-0428</a></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="services-head reveal">
+        <div class="section-kicker">ALX Services</div>
+        <h2 class="section-title">Vehicle Wraps, PPF, Tint & Fleet Graphics</h2>
+        <div class="services-divider" aria-hidden="true"></div>
+        <p class="section-copy">Choose by what the vehicle needs: a new look, paint protection, less cabin heat, or sharper business visibility.</p>
+      </div>
+      <div class="service-grid">
+        <a class="service-card reveal" href="#quote" aria-label="Start a quote for color change vehicle wraps">
+          <img class="service-bg" src="assets/svc-wraps.jpg" alt="Blue wrapped car in Arizona desert" />
+          <div class="service-titlebar">
+            <h3>Color Change Wraps</h3>
+          </div>
+          <div class="service-hover">
+            <p>Full and partial vehicle wraps with matte, satin, gloss, chrome, carbon, and specialty film options.</p>
+            <span>Quote Wraps</span>
+          </div>
+        </a>
+        <a class="service-card reveal" href="#quote" aria-label="Start a quote for paint protection film">
+          <img class="service-bg" src="assets/svc-ppf.jpg" alt="Yellow vehicle representing paint protection film" />
+          <div class="service-titlebar">
+            <h3>Paint Protection Film</h3>
+          </div>
+          <div class="service-hover">
+            <p>Clear paint protection film for bumpers, hoods, mirrors, full fronts, track packs, and full-body coverage.</p>
+            <span>Quote PPF</span>
+          </div>
+        </a>
+        <a class="service-card reveal" href="#quote" aria-label="Start a quote for color paint protection film">
+          <img class="service-bg" src="assets/work/wrap-0954.png" alt="Matte teal wrapped Porsche Macan by ALX Wraps" />
+          <div class="service-titlebar">
+            <h3>Color PPF</h3>
+          </div>
+          <div class="service-hover">
+            <p>Color PPF adds paint protection with a gloss, satin, matte, or color-shift finish.</p>
+            <span>Quote Color PPF</span>
+          </div>
+        </a>
+        <a class="service-card reveal" href="#quote" aria-label="Start a quote for ceramic window tint">
+          <img class="service-bg" src="assets/svc-tint.jpg" alt="Tinted luxury vehicle windows" />
+          <div class="service-titlebar">
+            <h3>Ceramic Window Tint</h3>
+          </div>
+          <div class="service-hover">
+            <p>Ceramic window tint reduces heat, glare, and UV exposure while improving privacy.</p>
+            <span>Quote Tint</span>
+          </div>
+        </a>
+        <a class="service-card reveal" href="#quote" aria-label="Start a quote for commercial fleet graphics">
+          <img class="service-bg" src="assets/work/wrap-3706.png" alt="Prestige Electric fleet truck wrap by ALX Wraps" />
+          <div class="service-titlebar">
+            <h3>Fleet Graphics</h3>
+          </div>
+          <div class="service-hover">
+            <p>Commercial wraps, truck graphics, logo placement, and lettering for daily brand visibility.</p>
+            <span>Quote Fleet</span>
+          </div>
+        </a>
+        <a class="service-card reveal" href="#quote" aria-label="Start a quote for commercial decals and lettering">
+          <img class="service-bg" src="assets/work/wrap-3727.png" alt="Commercial vehicle graphics installed by ALX Wraps" />
+          <div class="service-titlebar">
+            <h3>Decals & Lettering</h3>
+          </div>
+          <div class="service-hover">
+            <p>Vinyl lettering, accents, door logos, and spot graphics with clean placement.</p>
+            <span>Quote Decals</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop-story" id="why">
+    <div class="wrap why-shell">
+      <div class="story-panel reveal">
+        <span class="story-bg-word" aria-hidden="true">Why ALX</span>
+        <h2 class="display story-title">A Queen Creek Wrap Shop Built for Arizona Vehicles</h2>
+        <div class="story-divider" aria-hidden="true"></div>
+        <ul class="why-list">
+          <li class="why-item">
+            <span class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg></span>
+            <div>
+              <h3>Film chosen for Arizona use</h3>
+              <p>Wrap, PPF, and tint options are matched to sun exposure, parking conditions, driving use, and the finish you want.</p>
+            </div>
+          </li>
+          <li class="why-item">
+            <span class="why-icon"><svg viewBox="0 0 24 24"><path d="M4 18h16M7 6h10l3 7H4l3-7Z"/><path d="M8 13h8"/></svg></span>
+            <div>
+              <h3>Edges and panels planned first</h3>
+              <p>Mirrors, handles, badges, curves, and trim get mapped before film so the result looks clean up close.</p>
+            </div>
+          </li>
+          <li class="why-item">
+            <span class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 8v5l3 3"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg></span>
+            <div>
+              <h3>Scope confirmed before drop-off</h3>
+              <p>You get scope, material direction, prep notes, timing, and care expectations before the vehicle comes in.</p>
+            </div>
+          </li>
+          <li class="why-item">
+            <span class="why-icon"><svg viewBox="0 0 24 24"><path d="M3 16h13V7H3z"/><path d="M16 11h3l2 3v2h-5z"/><path d="M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg></span>
+            <div>
+              <h3>Local projects you can verify</h3>
+              <p>Recent ALX wrap and fleet projects keep the conversation grounded in work you can actually inspect.</p>
+            </div>
+          </li>
+        </ul>
+        <a class="btn btn-primary" href="#quote">Request A Quote</a>
+      </div>
+      <div class="story-media reveal">
+        <div class="story-photo">
+          <img src="assets/work/wrap-4217.png" alt="Custom wrapped RAM truck by ALX Wraps" />
+        </div>
+        <div class="story-stat red"><strong>Wrap</strong><span>Color + Fleet</span></div>
+        <div class="story-stat blue"><strong>PPF</strong><span>Clear + Color</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="split-head reveal">
+        <div>
+          <div class="section-kicker">Our Work</div>
+          <h2 class="section-title">Recent ALX Wraps & Fleet Graphics</h2>
+          <p class="section-copy">Recent color-change wraps, truck wraps, SUVs, and commercial graphics completed by ALX.</p>
+        </div>
+        <a class="btn btn-secondary" href="#quote">Quote A Similar Build</a>
+      </div>
+      <div class="filter-row reveal" id="workFilters">
+        <button type="button" class="active" data-filter="all">All</button>
+        <button type="button" data-filter="cars">Cars</button>
+        <button type="button" data-filter="trucks">Trucks</button>
+        <button type="button" data-filter="fleet">Fleet</button>
+      </div>
+      <div class="work-grid" id="workGrid">
+        <article class="work-tile wide reveal" data-cat="cars">
+          <img src="assets/work/wrap-0954.png" alt="Matte teal Porsche Macan S wrap by ALX Wraps" />
+          <div class="work-meta"><span>Color Change Wrap</span><b>Porsche Macan S</b></div>
+        </article>
+        <article class="work-tile reveal" data-cat="trucks">
+          <img src="assets/work/wrap-4213.png" alt="Burgundy RAM TRX wrap by ALX Wraps" />
+          <div class="work-meta"><span>Truck Wrap</span><b>RAM TRX</b></div>
+        </article>
+        <article class="work-tile reveal" data-cat="cars">
+          <img src="assets/work/wrap-9751.png" alt="Iridescent Ford Bronco wrap by ALX Wraps" />
+          <div class="work-meta"><span>Color-Shift Wrap</span><b>Ford Bronco</b></div>
+        </article>
+        <article class="work-tile wide reveal" data-cat="fleet">
+          <img src="assets/work/wrap-3706.png" alt="Prestige Electric branded fleet truck by ALX Wraps" />
+          <div class="work-meta"><span>Fleet Graphics</span><b>Prestige Electric</b></div>
+        </article>
+        <article class="work-tile reveal" data-cat="cars">
+          <img src="assets/work/wrap-1257.png" alt="Matte bronze Rivian R1S wrap by ALX Wraps" />
+          <div class="work-meta"><span>SUV Wrap</span><b>Rivian R1S</b></div>
+        </article>
+        <article class="work-tile reveal" data-cat="trucks">
+          <img src="assets/work/wrap-9353.png" alt="Matte grey custom Chevrolet pickup wrap by ALX Wraps" />
+          <div class="work-meta"><span>Truck Wrap</span><b>Custom Chevy</b></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-area" id="service-area" aria-label="ALX Wraps service area">
+    <div class="wrap service-area-shell">
+      <div class="service-map-frame reveal">
+        <div class="map-fallback" aria-hidden="true">
+          <svg class="map-route" viewBox="0 0 600 500" preserveAspectRatio="none">
+            <path d="M40 160 C160 140 210 210 300 210 C410 210 440 130 560 120" fill="none" stroke="#16191f" stroke-width="8" stroke-linecap="round" opacity=".2"/>
+            <path d="M120 420 C190 310 270 285 350 260 C435 234 495 200 560 95" fill="none" stroke="#16191f" stroke-width="6" stroke-linecap="round" opacity=".22"/>
+            <path d="M70 80 C180 170 290 160 380 250 C440 310 505 338 575 330" fill="none" stroke="#1ea7ff" stroke-width="4" stroke-linecap="round" opacity=".34"/>
+            <path d="M88 360 C170 310 220 322 310 252 C380 198 440 190 525 220" fill="none" stroke="#00e0c6" stroke-width="4" stroke-linecap="round" opacity=".34"/>
+          </svg>
+          <span class="map-chip">East Valley Coverage</span>
+          <span class="map-city mesa">Mesa</span>
+          <span class="map-city gilbert">Gilbert</span>
+          <span class="map-city chandler">Chandler</span>
+          <span class="map-city primary">Queen Creek</span>
+          <span class="map-city santan">San Tan Valley</span>
+          <span class="map-city aj">Apache Junction</span>
+        </div>
+        <iframe
+          title="Google map of Queen Creek and the Phoenix East Valley service area"
+          src="https://www.google.com/maps?q=Queen%20Creek%2C%20AZ&z=10&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-frame-tag" aria-hidden="true">
+          <b>Queen Creek Base</b>
+          <span>Phoenix East Valley</span>
+        </div>
+      </div>
+      <div class="service-area-copy reveal">
+        <div class="area-kicker">Service Area</div>
+        <h2 class="display area-title">Vehicle Wraps, PPF & Tint Near Queen Creek</h2>
+        <div class="area-divider" aria-hidden="true"></div>
+        <p class="area-copy">ALX Wraps serves Queen Creek, San Tan Valley, Gilbert, Chandler, Mesa, Apache Junction, Tempe, Scottsdale, and the East Valley with wraps, PPF, ceramic tint, decals, and fleet graphics.</p>
+        <ul class="area-cities">
+          <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Queen Creek, AZ</li>
+          <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>San Tan Valley, AZ</li>
+          <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Gilbert, AZ</li>
+          <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Chandler, AZ</li>
+          <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Mesa, AZ</li>
+          <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Apache Junction, AZ</li>
+          <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Tempe, AZ</li>
+          <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Scottsdale, AZ</li>
+        </ul>
+        <a class="btn btn-primary" href="#quote">Get A Free Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section" id="quote">
+    <div class="wrap quote-layout">
+      <div class="quote-info reveal">
+        <div class="quote-kicker">Request A Quote</div>
+        <h2 class="display quote-heading">Request a Wrap, PPF or Tint Quote</h2>
+        <p class="section-copy">Send the vehicle, service, finish, timeline, and photos. ALX will follow up with practical next steps.</p>
+        <div class="contact-list">
+          <a href="tel:+14807400428">
+            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg></span>
+            <span class="contact-copy"><em>Call ALX</em><strong>(480) 740-0428</strong></span>
+          </a>
+          <a href="mailto:info@alxwraps.com">
+            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <span class="contact-copy"><em>Email ALX</em><strong>info@alxwraps.com</strong></span>
+          </a>
+          <div>
+            <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5l3 3"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg></span>
+            <span class="contact-copy"><em>Shop Hours</em><strong>By appointment in the Phoenix metro</strong></span>
+          </div>
+        </div>
+      </div>
+      <form class="quote-form reveal" id="quoteForm">
+        <h3 class="display">Start Your ALX Quote</h3>
+        <div class="form-grid">
+          <label class="field" for="vehicle"><span>Vehicle</span><input id="vehicle" name="vehicle" type="text" placeholder="Year, Make, Model*" required /></label>
+          <label class="field" for="name"><span>Full Name</span><input id="name" name="name" type="text" autocomplete="name" placeholder="Full Name*" required /></label>
+        </div>
+        <div class="form-grid">
+          <label class="field" for="email"><span>Email</span><input id="email" name="email" type="email" autocomplete="email" placeholder="Email*" required /></label>
+          <label class="field" for="phone"><span>Phone</span><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone*" required /></label>
+        </div>
+        <fieldset class="service-checks">
+          <legend>Service needed:</legend>
+          <div class="service-options">
+            <label><input type="checkbox" name="services" value="Vehicle Wrap" />Vehicle Wraps</label>
+            <label><input type="checkbox" name="services" value="Paint Protection Film" />Paint Protection Film</label>
+            <label><input type="checkbox" name="services" value="Color PPF" />Color PPF</label>
+            <label><input type="checkbox" name="services" value="Window Tint" />Window Tint</label>
+            <label><input type="checkbox" name="services" value="Fleet Graphics" />Fleet Graphics</label>
+            <label><input type="checkbox" name="services" value="Not Sure Yet" />Not Sure Yet</label>
+          </div>
+        </fieldset>
+        <label class="field" for="details"><span>Project Details</span><textarea id="details" name="details" placeholder="Finish, coverage, timeline, photos, or questions."></textarea></label>
+        <label class="form-consent"><input type="checkbox" name="consent" required />I agree to be contacted by ALX Wraps about this quote request by phone, text, or email.</label>
+        <button class="btn btn-primary" type="submit">Request My Quote</button>
+        <p class="form-note" id="formNote">Submitting opens an email draft with your project details.</p>
+      </form>
+    </div>
+    <footer class="site-footer">
+      <div class="wrap footer-main">
+        <div class="footer-brand">
+          <img src="alxlogo.png" alt="ALX Wraps" />
+          <p>Vehicle wraps, PPF, ceramic tint, decals, and fleet graphics for Queen Creek and the Phoenix East Valley.</p>
+          <span class="footer-cert">Queen Creek Wrap Shop</span>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul class="footer-menu">
+            <li><a href="#services"><span class="line-mark"></span>Vehicle Wraps</a></li>
+            <li><a href="#services"><span class="line-mark"></span>Paint Protection Film</a></li>
+            <li><a href="#services"><span class="line-mark"></span>Color PPF</a></li>
+            <li><a href="#services"><span class="line-mark"></span>Window Tint</a></li>
+            <li><a href="#services"><span class="line-mark"></span>Fleet Graphics</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-menu">
+            <li><a href="#why"><span class="line-mark"></span>Why ALX</a></li>
+            <li><a href="#services"><span class="line-mark"></span>Services</a></li>
+            <li><a href="#work"><span class="line-mark"></span>Our Work</a></li>
+            <li><a href="#service-area"><span class="line-mark"></span>Service Area</a></li>
+            <li><a href="#quote"><span class="line-mark"></span>Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <div class="footer-contact">
+            <a href="tel:+14807400428"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg>(480) 740-0428</a>
+            <a href="mailto:info@alxwraps.com"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>info@alxwraps.com</a>
+            <div><svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Phoenix Metro Area, AZ</div>
+            <div class="footer-social" aria-label="ALX Wraps social links">
+              <a href="https://www.instagram.com/alx_wrapsss/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+              <a href="https://www.facebook.com/p/ALX-Wraps-100050027354303/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <span>&copy; 2026 ALX Wraps. All rights reserved.</span>
+        <a href="#quote">Start Your Quote</a>
+      </div>
+    </footer>
+  </section>
+</main>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  const mobilePanel = document.getElementById('mobilePanel');
+  const menuBtn = document.getElementById('menuBtn');
+
+  function updateNav(){
+    nav.classList.toggle('scrolled', window.scrollY > 24);
+  }
+  updateNav();
+  window.addEventListener('scroll', updateNav, {passive:true});
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobilePanel.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+  mobilePanel.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobilePanel.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.querySelectorAll('.service-map-frame iframe').forEach((frame) => {
+    const mapFrame = frame.closest('.service-map-frame');
+    const showMap = () => window.setTimeout(() => mapFrame?.classList.add('map-loaded'), 500);
+    frame.addEventListener('load', showMap, {once:true});
+  });
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+  const filterButtons = document.querySelectorAll('#workFilters button');
+  const workTiles = document.querySelectorAll('#workGrid .work-tile');
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      filterButtons.forEach((btn) => btn.classList.remove('active'));
+      button.classList.add('active');
+      const filter = button.dataset.filter;
+      workTiles.forEach((tile) => {
+        tile.style.display = filter === 'all' || tile.dataset.cat === filter ? '' : 'none';
+      });
+    });
+  });
+
+  const heroForm = document.getElementById('heroQuoteForm');
+  if(heroForm){
+    heroForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const d = new FormData(heroForm);
+      const subject = encodeURIComponent('ALX Wraps quote request');
+      const body = encodeURIComponent(
+        `Vehicle: ${d.get('vehicle') || ''}\n` +
+        `Phone: ${d.get('phone') || ''}\n` +
+        `Service: ${d.get('service') || ''}\n\n` +
+        `Sent from the ALX Wraps homepage hero.`
+      );
+      window.location.href = `mailto:info@alxwraps.com?subject=${subject}&body=${body}`;
+    });
+  }
+
+  document.getElementById('quoteForm').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const services = data.getAll('services').join(', ') || 'Not specified';
+    const subject = encodeURIComponent('ALX Wraps quote request');
+    const body = encodeURIComponent(
+      `Name: ${data.get('name') || ''}\n` +
+      `Phone: ${data.get('phone') || ''}\n` +
+      `Email: ${data.get('email') || ''}\n` +
+      `Service: ${services}\n` +
+      `Vehicle: ${data.get('vehicle') || ''}\n\n` +
+      `Project Details:\n${data.get('details') || ''}`
+    );
+    window.location.href = `mailto:info@alxwraps.com?subject=${subject}&body=${body}`;
+    document.getElementById('formNote').textContent = 'Email draft opened. You can also call or text ALX at (480) 740-0428.';
+  });
+</script>
+</body>
+</html>
