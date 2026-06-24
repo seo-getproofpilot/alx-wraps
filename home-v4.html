@@ -1776,6 +1776,22 @@
 
   /* remove the gold edge tab on buttons */
   .btn::after{display:none}
+
+  /* bottom quote: let the work show behind, frame the box custom */
+  .quote-slideshow::after{
+    background:
+      radial-gradient(135% 95% at 50% 45%,transparent 22%,rgba(6,5,9,.6) 100%),
+      linear-gradient(180deg,rgba(6,5,9,.58) 0%,rgba(6,5,9,.42) 40%,rgba(6,5,9,.72) 100%),
+      radial-gradient(60% 80% at 50% 0%,rgba(176,38,255,.18),transparent 60%);
+  }
+  .quote-head{text-shadow:0 2px 16px rgba(0,0,0,.8)}
+  .quote-box{
+    border:1.6px solid transparent;
+    background:
+      linear-gradient(165deg,rgba(15,17,25,.82),rgba(8,9,14,.9)) padding-box,
+      linear-gradient(135deg,#b026ff 0%,#7a17c0 42%,#ffc83d 100%) border-box;
+    box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 54px rgba(176,38,255,.22),inset 0 1px 0 rgba(255,255,255,.08);
+  }
 </style>
 </head>
 <body>
