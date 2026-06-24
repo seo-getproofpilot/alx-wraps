@@ -1626,6 +1626,54 @@
     .qbox-contact-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.08)}
     .qbox-grid{grid-template-columns:1fr}
   }
+
+  /* ===== Color zones: cool hero, alternating LIME contrast below ===== */
+  :root{ --lime:#b6ff1a; --lime-d:#7cb000; }
+
+  /* Cool sections below hero — dial teal back to blue (less teal) */
+  .shop-story, .service-area{
+    --film:#1ea7ff; --cyan:#1ea7ff; --film-dark:#0c6fb8; --copper:#1ea7ff; --orange:#1ea7ff;
+  }
+
+  /* LIME contrast zones: Services, Work, Quote + Footer */
+  .services, .work, .quote-section{
+    --red:#b6ff1a; --ember:#b6ff1a; --red-dark:#7cb000; --ember-dark:#5f8a00;
+    --copper:#b6ff1a; --orange:#b6ff1a;
+    --film:#b6ff1a; --cyan:#b6ff1a; --film-dark:#5f8a00; --chrome:#e7f6cf;
+  }
+
+  /* Lime is a LIGHT accent — use dark text/icons on lime fills */
+  .services .btn-primary, .work .btn-primary, .quote-section .btn-primary{
+    color:#0c1500;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 18px 44px rgba(182,255,26,.3);
+  }
+  .services .btn-primary:hover, .work .btn-primary:hover, .quote-section .btn-primary:hover{
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.34),0 22px 52px rgba(182,255,26,.42);
+  }
+  .work .filter-row button.active{color:#0c1500;box-shadow:10px 0 0 rgba(182,255,26,.26)}
+  .quote-section .qci-ic{color:#0c1500;box-shadow:0 0 18px rgba(182,255,26,.32)}
+  .quote-section .footer-social a{color:#0c1500}
+
+  /* recolor leftover hardcoded blue/teal inside the lime zones */
+  .services .service-card:hover, .services .service-card:focus-visible{
+    border-color:rgba(182,255,26,.9);
+    box-shadow:0 30px 70px rgba(0,0,0,.48),0 0 0 1px rgba(182,255,26,.25);
+  }
+  .work .work-tile::after{
+    background:linear-gradient(0deg,rgba(0,0,0,.88),transparent 58%),linear-gradient(135deg,rgba(182,255,26,.22),transparent 36%);
+  }
+  .quote-section{border-top-color:rgba(182,255,26,.45)}
+  .quote-section .quote-box{
+    border-color:rgba(182,255,26,.42);
+    box-shadow:0 40px 100px rgba(0,0,0,.55),0 0 0 1px rgba(182,255,26,.12),inset 0 1px 0 rgba(255,255,255,.07);
+  }
+  .quote-section a.qbox-contact-item:hover{background:rgba(182,255,26,.1)}
+  .quote-section .qbox-form input:focus, .quote-section .qbox-form select:focus, .quote-section .qbox-form textarea:focus{
+    border-color:var(--lime);box-shadow:0 0 0 3px rgba(182,255,26,.18);
+  }
+  .quote-section .qbox-form select{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23b6ff1a' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  }
 </style>
 </head>
 <body>
