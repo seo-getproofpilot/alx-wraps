@@ -751,30 +751,32 @@
   }
   .work-grid{
     display:grid;
-    grid-template-columns:repeat(12,minmax(0,1fr));
-    gap:18px;
-    align-items:stretch;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:20px;
   }
   .work-tile{
     position:relative;
-    grid-column:span 4;
-    min-height:330px;
-    border:1px solid var(--line);
-    border-radius:0;
+    min-height:300px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:16px;
     overflow:hidden;
     background:#111216;
-    clip-path:polygon(0 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%);
-    margin-left:0;
-    box-shadow:0 26px 60px rgba(0,0,0,.32);
+    box-shadow:0 22px 50px rgba(0,0,0,.35);
+    transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease,border-color .45s ease;
   }
-  .work-tile.wide{grid-column:span 5;min-height:380px}
-  .work-tile:nth-child(2),.work-tile:nth-child(6){grid-column:span 3}
-  .work-tile img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s ease}
-  .work-tile:hover img{transform:scale(1.05)}
-  .work-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.88),transparent 58%),linear-gradient(135deg,rgba(176,38,255,.22),transparent 36%)}
-  .work-meta{position:absolute;z-index:2;left:20px;right:20px;bottom:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.16)}
-  .work-meta b{display:block;font-family:var(--font-display);font-size:27px;text-transform:uppercase;line-height:1}
-  .work-meta span{display:block;color:var(--copper);font-size:13px;font-weight:800;margin-bottom:6px;text-transform:uppercase}
+  .work-tile img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+  .work-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,5,9,.9),transparent 55%);transition:background .4s ease}
+  .work-tile:hover{transform:translateY(-7px);border-color:rgba(176,38,255,.55);box-shadow:0 34px 72px rgba(0,0,0,.55),0 0 0 1px rgba(255,200,61,.35)}
+  .work-tile:hover img{transform:scale(1.08)}
+  .work-tile:hover::after{background:linear-gradient(0deg,rgba(6,5,9,.94),rgba(120,23,192,.2) 55%,transparent 88%)}
+  .work-meta{position:absolute;z-index:2;left:22px;right:22px;bottom:20px;transition:transform .4s cubic-bezier(.22,1,.36,1)}
+  .work-tile:hover .work-meta{transform:translateY(-4px)}
+  .work-meta span{display:block;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.1em;margin-bottom:5px;text-transform:uppercase}
+  .work-meta b{display:block;font-family:var(--font-display);font-size:25px;text-transform:uppercase;line-height:1.02;font-style:italic}
+  .work-meta::after{content:"";display:block;width:0;height:2px;margin-top:11px;border-radius:2px;background:linear-gradient(90deg,#b026ff,#ffc83d);transition:width .5s cubic-bezier(.22,1,.36,1)}
+  .work-tile:hover .work-meta::after{width:56px}
+  @media(max-width:900px){.work-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.work-grid{grid-template-columns:1fr}}
 
   .service-area{
     padding:104px 0;
@@ -1872,6 +1874,16 @@
 
   /* tonal flow: Service Area = purple -> bronze gradient (breaks the all-black) */
   .service-area{background:linear-gradient(120deg,#270d44 0%,#120f1a 48%,#352608 100%)}
+
+  /* work gallery: clean rounded filter pills + staggered scroll-in animation */
+  .filter-row{border-left:none;padding-left:0;gap:10px}
+  .filter-row button{clip-path:none;border-radius:50px;border:1px solid rgba(255,255,255,.2)}
+  .filter-row button.active{border-color:transparent;box-shadow:0 6px 20px rgba(176,38,255,.4)}
+  .work-tile.reveal{opacity:0;transform:translateY(36px) scale(.97);transition:opacity .6s ease,transform .75s cubic-bezier(.22,1,.36,1)}
+  .work-tile.reveal.in{opacity:1;transform:none}
+  .work-tile.reveal:nth-child(3n+2){transition-delay:.09s}
+  .work-tile.reveal:nth-child(3n){transition-delay:.18s}
+  @media(prefers-reduced-motion:reduce){.work-tile.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -2100,29 +2112,53 @@
         <button type="button" data-filter="fleet">Fleet</button>
       </div>
       <div class="work-grid" id="workGrid">
-        <article class="work-tile wide reveal" data-cat="cars">
-          <img src="assets/work/wrap-0954.png" alt="Matte teal Porsche Macan S wrap by ALX Wraps" />
+        <article class="work-tile reveal" data-cat="cars">
+          <img src="assets/work/wrap-0954.png" loading="lazy" alt="Matte teal Porsche Macan S wrap by ALX Wraps" />
           <div class="work-meta"><span>Color Change Wrap</span><b>Porsche Macan S</b></div>
         </article>
         <article class="work-tile reveal" data-cat="trucks">
-          <img src="assets/work/wrap-4213.png" alt="Burgundy RAM TRX wrap by ALX Wraps" />
+          <img src="assets/work/wrap-4213.png" loading="lazy" alt="Burgundy RAM TRX wrap by ALX Wraps" />
           <div class="work-meta"><span>Truck Wrap</span><b>RAM TRX</b></div>
         </article>
         <article class="work-tile reveal" data-cat="cars">
-          <img src="assets/work/wrap-9751.png" alt="Iridescent Ford Bronco wrap by ALX Wraps" />
+          <img src="assets/work/wrap-9751.png" loading="lazy" alt="Iridescent color-shift Ford Bronco wrap by ALX Wraps" />
           <div class="work-meta"><span>Color-Shift Wrap</span><b>Ford Bronco</b></div>
         </article>
-        <article class="work-tile wide reveal" data-cat="fleet">
-          <img src="assets/work/wrap-3706.png" alt="Prestige Electric branded fleet truck by ALX Wraps" />
+        <article class="work-tile reveal" data-cat="fleet">
+          <img src="assets/work/wrap-3706.png" loading="lazy" alt="Prestige Electric branded fleet truck by ALX Wraps" />
           <div class="work-meta"><span>Fleet Graphics</span><b>Prestige Electric</b></div>
         </article>
         <article class="work-tile reveal" data-cat="cars">
-          <img src="assets/work/wrap-1257.png" alt="Matte bronze Rivian R1S wrap by ALX Wraps" />
+          <img src="assets/work/wrap-1257.png" loading="lazy" alt="Matte bronze Rivian R1S wrap by ALX Wraps" />
           <div class="work-meta"><span>SUV Wrap</span><b>Rivian R1S</b></div>
         </article>
         <article class="work-tile reveal" data-cat="trucks">
-          <img src="assets/work/wrap-9353.png" alt="Matte grey custom Chevrolet pickup wrap by ALX Wraps" />
+          <img src="assets/work/wrap-9353.png" loading="lazy" alt="Matte grey custom Chevrolet pickup wrap by ALX Wraps" />
           <div class="work-meta"><span>Truck Wrap</span><b>Custom Chevy</b></div>
+        </article>
+        <article class="work-tile reveal" data-cat="cars">
+          <img src="assets/work/wrap-2392.png" loading="lazy" alt="Matte green Volkswagen Atlas wrap by ALX Wraps" />
+          <div class="work-meta"><span>Color Change Wrap</span><b>VW Atlas</b></div>
+        </article>
+        <article class="work-tile reveal" data-cat="cars">
+          <img src="assets/work/wrap-4356.png" loading="lazy" alt="Iridescent color-shift Honda Passport wrap by ALX Wraps" />
+          <div class="work-meta"><span>Color-Shift Wrap</span><b>Honda Passport</b></div>
+        </article>
+        <article class="work-tile reveal" data-cat="cars">
+          <img src="assets/work/wrap-9614.png" loading="lazy" alt="Desert tan Toyota GR Corolla wrap by ALX Wraps" />
+          <div class="work-meta"><span>Color Change Wrap</span><b>GR Corolla</b></div>
+        </article>
+        <article class="work-tile reveal" data-cat="cars">
+          <img src="assets/work/wrap-2920.png" loading="lazy" alt="Matte grey Range Rover wrap by ALX Wraps" />
+          <div class="work-meta"><span>SUV Wrap</span><b>Range Rover</b></div>
+        </article>
+        <article class="work-tile reveal" data-cat="trucks">
+          <img src="assets/work/wrap-9352.png" loading="lazy" alt="Matte champagne Chevrolet pickup wrap by ALX Wraps" />
+          <div class="work-meta"><span>Truck Wrap</span><b>Custom Chevy</b></div>
+        </article>
+        <article class="work-tile reveal" data-cat="fleet">
+          <img src="assets/work/wrap-3727.png" loading="lazy" alt="Prestige Electric fleet truck branding by ALX Wraps" />
+          <div class="work-meta"><span>Fleet &amp; Lettering</span><b>Prestige Electric</b></div>
         </article>
       </div>
     </div>
