@@ -1692,12 +1692,89 @@
   .services-head .section-copy{color:#aeb4bd}
   .services .service-card{border-color:rgba(255,255,255,.16);box-shadow:0 18px 45px rgba(0,0,0,.34)}
   .services .service-card:hover,.services .service-card:focus-visible{border-color:rgba(176,38,255,.9);box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 0 1px rgba(176,38,255,.35)}
+
+  /* ===== Detail polish ===== */
+  /* logo (top-left + footer) recolored purple -> gold via mask */
+  .logo-mark{
+    display:block;
+    background:linear-gradient(110deg,#b026ff 0%,#c64dff 44%,#ffc83d 100%);
+    -webkit-mask:url("alxlogo.png") center / contain no-repeat;
+    mask:url("alxlogo.png") center / contain no-repeat;
+  }
+  .nav .logo-mark{width:196px;height:29px}
+  .footer-brand .logo-mark{width:210px;height:31px}
+
+  /* keep 'SHOP' from clipping */
+  .neon-h1{line-height:1.0;padding-bottom:.08em}
+  .neon-h1 .chrome,.neon-h1 .glow{display:inline-block;padding:0 .12em .08em 0}
+
+  /* custom textured, solid, bulky buttons */
+  .btn{
+    border:1.5px solid rgba(255,255,255,.22);
+    background:
+      repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 2px,transparent 2px 7px),
+      linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.012)),
+      #14121c;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 -3px 7px rgba(0,0,0,.45),0 16px 30px rgba(0,0,0,.4);
+  }
+  .btn-primary{
+    border:1.5px solid rgba(255,255,255,.3);color:#fff;text-shadow:0 1px 2px rgba(30,0,55,.55);
+    background:
+      repeating-linear-gradient(115deg,rgba(255,255,255,.06) 0 2px,transparent 2px 8px),
+      linear-gradient(125deg,#bb40ff 0%,#a11fe8 48%,#7a17c0 100%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -3px 9px rgba(70,0,100,.55),0 18px 40px rgba(176,38,255,.42);
+  }
+  .btn-primary::after{background:var(--gold);width:6px}
+  .btn-primary:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -3px 9px rgba(70,0,100,.55),0 22px 52px rgba(176,38,255,.55)}
+  .btn-secondary{
+    border:1.5px solid rgba(255,255,255,.46);color:#fff;
+    background:
+      repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 2px,transparent 2px 7px),
+      linear-gradient(135deg,#1c1726,#120f1a);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 14px 30px rgba(0,0,0,.4);
+  }
+  .btn-secondary::after{background:var(--gold);width:6px}
+  .btn-secondary:hover{border-color:#fff;background:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 7px),linear-gradient(135deg,#241d31,#16121f)}
+  .proof-link{
+    border:1.5px solid rgba(255,255,255,.3);
+    background:
+      repeating-linear-gradient(115deg,rgba(255,255,255,.03) 0 2px,transparent 2px 7px),
+      linear-gradient(135deg,#1a1622,#110e18);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 12px 26px rgba(0,0,0,.4);
+  }
+
+  /* Service-area map: real Google colors, less purple, gold/purple pins */
+  .service-map-frame{border:1px solid rgba(255,255,255,.2);border-right-color:rgba(255,200,61,.6)}
+  .service-map-frame::after{background:#ffc83d}
+  .service-map-frame iframe{filter:saturate(1.06) contrast(1.02)}
+  .service-map-frame.map-loaded iframe{opacity:1}
+  .map-frame-tag{border-left-color:#ffc83d}
+  .map-fallback::before{background:rgba(255,200,61,.4)}
+  .map-fallback::after{background:rgba(176,38,255,.38)}
+  .map-city::before{background:#ffc83d;box-shadow:0 0 0 4px rgba(176,38,255,.28)}
+  .map-city.primary::before{background:#b026ff;box-shadow:0 0 0 5px rgba(255,200,61,.35)}
+
+  /* Bottom quote section: crossfading work slideshow */
+  .quote-section{position:relative;overflow:hidden}
+  .quote-slideshow{position:absolute;inset:0;z-index:0}
+  .qs-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:qsFade 30s infinite}
+  .qs-slide:nth-child(1){animation-delay:0s}
+  .qs-slide:nth-child(2){animation-delay:6s}
+  .qs-slide:nth-child(3){animation-delay:12s}
+  .qs-slide:nth-child(4){animation-delay:18s}
+  .qs-slide:nth-child(5){animation-delay:24s}
+  .quote-slideshow::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,5,9,.82),rgba(6,5,9,.9) 55%,#06050a 100%),radial-gradient(60% 80% at 50% 0%,rgba(176,38,255,.14),transparent 60%)}
+  @keyframes qsFade{0%{opacity:0}3%{opacity:1}17%{opacity:1}20%{opacity:0}100%{opacity:0}}
+  .quote-section > .wrap{position:relative;z-index:1}
+  .site-footer{position:relative;z-index:1;background:#06050a}
+  @media(prefers-reduced-motion:reduce){.qs-slide{animation:none}.qs-slide:nth-child(1){opacity:1}}
+  @media(max-width:720px){.nav .logo-mark{width:158px;height:23px}}
 </style>
 </head>
 <body>
 <header class="nav" id="siteNav">
   <div class="nav-inner">
-    <a href="#top" class="brand" aria-label="ALX Wraps home"><img src="alxlogo.png" alt="ALX Wraps" /></a>
+    <a href="#top" class="brand" aria-label="ALX Wraps home"><span class="logo-mark" role="img" aria-label="ALX Wraps"></span></a>
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="#services">Services</a>
       <a href="#why">Why ALX</a>
@@ -1758,7 +1835,6 @@
         </div>
         <div class="neon-side reveal">
           <form class="quote-card" id="heroQuoteForm">
-            <span class="qc-flag">Fast Free Quote</span>
             <h3>Get A Free Quote</h3>
             <p>Tell us the vehicle and what you're after — we'll follow up with options and pricing.</p>
             <div class="qc-field"><input type="text" name="vehicle" placeholder="Year / Make / Model" required></div>
@@ -1775,7 +1851,6 @@
               </select>
             </div>
             <button class="btn btn-primary" type="submit">Request My Quote</button>
-            <div class="qc-or">or call <a href="tel:+14807400428">(480) 740-0428</a></div>
           </form>
         </div>
       </div>
@@ -1997,6 +2072,13 @@
   </section>
 
   <section class="quote-section" id="quote">
+    <div class="quote-slideshow" aria-hidden="true">
+      <div class="qs-slide" style="background-image:url(assets/work/wrap-0954.png)"></div>
+      <div class="qs-slide" style="background-image:url(assets/work/wrap-1257.png)"></div>
+      <div class="qs-slide" style="background-image:url(assets/work/wrap-4213.png)"></div>
+      <div class="qs-slide" style="background-image:url(assets/work/wrap-9751.png)"></div>
+      <div class="qs-slide" style="background-image:url(assets/work/wrap-9353.png)"></div>
+    </div>
     <div class="wrap">
       <div class="quote-head reveal">
         <span class="qhead-eyebrow">Request A Quote</span>
@@ -2047,7 +2129,7 @@
     <footer class="site-footer">
       <div class="wrap footer-main">
         <div class="footer-brand">
-          <img src="alxlogo.png" alt="ALX Wraps" />
+          <span class="logo-mark" role="img" aria-label="ALX Wraps"></span>
           <p>Vehicle wraps, PPF, ceramic tint, decals, and fleet graphics for Queen Creek and the Phoenix East Valley.</p>
           <span class="footer-cert">Queen Creek Wrap Shop</span>
         </div>
