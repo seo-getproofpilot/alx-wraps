@@ -1663,6 +1663,24 @@
   /* gray accents in the hero */
   .quote-card .qc-flag{color:#d2d7da}
   .neon-h1 .chrome{filter:drop-shadow(0 1px 1px rgba(0,0,0,.5))}
+
+  /* ===== Brushed Nardo-gray section band: SERVICES (light, against the black) ===== */
+  .services{
+    background:
+      repeating-linear-gradient(116deg,rgba(255,255,255,.06) 0 1px,transparent 1px 5px),
+      linear-gradient(165deg,#cbd0d4 0%,#b6bcc1 58%,#abb1b6 100%);
+    border-top:1px solid rgba(0,0,0,.25);
+    border-bottom:1px solid rgba(0,0,0,.25);
+  }
+  .services::before{content:none}
+  /* dark type on the light panel */
+  .services-head .section-kicker{color:#0d6cb5}
+  .services-head .section-title{color:#15181b}
+  .services-head .section-copy{color:#3f4449}
+  .services-divider{background:linear-gradient(90deg,#1ea7ff 0 38%,#6c7176 39% 58%,transparent)}
+  /* define the dark photo cards against the gray band */
+  .services .service-card{border-color:rgba(0,0,0,.32);box-shadow:0 22px 50px rgba(0,0,0,.32)}
+  .services .service-card:hover,.services .service-card:focus-visible{border-color:rgba(30,167,255,.9);box-shadow:0 30px 70px rgba(0,0,0,.42),0 0 0 1px rgba(30,167,255,.3)}
 </style>
 </head>
 <body>
