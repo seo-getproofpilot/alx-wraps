@@ -564,10 +564,9 @@
     padding:110px 0;
     overflow:hidden;
     background:
-      radial-gradient(72% 95% at 100% 8%,rgba(176,38,255,.26),transparent 55%),
-      radial-gradient(64% 85% at 0% 92%,rgba(150,45,210,.22),transparent 60%),
-      radial-gradient(130% 130% at 50% 50%,rgba(70,25,115,.2),transparent 68%),
-      linear-gradient(180deg,#0d0816,#050309);
+      linear-gradient(110deg,rgba(8,5,14,.93) 0%,rgba(8,5,14,.6) 45%,rgba(8,5,14,.42) 100%),
+      url("assets/vinyl-texture.svg") center / cover no-repeat,
+      #0a0613;
     border-block:1px solid rgba(255,255,255,.12);
   }
   .shop-story::before{
@@ -1973,6 +1972,13 @@
       url("assets/service-area-bg.jpg") center / cover no-repeat;
   }
   .service-area::before{background:linear-gradient(120deg,rgba(176,38,255,.14),transparent 45%,rgba(255,180,60,.1))}
+
+  /* ===== Round 3: service-card hover = blur photo + fade in description; clipped rounded image ===== */
+  .service-card{overflow:hidden;isolation:isolate}
+  .service-bg{border-radius:18px;transition:filter .45s ease,transform .6s cubic-bezier(.22,1,.36,1)}
+  .service-card:hover .service-bg,.service-card:focus-visible .service-bg{filter:blur(8px) brightness(.42);transform:scale(1.06)}
+  .service-reveal{justify-content:center;align-items:flex-start;background:rgba(13,8,20,.46);backdrop-filter:none;transform:none;opacity:0;transition:opacity .4s ease}
+  .service-card:hover .service-reveal,.service-card:focus-visible .service-reveal{opacity:1;transform:none}
 </style>
 </head>
 <body>
@@ -2078,7 +2084,7 @@
           <div class="service-reveal">
             <h3>Color Change Wraps</h3>
             <p>Transform your vehicle with premium vinyl — matte, satin, gloss, chrome, carbon, or color-shift. Fully reversible and easy on your factory paint.</p>
-            <span class="sc-cta">Quote Wraps →</span>
+            <span class="sc-cta">Get a Quote →</span>
           </div>
         </a>
         <a class="service-card reveal" href="#quote" aria-label="Start a quote for paint protection film">
@@ -2087,7 +2093,7 @@
           <div class="service-reveal">
             <h3>Paint Protection Film</h3>
             <p>Self-healing clear film that shields paint from rock chips, scratches, and road grime — bumpers, hoods, full fronts, or full-body coverage.</p>
-            <span class="sc-cta">Quote PPF →</span>
+            <span class="sc-cta">Get a Quote →</span>
           </div>
         </a>
         <a class="service-card reveal" href="#quote" aria-label="Start a quote for color paint protection film">
@@ -2096,7 +2102,7 @@
           <div class="service-reveal">
             <h3>Color PPF</h3>
             <p>Protection and a fresh finish in one film — gloss, satin, matte, or color-shift coverage that guards your paint while it transforms it.</p>
-            <span class="sc-cta">Quote Color PPF →</span>
+            <span class="sc-cta">Get a Quote →</span>
           </div>
         </a>
         <a class="service-card reveal" href="#quote" aria-label="Start a quote for ceramic window tint">
@@ -2105,7 +2111,7 @@
           <div class="service-reveal">
             <h3>Ceramic Window Tint</h3>
             <p>Premium ceramic tint that blocks heat, glare, and UV — cooler cabins, more privacy, and a clean factory-tint look.</p>
-            <span class="sc-cta">Quote Tint →</span>
+            <span class="sc-cta">Get a Quote →</span>
           </div>
         </a>
         <a class="service-card reveal" href="#quote" aria-label="Start a quote for commercial fleet graphics">
@@ -2114,7 +2120,7 @@
           <div class="service-reveal">
             <h3>Fleet Graphics</h3>
             <p>Turn your work trucks and vans into rolling billboards — branded wraps, logos, and lettering that get your business seen everywhere it drives.</p>
-            <span class="sc-cta">Quote Fleet →</span>
+            <span class="sc-cta">Get a Quote →</span>
           </div>
         </a>
         <a class="service-card reveal" href="#quote" aria-label="Start a quote for commercial decals and lettering">
@@ -2123,7 +2129,7 @@
           <div class="service-reveal">
             <h3>Decals &amp; Lettering</h3>
             <p>Vinyl lettering, door logos, accents, and spot graphics — clean, precise placement that makes your brand pop.</p>
-            <span class="sc-cta">Quote Decals →</span>
+            <span class="sc-cta">Get a Quote →</span>
           </div>
         </a>
       </div>
@@ -2295,7 +2301,7 @@
   </section>
 
   <section class="quote-section" id="quote">
-    <div class="quote-slideshow" aria-hidden="true" style="background-image:url(assets/work/wrap-9751.png);background-size:cover;background-position:center"></div>
+    <div class="quote-slideshow" aria-hidden="true" style="background-image:url(assets/work/wrap-2920.png);background-size:cover;background-position:center"></div>
     <div class="wrap">
       <div class="quote-head reveal">
         <span class="qhead-eyebrow">Request A Quote</span>
