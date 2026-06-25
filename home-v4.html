@@ -2133,6 +2133,31 @@
   .services .service-card:nth-child(6n):not(:hover):not(:focus-visible){background:linear-gradient(#0d0b12,#0d0b12) padding-box,linear-gradient(45deg,#b026ff 0%,#b026ff 50%,#ffc83d 64%,#ffc83d 100%) border-box}      /* gold bottom-left */
   /* "Learn More" no longer gold — so it never ties into a gold border edge */
   .service-foot .sc-learn{color:#f2f4f7}
+
+  /* ===== Round 7 ===== */
+  /* CTA hover: a neon-purple glow fills L->R, turns gold/pink at the midpoint (logo gradient), then holds solid */
+  .btn-primary,.quote-card .btn-primary,.shop-story .btn-primary,.qbox-form .btn-primary,.service-area .btn-primary{
+    transition:transform .2s ease,box-shadow .25s ease,color .25s ease .3s;
+  }
+  .btn-primary::before,.quote-card .btn-primary::before,.shop-story .btn-primary::before,.qbox-form .btn-primary::before,.service-area .btn-primary::before{
+    content:"";display:block;position:absolute;inset:0;top:0;right:0;bottom:0;left:0;width:100%;z-index:-1;pointer-events:none;
+    transform:none;opacity:1;
+    background:linear-gradient(90deg,#b026ff 0%,#b026ff 26%,#ce53ff 44%,#ff86c0 62%,#ffc24d 100%);
+    clip-path:inset(0 100% 0 0);
+    transition:clip-path .75s cubic-bezier(.33,0,.2,1);
+    animation:none;
+  }
+  .btn-primary:hover::before,.quote-card .btn-primary:hover::before,.shop-story .btn-primary:hover::before,.qbox-form .btn-primary:hover::before,.service-area .btn-primary:hover::before{
+    clip-path:inset(0 0 0 0);animation:none;
+  }
+  .btn-primary:hover,.quote-card .btn-primary:hover,.shop-story .btn-primary:hover,.qbox-form .btn-primary:hover,.service-area .btn-primary:hover{
+    color:#ffffff;text-shadow:0 1px 2px rgba(45,0,65,.45);
+  }
+  .btn-primary:hover svg,.quote-card .btn-primary:hover svg,.shop-story .btn-primary:hover svg,.qbox-form .btn-primary:hover svg,.service-area .btn-primary:hover svg{stroke:#ffffff}
+
+  /* Service cards: single DIM border per card (not the full two-color gradient) — alternating dim neon purple / light neon gold */
+  .services .service-card:nth-child(odd):not(:hover):not(:focus-visible){background:#0d0b12;border-color:rgba(176,38,255,.5)}
+  .services .service-card:nth-child(even):not(:hover):not(:focus-visible){background:#0d0b12;border-color:rgba(255,200,61,.45)}
 </style>
 </head>
 <body>
