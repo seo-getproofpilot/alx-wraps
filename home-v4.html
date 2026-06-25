@@ -2162,6 +2162,9 @@
   /* IG / FB hero chips: keep the brand-color left edge on at all times (always-hovered look) */
   .proof-link.ig{border-left:3px solid #d62976}
   .proof-link.fb{border-left:3px solid #1877f2}
+
+  /* Bottom quote section: lighter, more luminous graphite background — drop the purple side-tints (keep the soft white hairlines) so it isn't purple-on-purple under the top border */
+  .quote-section::before{background:repeating-linear-gradient(135deg,rgba(255,255,255,.03) 0 1px,transparent 1px 18px);opacity:.85}
 </style>
 </head>
 <body>
@@ -2480,7 +2483,7 @@
   </section>
 
   <section class="quote-section" id="quote">
-    <div class="quote-slideshow" aria-hidden="true" style="background:radial-gradient(58% 80% at 12% 6%,rgba(176,38,255,.16),transparent 60%),radial-gradient(55% 80% at 90% 94%,rgba(255,200,61,.10),transparent 60%),linear-gradient(180deg,rgba(10,9,14,.90),rgba(7,6,10,.96)),url(assets/carbon.svg) 0 0/30px 30px repeat"></div>
+    <div class="quote-slideshow" aria-hidden="true" style="background:radial-gradient(96% 82% at 50% 26%,rgba(222,228,236,.18),rgba(222,228,236,.05) 42%,transparent 66%),linear-gradient(180deg,rgba(52,55,63,.84) 0%,rgba(31,33,39,.9) 52%,rgba(16,17,21,.95) 100%),url(assets/carbon.svg) 0 0/30px 30px repeat,#2b2d33"></div>
     <div class="wrap">
       <div class="quote-head reveal">
         <span class="qhead-eyebrow">Request A Quote</span>
