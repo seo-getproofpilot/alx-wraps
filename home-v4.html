@@ -2123,6 +2123,16 @@
   .tile-nav:hover{background:rgba(176,38,255,.65);transform:translateY(-50%) scale(1.08)}
   .tile-count{cursor:default}
   @media(hover:none){.tile-nav{opacity:1;background:rgba(8,7,12,.5)}}
+
+  /* ===== Round 6: stagger each service-card border so the purple/gold don't all line up; gold lands in a different spot per card ===== */
+  .services .service-card:nth-child(6n+1):not(:hover):not(:focus-visible){background:linear-gradient(#0d0b12,#0d0b12) padding-box,linear-gradient(135deg,#b026ff 0%,#b026ff 50%,#ffc83d 64%,#ffc83d 100%) border-box}   /* gold bottom-right */
+  .services .service-card:nth-child(6n+2):not(:hover):not(:focus-visible){background:linear-gradient(#0d0b12,#0d0b12) padding-box,linear-gradient(180deg,#ffc83d 0%,#ffc83d 42%,#b026ff 58%,#b026ff 100%) border-box}   /* gold top */
+  .services .service-card:nth-child(6n+3):not(:hover):not(:focus-visible){background:linear-gradient(#0d0b12,#0d0b12) padding-box,linear-gradient(90deg,#b026ff 0%,#b026ff 50%,#ffc83d 64%,#ffc83d 100%) border-box}    /* gold right */
+  .services .service-card:nth-child(6n+4):not(:hover):not(:focus-visible){background:linear-gradient(#0d0b12,#0d0b12) padding-box,linear-gradient(225deg,#ffc83d 0%,#ffc83d 40%,#b026ff 58%,#b026ff 100%) border-box}   /* gold top-right */
+  .services .service-card:nth-child(6n+5):not(:hover):not(:focus-visible){background:linear-gradient(#0d0b12,#0d0b12) padding-box,linear-gradient(270deg,#b026ff 0%,#b026ff 50%,#ffc83d 64%,#ffc83d 100%) border-box}   /* gold left */
+  .services .service-card:nth-child(6n):not(:hover):not(:focus-visible){background:linear-gradient(#0d0b12,#0d0b12) padding-box,linear-gradient(45deg,#b026ff 0%,#b026ff 50%,#ffc83d 64%,#ffc83d 100%) border-box}      /* gold bottom-left */
+  /* "Learn More" no longer gold — so it never ties into a gold border edge */
+  .service-foot .sc-learn{color:#f2f4f7}
 </style>
 </head>
 <body>
