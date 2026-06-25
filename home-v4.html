@@ -2165,6 +2165,12 @@
 
   /* Bottom quote section: lighter, more luminous graphite background — drop the purple side-tints (keep the soft white hairlines) so it isn't purple-on-purple under the top border */
   .quote-section::before{background:repeating-linear-gradient(135deg,rgba(255,255,255,.03) 0 1px,transparent 1px 18px);opacity:.85}
+  /* the slideshow overlay was painting near-black + a purple top glow over the bg — replace with a soft, purple-free vignette so the graphite + light shows */
+  .quote-slideshow::after{
+    background:
+      radial-gradient(150% 108% at 50% 42%,transparent 40%,rgba(9,10,13,.5) 100%),
+      radial-gradient(72% 60% at 50% 4%,rgba(228,232,238,.08),transparent 62%);
+  }
 </style>
 </head>
 <body>
