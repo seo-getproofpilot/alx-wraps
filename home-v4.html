@@ -564,18 +564,17 @@
     padding:110px 0;
     overflow:hidden;
     background:
-      radial-gradient(62% 80% at 100% 18%,rgba(176,38,255,.08),transparent 58%),
-      radial-gradient(44% 70% at 0% 86%,rgba(176,38,255,.12),transparent 62%),
-      linear-gradient(180deg,#08090b,#030304);
+      radial-gradient(72% 95% at 100% 8%,rgba(176,38,255,.26),transparent 55%),
+      radial-gradient(64% 85% at 0% 92%,rgba(150,45,210,.22),transparent 60%),
+      radial-gradient(130% 130% at 50% 50%,rgba(70,25,115,.2),transparent 68%),
+      linear-gradient(180deg,#0d0816,#050309);
     border-block:1px solid rgba(255,255,255,.12);
   }
   .shop-story::before{
     content:"";
     position:absolute;
     inset:0;
-    background:
-      linear-gradient(120deg,transparent 0 56%,rgba(176,38,255,.08) 57% 58%,transparent 59%),
-      repeating-linear-gradient(135deg,rgba(255,255,255,.022) 0 1px,transparent 1px 18px);
+    background:linear-gradient(125deg,transparent 28%,rgba(200,140,255,.09) 50%,transparent 72%);
     pointer-events:none;
   }
   .why-shell{
@@ -792,9 +791,8 @@
     position:absolute;
     inset:0;
     background:
-      radial-gradient(55% 80% at 0% 50%,rgba(176,38,255,.12),transparent 62%),
-      radial-gradient(55% 80% at 100% 50%,rgba(176,38,255,.11),transparent 58%),
-      repeating-linear-gradient(135deg,rgba(255,255,255,.02) 0 1px,transparent 1px 18px);
+      radial-gradient(62% 90% at 0% 38%,rgba(176,38,255,.32),transparent 60%),
+      radial-gradient(62% 90% at 100% 62%,rgba(255,180,60,.2),transparent 60%);
     pointer-events:none;
   }
   .service-area-shell{
@@ -1884,6 +1882,47 @@
   .work-tile.reveal:nth-child(3n+2){transition-delay:.09s}
   .work-tile.reveal:nth-child(3n){transition-delay:.18s}
   @media(prefers-reduced-motion:reduce){.work-tile.reveal{opacity:1;transform:none;transition:none}}
+
+  /* ===== Refresh pass ===== */
+  /* clean rounded button system (no angular edges, no heavy texture) */
+  .btn{clip-path:none;border-radius:12px;background:linear-gradient(140deg,#1a1622,#100d18);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 12px 26px rgba(0,0,0,.4)}
+  .btn-primary{border:none;color:#fff;text-shadow:0 1px 2px rgba(30,0,55,.5);background:linear-gradient(120deg,#b833ff 0%,#8a1fd6 46%,#ffb02e 118%);box-shadow:0 10px 30px rgba(176,38,255,.34),inset 0 1px 0 rgba(255,255,255,.32)}
+  .btn-primary:hover{transform:translateY(-2px);background:linear-gradient(120deg,#c44dff 0%,#9a2ae6 46%,#ffc44e 120%);box-shadow:0 16px 42px rgba(176,38,255,.5),0 0 0 1px rgba(255,200,61,.4),inset 0 1px 0 rgba(255,255,255,.36)}
+  .btn-secondary{border:1px solid rgba(255,255,255,.3);color:#fff;background:linear-gradient(140deg,rgba(255,255,255,.06),rgba(255,255,255,.02));box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+  .btn-secondary:hover{transform:translateY(-2px);border-color:#fff;background:linear-gradient(140deg,rgba(255,255,255,.12),rgba(255,255,255,.04))}
+  .btn-sm{border-radius:10px}
+
+  /* bottom 'Request My Quote' = gold/bronze (distinct from the purple ones) */
+  .qbox-form .btn-primary{color:#1c1206;text-shadow:none;background:linear-gradient(120deg,#ffd24a 0%,#f3a722 46%,#c8761a 100%);box-shadow:0 12px 32px rgba(240,160,30,.4),inset 0 1px 0 rgba(255,255,255,.5)}
+  .qbox-form .btn-primary:hover{background:linear-gradient(120deg,#ffdc66 0%,#f9b234 46%,#d4861f 100%);box-shadow:0 16px 42px rgba(240,160,30,.55),0 0 0 1px rgba(176,38,255,.4),inset 0 1px 0 rgba(255,255,255,.55)}
+
+  /* service cards: flip on hover to reveal details */
+  .service-card{perspective:1400px;background:none;border:none;box-shadow:none;min-height:380px;border-radius:18px;overflow:visible}
+  .service-card::before,.service-card::after{display:none}
+  .sc-inner{position:relative;width:100%;min-height:380px;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.22,1,.36,1)}
+  .service-card:hover .sc-inner,.service-card:focus-visible .sc-inner{transform:rotateY(180deg)}
+  .sc-front,.sc-back{position:absolute;inset:0;border-radius:18px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid rgba(255,255,255,.14)}
+  .sc-front{box-shadow:0 22px 50px rgba(0,0,0,.4)}
+  .sc-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .sc-front::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,4,9,.92),transparent 56%)}
+  .sc-label{position:absolute;left:22px;right:22px;bottom:22px;z-index:2}
+  .sc-label h3{font-family:var(--font-display);font-style:italic;text-transform:uppercase;color:#fff;font-size:clamp(23px,2.3vw,31px);line-height:1}
+  .sc-label em{display:block;margin-top:9px;font-style:normal;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .sc-back{transform:rotateY(180deg);background:linear-gradient(160deg,#1a1226,#0b0814);display:flex;flex-direction:column;justify-content:center;padding:30px;border-color:rgba(176,38,255,.45);box-shadow:0 22px 50px rgba(0,0,0,.5),0 0 0 1px rgba(255,200,61,.18)}
+  .sc-back h3{font-family:var(--font-display);font-style:italic;text-transform:uppercase;font-size:25px;line-height:1.02;margin-bottom:13px;background:linear-gradient(110deg,#c44dff,#ffc83d);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sc-back p{color:#d7dce2;font-size:14.5px;line-height:1.5}
+  .sc-cta{margin-top:18px;color:var(--gold);font-family:var(--font-display);font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.04em}
+  @media(hover:none){.sc-inner{transform:none!important}.sc-label em{display:none}}
+
+  /* gallery hover: gold accent, no purple photo tint */
+  .work-tile:hover{border-color:rgba(255,200,61,.5);box-shadow:0 34px 72px rgba(0,0,0,.55),0 0 0 1px rgba(255,200,61,.45)}
+  .work-tile:hover::after{background:linear-gradient(0deg,rgba(6,5,9,.92),transparent 58%)}
+
+  /* footer social = neutral dark chip, brand-color logos */
+  .footer-social a{background:#15171a;border:1px solid rgba(255,255,255,.14)}
+
+  /* Service Area gradient = brighter, more visible purple -> gold */
+  .service-area{background:linear-gradient(120deg,#42157a 0%,#1b1426 44%,#6b4a12 100%)}
 </style>
 </head>
 <body>
@@ -1984,63 +2023,81 @@
       </div>
       <div class="service-grid">
         <a class="service-card reveal" href="#quote" aria-label="Start a quote for color change vehicle wraps">
-          <img class="service-bg" src="assets/work/wrap-9751.png" alt="Iridescent color-change wrap on a Ford Bronco by ALX Wraps" />
-          <div class="service-titlebar">
-            <h3>Color Change Wraps</h3>
-          </div>
-          <div class="service-hover">
-            <p>Full and partial vehicle wraps with matte, satin, gloss, chrome, carbon, and specialty film options.</p>
-            <span>Quote Wraps</span>
+          <div class="sc-inner">
+            <div class="sc-front">
+              <img class="sc-img" src="assets/work/wrap-9751.png" alt="Iridescent color-change wrap on a Ford Bronco by ALX Wraps" />
+              <div class="sc-label"><h3>Color Change Wraps</h3><em>Hover to learn more</em></div>
+            </div>
+            <div class="sc-back">
+              <h3>Color Change Wraps</h3>
+              <p>Full &amp; partial vehicle wraps — matte, satin, gloss, chrome, carbon, and specialty films.</p>
+              <span class="sc-cta">Quote Wraps →</span>
+            </div>
           </div>
         </a>
         <a class="service-card reveal" href="#quote" aria-label="Start a quote for paint protection film">
-          <img class="service-bg" src="assets/svc-ppf.jpg" alt="Yellow vehicle representing paint protection film" />
-          <div class="service-titlebar">
-            <h3>Paint Protection Film</h3>
-          </div>
-          <div class="service-hover">
-            <p>Clear paint protection film for bumpers, hoods, mirrors, full fronts, track packs, and full-body coverage.</p>
-            <span>Quote PPF</span>
+          <div class="sc-inner">
+            <div class="sc-front">
+              <img class="sc-img" src="assets/svc-ppf.jpg" alt="Paint protection film being installed" />
+              <div class="sc-label"><h3>Paint Protection Film</h3><em>Hover to learn more</em></div>
+            </div>
+            <div class="sc-back">
+              <h3>Paint Protection Film</h3>
+              <p>Clear PPF for bumpers, hoods, mirrors, full fronts, track packs, and full-body coverage.</p>
+              <span class="sc-cta">Quote PPF →</span>
+            </div>
           </div>
         </a>
         <a class="service-card reveal" href="#quote" aria-label="Start a quote for color paint protection film">
-          <img class="service-bg" src="assets/work/wrap-0954.png" alt="Matte teal wrapped Porsche Macan by ALX Wraps" />
-          <div class="service-titlebar">
-            <h3>Color PPF</h3>
-          </div>
-          <div class="service-hover">
-            <p>Color PPF adds paint protection with a gloss, satin, matte, or color-shift finish.</p>
-            <span>Quote Color PPF</span>
+          <div class="sc-inner">
+            <div class="sc-front">
+              <img class="sc-img" src="assets/work/wrap-0954.png" alt="Matte teal wrapped Porsche Macan by ALX Wraps" />
+              <div class="sc-label"><h3>Color PPF</h3><em>Hover to learn more</em></div>
+            </div>
+            <div class="sc-back">
+              <h3>Color PPF</h3>
+              <p>Paint protection plus a finished look — gloss, satin, matte, or color-shift in one film.</p>
+              <span class="sc-cta">Quote Color PPF →</span>
+            </div>
           </div>
         </a>
         <a class="service-card reveal" href="#quote" aria-label="Start a quote for ceramic window tint">
-          <img class="service-bg" src="assets/work/ig-tint-jeep.jpg" alt="Jeep Grand Cherokee with dark window tint by ALX Wraps" />
-          <div class="service-titlebar">
-            <h3>Ceramic Window Tint</h3>
-          </div>
-          <div class="service-hover">
-            <p>Ceramic window tint reduces heat, glare, and UV exposure while improving privacy.</p>
-            <span>Quote Tint</span>
+          <div class="sc-inner">
+            <div class="sc-front">
+              <img class="sc-img" src="assets/work/ig-tint-jeep.jpg" alt="Jeep Grand Cherokee with dark window tint by ALX Wraps" />
+              <div class="sc-label"><h3>Ceramic Window Tint</h3><em>Hover to learn more</em></div>
+            </div>
+            <div class="sc-back">
+              <h3>Ceramic Window Tint</h3>
+              <p>Ceramic tint cuts heat, glare, and UV exposure while adding privacy and comfort.</p>
+              <span class="sc-cta">Quote Tint →</span>
+            </div>
           </div>
         </a>
         <a class="service-card reveal" href="#quote" aria-label="Start a quote for commercial fleet graphics">
-          <img class="service-bg" src="assets/work/wrap-3706.png" alt="Prestige Electric fleet truck wrap by ALX Wraps" />
-          <div class="service-titlebar">
-            <h3>Fleet Graphics</h3>
-          </div>
-          <div class="service-hover">
-            <p>Commercial wraps, truck graphics, logo placement, and lettering for daily brand visibility.</p>
-            <span>Quote Fleet</span>
+          <div class="sc-inner">
+            <div class="sc-front">
+              <img class="sc-img" src="assets/work/wrap-3706.png" alt="Prestige Electric fleet truck wrap by ALX Wraps" />
+              <div class="sc-label"><h3>Fleet Graphics</h3><em>Hover to learn more</em></div>
+            </div>
+            <div class="sc-back">
+              <h3>Fleet Graphics</h3>
+              <p>Commercial wraps, truck graphics, logos, and lettering for daily brand visibility.</p>
+              <span class="sc-cta">Quote Fleet →</span>
+            </div>
           </div>
         </a>
         <a class="service-card reveal" href="#quote" aria-label="Start a quote for commercial decals and lettering">
-          <img class="service-bg" src="assets/work/wrap-9353.png" alt="Custom Chevy pickup with ALX Wraps lettering and decals" />
-          <div class="service-titlebar">
-            <h3>Decals & Lettering</h3>
-          </div>
-          <div class="service-hover">
-            <p>Vinyl lettering, accents, door logos, and spot graphics with clean placement.</p>
-            <span>Quote Decals</span>
+          <div class="sc-inner">
+            <div class="sc-front">
+              <img class="sc-img" src="assets/work/wrap-9353.png" alt="Custom Chevy pickup with ALX Wraps lettering and decals" />
+              <div class="sc-label"><h3>Decals &amp; Lettering</h3><em>Hover to learn more</em></div>
+            </div>
+            <div class="sc-back">
+              <h3>Decals &amp; Lettering</h3>
+              <p>Vinyl lettering, accents, door logos, and spot graphics with clean, precise placement.</p>
+              <span class="sc-cta">Quote Decals →</span>
+            </div>
           </div>
         </a>
       </div>
@@ -2103,7 +2160,6 @@
           <h2 class="section-title">Recent ALX Wraps Work</h2>
           <p class="section-copy">Recent color-change wraps, truck wraps, SUVs, and commercial graphics completed by ALX.</p>
         </div>
-        <a class="btn btn-secondary" href="#quote">Quote A Similar Build</a>
       </div>
       <div class="filter-row reveal" id="workFilters">
         <button type="button" class="active" data-filter="all">All</button>
@@ -2156,9 +2212,9 @@
           <img src="assets/work/wrap-9352.png" loading="lazy" alt="Matte champagne Chevrolet pickup wrap by ALX Wraps" />
           <div class="work-meta"><span>Truck Wrap</span><b>Custom Chevy</b></div>
         </article>
-        <article class="work-tile reveal" data-cat="fleet">
-          <img src="assets/work/wrap-3727.png" loading="lazy" alt="Prestige Electric fleet truck branding by ALX Wraps" />
-          <div class="work-meta"><span>Fleet &amp; Lettering</span><b>Prestige Electric</b></div>
+        <article class="work-tile reveal" data-cat="cars">
+          <img src="assets/work/wrap-1379.png" loading="lazy" alt="Matte white Tesla Model Y wrap by ALX Wraps" />
+          <div class="work-meta"><span>Color Change Wrap</span><b>Tesla Model Y</b></div>
         </article>
       </div>
     </div>
@@ -2266,7 +2322,6 @@
         <div class="footer-brand">
           <span class="logo-mark" role="img" aria-label="ALX Wraps"></span>
           <p>Vehicle wraps, PPF, ceramic tint, decals, and fleet graphics for Queen Creek and the Phoenix East Valley.</p>
-          <span class="footer-cert">Queen Creek Wrap Shop</span>
         </div>
         <div class="footer-col">
           <h3>Services</h3>
@@ -2296,8 +2351,8 @@
             <div><svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Phoenix Metro Area, AZ</div>
             <div><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>Mon–Fri 8a–6p · Sat 9a–3p · Sun Closed</div>
             <div class="footer-social" aria-label="ALX Wraps social links">
-              <a href="https://www.instagram.com/alx_wrapsss/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg></a>
-              <a href="https://www.facebook.com/p/ALX-Wraps-100050027354303/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+              <a href="https://www.instagram.com/alx_wrapsss/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><defs><linearGradient id="igFoot" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".35" stop-color="#fa7e1e"/><stop offset=".6" stop-color="#d62976"/><stop offset=".8" stop-color="#962fbf"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="url(#igFoot)"/><circle cx="12" cy="12" r="4.2" stroke="url(#igFoot)"/><circle cx="17.6" cy="6.4" r="1.1" fill="url(#igFoot)" stroke="none"/></svg></a>
+              <a href="https://www.facebook.com/p/ALX-Wraps-100050027354303/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="#1877f2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
             </div>
           </div>
         </div>
