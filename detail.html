@@ -216,16 +216,28 @@
   .stat b i{font-style:normal;color:var(--brand)}
   .stat span{font-family:var(--mono);color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-top:10px;display:block}
 
-  /* ===== SCIENCE ===== */
-  .science{padding:0 0 130px}
-  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:40px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
-  .feat{position:relative;padding:38px 34px;background:var(--bg);transition:background .3s,transform .3s}
-  .feat:hover{background:var(--panel);transform:translateY(-3px)}
-  .feat .fn{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;letter-spacing:-.02em;background:linear-gradient(125deg,#e2a7ff,#9b3ee0);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .feat .fi{display:none}
-  .feat h3{margin-top:26px;padding-top:20px;font-size:21px;font-weight:700;color:#fff;position:relative}
-  .feat h3::before{content:"";position:absolute;top:0;left:0;width:34px;height:2px;border-radius:2px;background:linear-gradient(90deg,#c77bff,#8a1fd0)}
-  .feat p{margin-top:12px;color:#b7bbc2;font-size:15px;line-height:1.7}
+  /* ===== SCIENCE — scroll-stacking cards ===== */
+  .science{padding:20px 0 130px}
+  .sci-head{max-width:640px;margin-bottom:44px}
+  .sci-head h2{font-size:clamp(34px,5vw,60px);color:#fff;margin-top:14px;letter-spacing:-.025em;line-height:1}
+  .sci-head h2 em{font-style:normal;color:var(--brand)}
+  .sci-head p{color:#b7bbc2;font-size:17px;margin-top:18px;line-height:1.7}
+  .sci-stack{display:flex;flex-direction:column;gap:24px}
+  .sci-card{position:sticky;top:calc(92px + var(--i) * 15px);min-height:clamp(300px,46vh,400px);border-radius:22px;
+    border:1px solid rgba(255,255,255,.1);overflow:hidden;
+    background:radial-gradient(90% 130% at 90% 8%,color-mix(in srgb,var(--ac) 22%,transparent),transparent 58%),linear-gradient(158deg,#15151b,#0a0a0d);
+    padding:clamp(30px,3.6vw,54px);display:grid;grid-template-columns:1.12fr .88fr;gap:30px;align-items:center;
+    box-shadow:0 -14px 46px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05)}
+  .sci-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ac),transparent 70%)}
+  .sci-c-eyebrow{font-family:var(--label);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:color-mix(in srgb,var(--ac) 65%,#fff)}
+  .sci-c-body h3{font-size:clamp(25px,3.3vw,40px);font-weight:800;color:#fff;margin-top:15px;letter-spacing:-.02em;line-height:1.03}
+  .sci-c-body p{margin-top:16px;color:#c4c7cd;font-size:16.5px;line-height:1.72;max-width:460px}
+  .sci-c-visual{position:relative;display:grid;place-items:center;height:100%;min-height:170px}
+  .sci-c-num{position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--display);font-weight:800;font-size:clamp(130px,19vw,230px);line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px color-mix(in srgb,var(--ac) 42%,transparent);opacity:.55;pointer-events:none;user-select:none}
+  .sci-c-icon{position:relative;z-index:1;width:clamp(84px,9vw,112px);height:clamp(84px,9vw,112px);border-radius:26px;display:grid;place-items:center;
+    background:linear-gradient(150deg,color-mix(in srgb,var(--ac) 32%,transparent),color-mix(in srgb,var(--ac) 8%,transparent));
+    border:1px solid color-mix(in srgb,var(--ac) 45%,transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 12px 32px color-mix(in srgb,var(--ac) 20%,transparent)}
+  .sci-c-icon svg{width:50%;height:50%;color:var(--ac);stroke:#fff;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 
   /* ===== WORKS ON ===== */
   .works{padding:80px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
@@ -248,7 +260,10 @@
   .connect-note{margin-top:18px;font-family:var(--mono);color:var(--soft);font-size:12px;letter-spacing:.06em;min-height:18px}
 
   /* ===== FOOTER ===== */
-  .site-footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 26px}
+  .site-footer{position:relative;background:linear-gradient(180deg,#0a0a0d,#060607);border-top:1px solid var(--line);padding:60px 0 26px;overflow:hidden}
+  .site-footer::before{content:"";position:absolute;top:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#ff8a1e 22%,#ff3da6 50%,var(--brand) 78%,transparent)}
+  .site-footer::after{content:"";position:absolute;top:-90px;left:-40px;width:460px;height:340px;border-radius:50%;background:radial-gradient(closest-side,rgba(176,38,255,.13),transparent);pointer-events:none}
+  .site-footer .wrap{position:relative;z-index:1}
   .footer-main{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:30px 40px}
   .footer-brand .brand{display:inline-block;margin-bottom:15px}
   .footer-brand p{color:#9a9ea5;font-size:14px;max-width:290px;line-height:1.65}
@@ -282,13 +297,15 @@
     .mask>span{transform:none;transition:none}
     .prodhead-grid{grid-template-columns:1fr;gap:14px}.prodhead p{justify-self:start}
     .kit-grid,.story-grid{grid-template-columns:1fr}.kit-stage{order:-1}
-    .feat-grid{grid-template-columns:1fr 1fr}
+    .sci-card{grid-template-columns:1fr;gap:0;min-height:auto;padding:26px 24px 30px}
+    .sci-c-visual{order:-1;min-height:112px;place-items:center;justify-items:start;margin-bottom:6px}
+    .sci-c-num{font-size:118px;right:-2%}
+    .sci-c-icon{width:74px;height:74px;border-radius:20px}
     .footer-main{grid-template-columns:1fr 1fr;gap:32px 28px}
     .footer-brand{grid-column:1/-1}
     .footer-col:last-child{grid-column:1/-1}
   }
   @media(max-width:600px){
-    .feat-grid{grid-template-columns:1fr}
     .footer-bottom{flex-direction:column;align-items:flex-start;gap:10px}
     .kit-list li b{min-width:0}.kit-list li{flex-wrap:wrap}
   }
@@ -417,13 +434,60 @@
   <!-- SCIENCE -->
   <section class="science" id="science">
     <div class="wrap">
-      <div class="feat-grid">
-        <div class="feat fade"><div class="fn">01</div><div class="fi"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M12 6.4c-2.7 3.2-4.1 5.1-4.1 7a4.1 4.1 0 0 0 8.2 0c0-1.9-1.4-3.8-4.1-7Z" fill="currentColor" fill-opacity=".18"/><path d="M9.9 13.2l1.4 1.4 2.7-2.8"/></svg></div><h3>pH-Neutral &amp; Film-Safe</h3><p>Balanced chemistry that cleans hard but never strips finishes or attacks wrap adhesive.</p></div>
-        <div class="feat fade" data-a="1"><div class="fn">02</div><div class="fi"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.4" width="17" height="15.2" rx="3.4" fill="currentColor" fill-opacity=".14"/><path d="M7.4 16.8 15.2 8.6"/><path d="M11 17 16.6 11"/></svg></div><h3>Matte, Satin &amp; Gloss Safe</h3><p>Tuned to keep flat finishes flat and glossy finishes deep — no streaks, no unwanted shine.</p></div>
-        <div class="feat fade" data-a="2"><div class="fn">03</div><div class="fi"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M6.6 20a5.4 5.4 0 0 1 10.8 0"/><circle cx="12" cy="7.8" r="2.5" fill="currentColor" fill-opacity=".22"/><path d="M12 2.3v1.7M6.1 3.9l1.15 1.3M17.9 3.9l-1.15 1.3M2.9 10.4l1.7.35M21.1 10.4l-1.7.35"/></svg></div><h3>UV &amp; Oxidation Defense</h3><p>Ceramic and sealant layers shield against the sun that fades and chalks unprotected film.</p></div>
-        <div class="feat fade"><div class="fn">04</div><div class="fi"><svg viewBox="0 0 24 24"><path d="M9.5 3h5"/><path d="M10.6 3v5.2L6.1 16.6A2 2 0 0 0 7.9 19.6h8.2A2 2 0 0 0 17.9 16.6L13.4 8.2V3"/><path d="M7.6 13.6h8.8l1.5 3A2 2 0 0 1 16.1 19.6H7.9A2 2 0 0 1 6.1 16.6Z" fill="currentColor" fill-opacity=".22" stroke="none"/><circle cx="10.6" cy="16.4" r=".8" fill="currentColor" stroke="none"/></svg></div><h3>Tested In The Wrap Bay</h3><p>Developed and proven on the same wraps, PPF, and color PPF ALX installs every day.</p></div>
-        <div class="feat fade" data-a="1"><div class="fn">05</div><div class="fi"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M12 6.4c-2.7 3.2-4.1 5.1-4.1 7a4.1 4.1 0 0 0 8.2 0c0-1.9-1.4-3.8-4.1-7Z" fill="currentColor" fill-opacity=".18"/><path d="M5.4 16.8a2.4 2.4 0 0 0 2.1-1.4M18.6 16.8a2.4 2.4 0 0 1-2.1-1.4"/></svg></div><h3>Hydrophobic By Design</h3><p>Water sheets and beads off treated panels, so dirt rinses free and drying is faster.</p></div>
-        <div class="feat fade" data-a="2"><div class="fn">06</div><div class="fi"><svg viewBox="0 0 24 24"><path d="M4.5 6.5A2.5 2.5 0 0 1 7 4h7l6 6v7.5a2.5 2.5 0 0 1-2.5 2.5h-10A2.5 2.5 0 0 1 4.5 17.5Z" fill="currentColor" fill-opacity=".14"/><path d="M14 4v3.5A2.5 2.5 0 0 0 16.5 10H20"/><path d="M8.5 14.5l2.4 2.4 4.6-4.8"/></svg></div><h3>Made For Wraps &amp; PPF</h3><p>Formulated specifically for vinyl, paint protection film, and color PPF — start to finish.</p></div>
+      <div class="sci-head fade">
+        <div class="sec-label"><b>The Science</b></div>
+        <h2>Built On <em>Real Chemistry</em></h2>
+        <p>Six reasons ALX care outperforms generic detailers on wrap, PPF &amp; color PPF — engineered and proven where the film actually lives.</p>
+      </div>
+      <div class="sci-stack">
+        <article class="sci-card" style="--i:0;--ac:#3fa2f6">
+          <div class="sci-c-body">
+            <span class="sci-c-eyebrow">Step 01 / 06</span>
+            <h3>pH-Neutral &amp; Film-Safe</h3>
+            <p>Balanced chemistry that cleans hard but never strips finishes or attacks wrap adhesive — safe on every panel, every wash.</p>
+          </div>
+          <div class="sci-c-visual"><span class="sci-c-num" aria-hidden="true">01</span><span class="sci-c-icon"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M12 6.4c-2.7 3.2-4.1 5.1-4.1 7a4.1 4.1 0 0 0 8.2 0c0-1.9-1.4-3.8-4.1-7Z" fill="currentColor" fill-opacity=".22"/><path d="M9.9 13.2l1.4 1.4 2.7-2.8"/></svg></span></div>
+        </article>
+        <article class="sci-card" style="--i:1;--ac:#d76ae0">
+          <div class="sci-c-body">
+            <span class="sci-c-eyebrow">Step 02 / 06</span>
+            <h3>Matte, Satin &amp; Gloss Safe</h3>
+            <p>Tuned to keep flat finishes flat and glossy finishes deep — no streaks, no haze, and never any unwanted shine on a matte wrap.</p>
+          </div>
+          <div class="sci-c-visual"><span class="sci-c-num" aria-hidden="true">02</span><span class="sci-c-icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.4" width="17" height="15.2" rx="3.4" fill="currentColor" fill-opacity=".16"/><path d="M7.4 16.8 15.2 8.6"/><path d="M11 17 16.6 11"/></svg></span></div>
+        </article>
+        <article class="sci-card" style="--i:2;--ac:#f6ac3c">
+          <div class="sci-c-body">
+            <span class="sci-c-eyebrow">Step 03 / 06</span>
+            <h3>UV &amp; Oxidation Defense</h3>
+            <p>Sealant layers shield against the sun that fades, chalks, and yellows unprotected film — keeping color and clarity locked in.</p>
+          </div>
+          <div class="sci-c-visual"><span class="sci-c-num" aria-hidden="true">03</span><span class="sci-c-icon"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M6.6 20a5.4 5.4 0 0 1 10.8 0"/><circle cx="12" cy="7.8" r="2.5" fill="currentColor" fill-opacity=".24"/><path d="M12 2.3v1.7M6.1 3.9l1.15 1.3M17.9 3.9l-1.15 1.3M2.9 10.4l1.7.35M21.1 10.4l-1.7.35"/></svg></span></div>
+        </article>
+        <article class="sci-card" style="--i:3;--ac:#3fd98a">
+          <div class="sci-c-body">
+            <span class="sci-c-eyebrow">Step 04 / 06</span>
+            <h3>Tested In The Wrap Bay</h3>
+            <p>Developed and proven on the exact same wraps, PPF, and color PPF that ALX installs every single day — not in a lab far from the film.</p>
+          </div>
+          <div class="sci-c-visual"><span class="sci-c-num" aria-hidden="true">04</span><span class="sci-c-icon"><svg viewBox="0 0 24 24"><path d="M9.5 3h5"/><path d="M10.6 3v5.2L6.1 16.6A2 2 0 0 0 7.9 19.6h8.2A2 2 0 0 0 17.9 16.6L13.4 8.2V3"/><path d="M7.6 13.6h8.8l1.5 3A2 2 0 0 1 16.1 19.6H7.9A2 2 0 0 1 6.1 16.6Z" fill="currentColor" fill-opacity=".24" stroke="none"/><circle cx="10.6" cy="16.4" r=".8" fill="currentColor" stroke="none"/></svg></span></div>
+        </article>
+        <article class="sci-card" style="--i:4;--ac:#38cfd4">
+          <div class="sci-c-body">
+            <span class="sci-c-eyebrow">Step 05 / 06</span>
+            <h3>Hydrophobic By Design</h3>
+            <p>Water sheets and beads straight off treated panels, so dirt rinses free, spotting drops, and drying is dramatically faster.</p>
+          </div>
+          <div class="sci-c-visual"><span class="sci-c-num" aria-hidden="true">05</span><span class="sci-c-icon"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M12 6.4c-2.7 3.2-4.1 5.1-4.1 7a4.1 4.1 0 0 0 8.2 0c0-1.9-1.4-3.8-4.1-7Z" fill="currentColor" fill-opacity=".22"/><path d="M5.4 16.8a2.4 2.4 0 0 0 2.1-1.4M18.6 16.8a2.4 2.4 0 0 1-2.1-1.4"/></svg></span></div>
+        </article>
+        <article class="sci-card" style="--i:5;--ac:#b06bff">
+          <div class="sci-c-body">
+            <span class="sci-c-eyebrow">Step 06 / 06</span>
+            <h3>Made For Wraps &amp; PPF</h3>
+            <p>Formulated from the ground up for vinyl, paint protection film, and color PPF — every product in the line, start to finish.</p>
+          </div>
+          <div class="sci-c-visual"><span class="sci-c-num" aria-hidden="true">06</span><span class="sci-c-icon"><svg viewBox="0 0 24 24"><path d="M4.5 6.5A2.5 2.5 0 0 1 7 4h7l6 6v7.5a2.5 2.5 0 0 1-2.5 2.5h-10A2.5 2.5 0 0 1 4.5 17.5Z" fill="currentColor" fill-opacity=".16"/><path d="M14 4v3.5A2.5 2.5 0 0 0 16.5 10H20"/><path d="M8.5 14.5l2.4 2.4 4.6-4.8"/></svg></span></div>
+        </article>
       </div>
     </div>
   </section>
