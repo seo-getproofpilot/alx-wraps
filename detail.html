@@ -248,21 +248,21 @@
   .connect-note{margin-top:18px;font-family:var(--mono);color:var(--soft);font-size:12px;letter-spacing:.06em;min-height:18px}
 
   /* ===== FOOTER ===== */
-  .site-footer{background:var(--bg);border-top:1px solid var(--line);padding:64px 0 30px}
-  .footer-main{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.1fr;gap:36px}
-  .footer-brand .brand{margin-bottom:18px}
-  .footer-brand p{color:var(--muted);font-size:15px;max-width:300px;line-height:1.7}
-  .footer-col h3{font-family:var(--label);font-weight:700;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#e7e9ec;margin-bottom:18px;display:flex;align-items:center;gap:9px}
-  .footer-col h3::before{content:"";width:16px;height:2px;border-radius:2px;background:linear-gradient(90deg,#ff8a1e,#ff3da6 55%,var(--brand))}
-  .footer-menu{list-style:none;display:grid;gap:12px}
-  .footer-menu a{display:inline-flex;align-items:center;gap:9px;color:#b6b9bf;font-size:15px;transition:color .2s}
+  .site-footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 26px}
+  .footer-main{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:30px 40px}
+  .footer-brand .brand{display:inline-block;margin-bottom:15px}
+  .footer-brand p{color:#9a9ea5;font-size:14px;max-width:290px;line-height:1.65}
+  .footer-col h3{font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:#cfd2d7;margin-bottom:15px}
+  .footer-menu{list-style:none;display:grid;gap:11px}
+  .footer-menu a{display:inline-flex;align-items:center;gap:9px;color:#9a9ea5;font-size:14px;transition:color .2s,transform .2s}
   .footer-menu a svg{width:15px;height:15px;stroke:var(--brand);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none}
-  .footer-menu a:hover{color:#fff}
-  .footer-social{display:flex;gap:10px;margin-top:8px}
-  .footer-social a{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line-2);border-radius:2px;transition:border-color .2s,transform .2s}
-  .footer-social a:hover{border-color:var(--text);transform:translateY(-2px)}
-  .footer-social svg{width:19px;height:19px}
-  .footer-bottom{margin-top:46px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);color:var(--soft);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+  .footer-menu a:hover{color:#fff;transform:translateX(2px)}
+  .footer-social{display:flex;gap:10px;margin-top:16px}
+  .footer-social a{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--line-2);border-radius:11px;background:rgba(255,255,255,.02);transition:border-color .2s,background .2s,transform .2s}
+  .footer-social a:hover{border-color:rgba(255,255,255,.42);background:rgba(255,255,255,.06);transform:translateY(-2px)}
+  .footer-social svg{width:18px;height:18px}
+  .footer-bottom{margin-top:38px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;color:#7d8087;font-size:12.5px}
+  .footer-bottom a{color:#9a9ea5;transition:color .2s}
   .footer-bottom a:hover{color:#fff}
 
   @media(max-width:940px){
@@ -282,10 +282,14 @@
     .mask>span{transform:none;transition:none}
     .prodhead-grid{grid-template-columns:1fr;gap:14px}.prodhead p{justify-self:start}
     .kit-grid,.story-grid{grid-template-columns:1fr}.kit-stage{order:-1}
-    .feat-grid{grid-template-columns:1fr 1fr}.footer-main{grid-template-columns:1fr 1fr}
+    .feat-grid{grid-template-columns:1fr 1fr}
+    .footer-main{grid-template-columns:1fr 1fr;gap:32px 28px}
+    .footer-brand{grid-column:1/-1}
+    .footer-col:last-child{grid-column:1/-1}
   }
   @media(max-width:600px){
-    .feat-grid{grid-template-columns:1fr}.footer-main{grid-template-columns:1fr}
+    .feat-grid{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;align-items:flex-start;gap:10px}
     .kit-list li b{min-width:0}.kit-list li{flex-wrap:wrap}
   }
 </style>
@@ -445,7 +449,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 ALX Detail — A Product Line By ALX Wraps</span><a href="#top">Back To Top ↑</a></div>
+    <div class="footer-bottom"><span>© 2026 ALX Wraps — Wrap, PPF &amp; Color-PPF Care</span><a href="#top">Back to top ↑</a></div>
   </div>
 </footer>
 
