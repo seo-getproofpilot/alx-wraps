@@ -160,14 +160,11 @@
   .p-name .em{color:var(--acc)}
   .p-tag{margin-top:18px;font-family:var(--body);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#f2f3f4}
   .p-desc{margin-top:20px;color:#f2f3f4;font-size:17px;max-width:500px;line-height:1.78}
-  .p-specs{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-  .p-specs li{--sc:#9aa0aa;display:inline-flex;align-items:center;gap:11px;font-family:var(--body);font-weight:600;font-size:14.5px;color:#eceef1;
-    padding:11px 18px;border-radius:11px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.035);
-    transition:border-color .25s,background .25s,transform .25s}
-  .p-specs li::before{content:"";width:8px;height:8px;border-radius:50%;flex:none;background:var(--sc);box-shadow:0 0 10px var(--sc),0 0 3px var(--sc)}
-  .p-specs li:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--sc) 55%,transparent);background:color-mix(in srgb,var(--sc) 9%,transparent)}
-  .p-specs li .si{display:none}
-  .p-specs li svg{display:none}
+  .p-specs{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:18px 30px;margin-top:30px;max-width:520px}
+  .p-specs li{display:inline-flex;align-items:center;gap:13px;font-family:var(--body);font-weight:600;font-size:15.5px;color:#eaecef}
+  .p-specs li .si{flex:none;display:grid;place-items:center;width:30px;height:30px;transition:transform .25s var(--ease)}
+  .p-specs li:hover .si{transform:translateY(-2px) scale(1.06)}
+  .p-specs li svg{width:30px;height:30px;display:block}
   .p-cta{margin-top:32px;display:inline-flex}
   .p-cta a{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:#fff;padding-bottom:8px;border-bottom:1px solid var(--acc);transition:gap .25s}
   .p-cta a:hover{gap:18px}
@@ -273,11 +270,16 @@
     .hero h1{font-size:clamp(40px,11vw,72px)}
     .hero-video video{object-position:50% 42%}
     .hero-veil{background:linear-gradient(180deg,rgba(5,5,6,.5) 0%,transparent 24%,transparent 40%,rgba(5,5,6,.8) 72%,rgba(5,5,6,.97) 100%)}
-    .show{min-height:0;padding:56px 0}
-    .show-inner{grid-template-columns:1fr;gap:30px}
+    /* mobile: clean stacked product — image, then full readable description (no late reveals flying past) */
+    .show{min-height:0;padding:44px 0}
+    .show-inner{grid-template-columns:1fr;gap:24px}
     .show:nth-child(even) .show-media{order:0}
-    .show-media{order:-1;position:static;height:auto;aspect-ratio:1/1}
-    .show-info{min-height:0;padding:0}
+    .show-media{order:-1;position:static;height:auto;aspect-ratio:4/5}
+    .show-info{min-height:auto;padding:0;justify-content:flex-start}
+    .p-specs{grid-template-columns:1fr 1fr;max-width:none;gap:16px 20px}
+    /* content is present immediately on mobile so a fast scroll can't skip it before it animates in */
+    .fade,.slide-l,.fade-o{opacity:1;transform:none;transition:none}
+    .mask>span{transform:none;transition:none}
     .prodhead-grid{grid-template-columns:1fr;gap:14px}.prodhead p{justify-self:start}
     .kit-grid,.story-grid{grid-template-columns:1fr}.kit-stage{order:-1}
     .feat-grid{grid-template-columns:1fr 1fr}.footer-main{grid-template-columns:1fr 1fr}
@@ -293,6 +295,17 @@
 <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0">
   <defs>
     <filter id="heroSharpen" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feConvolveMatrix order="3" preserveAlpha="true" edgeMode="duplicate" kernelMatrix="0 -0.5 0 -0.5 3 -0.5 0 -0.5 0"/></filter>
+    <!-- spec icon gradients (userSpaceOnUse so all 24x24 icons share one diagonal ramp) -->
+    <linearGradient id="gs-drop" gradientUnits="userSpaceOnUse" x1="4" y1="3" x2="20" y2="21"><stop offset="0" stop-color="#9ad3ff"/><stop offset="1" stop-color="#2b7fd6"/></linearGradient>
+    <linearGradient id="gs-dropoff" gradientUnits="userSpaceOnUse" x1="4" y1="3" x2="20" y2="21"><stop offset="0" stop-color="#8af0f3"/><stop offset="1" stop-color="#1f9ea3"/></linearGradient>
+    <linearGradient id="gs-shield" gradientUnits="userSpaceOnUse" x1="4" y1="3" x2="20" y2="21"><stop offset="0" stop-color="#97f3c4"/><stop offset="1" stop-color="#1fa866"/></linearGradient>
+    <linearGradient id="gs-sun" gradientUnits="userSpaceOnUse" x1="4" y1="3" x2="20" y2="21"><stop offset="0" stop-color="#ffd88c"/><stop offset="1" stop-color="#e08a1a"/></linearGradient>
+    <linearGradient id="gs-spark" gradientUnits="userSpaceOnUse" x1="4" y1="3" x2="20" y2="21"><stop offset="0" stop-color="#c8f59a"/><stop offset="1" stop-color="#5fae2c"/></linearGradient>
+    <linearGradient id="gs-sheen" gradientUnits="userSpaceOnUse" x1="4" y1="3" x2="20" y2="21"><stop offset="0" stop-color="#f3aef7"/><stop offset="1" stop-color="#a83fb3"/></linearGradient>
+    <linearGradient id="gs-bolt" gradientUnits="userSpaceOnUse" x1="4" y1="3" x2="20" y2="21"><stop offset="0" stop-color="#ffe98f"/><stop offset="1" stop-color="#d9ab18"/></linearGradient>
+    <linearGradient id="gs-clock" gradientUnits="userSpaceOnUse" x1="4" y1="3" x2="20" y2="21"><stop offset="0" stop-color="#ddc6ff"/><stop offset="1" stop-color="#8f5ae0"/></linearGradient>
+    <linearGradient id="gs-capsule" gradientUnits="userSpaceOnUse" x1="4" y1="3" x2="20" y2="21"><stop offset="0" stop-color="#86f2d3"/><stop offset="1" stop-color="#17a37c"/></linearGradient>
+    <linearGradient id="gs-check" gradientUnits="userSpaceOnUse" x1="4" y1="3" x2="20" y2="21"><stop offset="0" stop-color="#c8ccd3"/><stop offset="1" stop-color="#6f757e"/></linearGradient>
     <linearGradient id="bodyWhite" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c4c8cd"/><stop offset=".1" stop-color="#fff"/><stop offset=".32" stop-color="#eef0f2"/><stop offset=".52" stop-color="#f8f9fa"/><stop offset=".72" stop-color="#e4e7ea"/><stop offset=".9" stop-color="#fbfbfc"/><stop offset="1" stop-color="#b9bdc3"/></linearGradient>
     <linearGradient id="plastic" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0a0a0b"/><stop offset=".14" stop-color="#37383c"/><stop offset=".4" stop-color="#161618"/><stop offset=".62" stop-color="#0c0c0e"/><stop offset=".85" stop-color="#232427"/><stop offset="1" stop-color="#060607"/></linearGradient>
     <linearGradient id="plasticV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3b3f"/><stop offset=".3" stop-color="#1c1d20"/><stop offset="1" stop-color="#0a0a0b"/></linearGradient>
@@ -490,7 +503,7 @@
     else if(/scratch|protect|shield|defen|coat/.test(t))k='shield';
     else if(/ph|lubric|slick|foam/.test(t))k='drop';
     const ic=SVGI[k];
-    return {c:ic.c,html:`<span class="si"><svg viewBox="0 0 24 24">${ic.p}</svg></span>`};
+    return {c:ic.c,key:k,html:`<span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gs-${k})" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${ic.p}</svg></span>`};
   }
 
   /* build showcases with real product photography */
@@ -509,7 +522,7 @@
             <h2 class="p-name mask" data-a="2"><span class="em">${p.name}</span></h2>
             <div class="p-tag fade" data-a="2">${TAGLINE[key]}</div>
             <p class="p-desc fade" data-a="3">${DESC[key]}</p>
-            <ul class="p-specs fade" data-a="3">${SPECS[key].map(s=>`<li style="--sc:${specIcon(s).c}"><span>${s}</span></li>`).join('')}</ul>
+            <ul class="p-specs fade" data-a="3">${SPECS[key].map(s=>{const ic=specIcon(s);return `<li>${ic.html}<span>${s}</span></li>`;}).join('')}</ul>
           </div>
         </div>
       </section>`);
