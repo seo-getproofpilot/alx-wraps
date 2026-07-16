@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop — ALX Wraps Wrap, PPF & Color-PPF Care</title>
+<meta name="description" content="Order the ALX Wraps wrap-care line — Wrap + PPF Wash, Detailer, Matte + Satin Cleaner, Sealant, and Waterless Wash, or the complete kit." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23070708'/%3E%3Cpath d='M12 46 26 18h9L21 46H12Zm22 0 7-16 12 16H43l-5-7-3 7h-1Z' fill='%23b026ff'/%3E%3Cpath d='M43 18h10L40 46H29l14-28Z' fill='%23e7e8ea'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#060607;--bg-2:#0a0a0c;--panel:#111114;
+    --line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.16);
+    --text:#f4f4f2;--muted:#a4a7ad;--soft:#868990;--brand:#b026ff;
+    --max:1280px;--ease:cubic-bezier(.16,1,.3,1);
+    --display:"Unbounded",system-ui,sans-serif;--mono:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --body:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{min-width:320px;background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+  img{image-rendering:auto}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1;letter-spacing:-.02em}
+  section[id]{scroll-margin-top:96px}
+  ::selection{background:rgba(176,38,255,.32);color:#fff}
+  .wrap{width:min(100% - 44px,var(--max));margin-inline:auto}
+  .kicker{font-family:var(--mono);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.24em;color:var(--muted)}
+  .kicker b{color:var(--brand)}
+
+  .btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;cursor:pointer;border:1px solid transparent;font-family:var(--body);font-weight:600;font-size:16px;letter-spacing:.005em;border-radius:8px;transition:transform .25s var(--ease),background-position .55s var(--ease),box-shadow .28s,border-color .25s}
+  .btn svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;transition:transform .25s}
+  .btn:hover svg{transform:translateX(4px)}
+  .btn::before{content:"";position:absolute;top:0;left:-85%;width:38%;height:100%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);transition:left .6s var(--ease);pointer-events:none}
+  .btn:hover::before{left:145%}
+  .btn-primary{color:#0a0a0d;border-color:transparent;background:linear-gradient(180deg,#ffffff,#e7e9ee);box-shadow:0 6px 18px rgba(0,0,0,.4)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,0,0,.5)}
+  .btn-ghost{color:#fff;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.045);backdrop-filter:blur(6px)}
+  .btn-ghost:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.85);background:rgba(255,255,255,.1)}
+  .btn-sm{min-height:44px;padding:0 18px;font-size:12px}
+  .btn-full{width:100%}
+
+  /* nav */
+  .nav{position:fixed;inset:0 0 auto;z-index:40;background:rgba(6,6,7,.75);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+  .nav-inner{width:min(100% - 44px,var(--max));min-height:74px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand-logo{display:block;height:32px;width:218px;
+    background:linear-gradient(90deg,#ffffff 0 37%,#ff8a1e 45%,#ff3da6 66%,#b026ff 100%);
+    -webkit-mask:url(alxlogo.png) left center/contain no-repeat;mask:url(alxlogo.png) left center/contain no-repeat}
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a{position:relative;font-family:var(--body);font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.17em;color:#e9ebee;transition:color .25s,text-shadow .25s}
+  .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:2px;border-radius:2px;background:linear-gradient(90deg,#c77bff,#b026ff);box-shadow:0 0 10px rgba(176,38,255,.7);transition:right .3s var(--ease)}
+  .nav-links a:hover{color:#d98bff;text-shadow:0 0 14px rgba(176,38,255,.5)}
+  .nav-links a:hover::after,.nav-links a.active::after{right:0}
+  .nav-links a.active{color:#d98bff}
+  .nav-actions{display:flex;align-items:center;gap:14px}
+  .menu-btn{display:none;width:44px;height:44px;border:1px solid var(--line-2);border-radius:2px;background:transparent;color:#fff;align-items:center;justify-content:center}
+  .menu-btn svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;fill:none}
+  .mobile-panel{position:fixed;inset:74px 0 auto;z-index:39;display:none;background:rgba(6,6,7,.98);border-bottom:1px solid var(--line);padding:14px 22px 24px}
+  .mobile-panel.open{display:block}
+  .mobile-panel a{display:block;padding:15px 0;font-family:var(--display);font-weight:600;font-size:22px;border-bottom:1px solid var(--line)}
+  .mobile-panel a:last-child{border-bottom:0}
+
+  /* page head */
+  .shophead{padding:150px 0 40px}
+  .shophead h1{font-size:clamp(40px,6vw,90px);color:#fff;text-transform:uppercase;margin-top:16px}
+  .shophead h1 em{font-style:normal;color:var(--brand)}
+  .shophead p{color:var(--muted);font-size:17px;max-width:560px;margin-top:18px;line-height:1.7}
+
+  /* complete kit feature */
+  .kitfeat{margin:36px 0 70px;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,56px);align-items:center;
+    border:1px solid rgba(176,38,255,.3);border-radius:12px;overflow:hidden;background:linear-gradient(120deg,#120c1a,#0a0a0c)}
+  .kitfeat-media{position:relative;background:#050506}
+  .kitfeat-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+  .kitfeat-badge{position:absolute;top:18px;left:18px;font-family:var(--mono);font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#fff;border:1px solid var(--brand);background:rgba(176,38,255,.16);border-radius:2px;padding:7px 12px}
+  .kitfeat-body{padding:clamp(28px,3.4vw,54px) clamp(24px,3vw,48px) clamp(28px,3.4vw,54px) 0}
+  .kitfeat-body h2{font-size:clamp(28px,3.4vw,46px);color:#fff}
+  .kitfeat-body h2 em{font-style:normal;color:var(--brand)}
+  .kitfeat-body p{color:var(--muted);font-size:16px;margin-top:16px;line-height:1.7;max-width:440px}
+  .kitfeat-price{display:flex;align-items:baseline;gap:14px;margin:24px 0 6px}
+  .kitfeat-price .now{font-family:var(--display);font-weight:800;font-size:38px;color:#fff}
+  .kitfeat-price .was{font-family:var(--mono);font-size:16px;color:var(--soft);text-decoration:line-through}
+  .kitfeat-price .save{font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#57cf62;border:1px solid rgba(87,207,98,.4);border-radius:999px;padding:5px 10px}
+  .kitfeat-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+
+  /* product grid */
+  .shop-sec{padding:0 0 90px}
+  .shop-lab{display:flex;align-items:center;gap:16px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:26px}
+  .shop-lab::before{content:"";width:44px;height:1px;background:var(--brand)}
+  .shop-lab b{color:var(--brand)}
+  .shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .pcard{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg-2);display:flex;flex-direction:column;transition:transform .3s var(--ease),border-color .3s}
+  .pcard:hover{transform:translateY(-5px);border-color:var(--line-2)}
+  .pcard-media{position:relative;aspect-ratio:1/1.02;background:#08080a;overflow:hidden}
+  .pcard-media::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;z-index:2;background:var(--acc)}
+  .pcard-media img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
+  .pcard-icon{position:absolute;top:14px;left:14px;z-index:2;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(8,8,10,.5);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(7px)}
+  .pcard-icon img{width:29px;height:29px;object-fit:contain;display:block}
+  .pcard-ph{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:20px}
+  .pcard-media.noimg img{display:none}
+  .pcard-media.noimg .pcard-ph{display:flex}
+  .pcard-ph .d{width:12px;height:12px;border-radius:50%;background:var(--acc)}
+  .pcard-ph .n{font-family:var(--display);font-weight:800;font-size:22px;color:#141418;text-transform:uppercase;line-height:1}
+  .pcard-ph .t{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(18,18,22,.5)}
+  .pcard-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+  .pcard-pre{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .pcard-name{font-size:26px;color:#fff;text-transform:uppercase;margin-top:6px}
+  .pcard-name em{font-style:normal;color:var(--acc)}
+  .pcard-tag{color:#b7bac0;font-size:14px;margin-top:10px;line-height:1.5}
+  .pcard-foot{margin-top:auto;padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .pcard-price{font-family:var(--display);font-weight:800;font-size:22px;color:#fff}
+  .pcard-price small{font-family:var(--mono);font-weight:400;font-size:11px;color:var(--soft);letter-spacing:.06em}
+
+  /* ordering note */
+  .ordernote{margin-top:16px;padding:22px 26px;border:1px dashed var(--line-2);border-radius:8px;background:rgba(255,255,255,.02);
+    font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);text-align:center}
+  .ordernote b{color:#fff}
+
+  /* footer */
+  .site-footer{background:var(--bg);border-top:1px solid var(--line);padding:56px 0 30px;margin-top:20px}
+  .footer-flex{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .footer-flex p{color:var(--muted);font-size:14px;max-width:320px;line-height:1.6}
+  .footer-links{display:flex;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .footer-links a:hover{color:var(--brand)}
+  .footer-bottom{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-family:var(--mono);color:var(--soft);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+
+  @media(max-width:940px){
+    .nav-links{display:none}.menu-btn{display:flex}
+    .kitfeat{grid-template-columns:1fr}.kitfeat-media{aspect-ratio:16/10}
+    .kitfeat-body{padding:0 clamp(24px,4vw,40px) clamp(28px,4vw,44px)}
+    .shop-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:620px){.shop-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body id="top">
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="detail.html" class="brand" aria-label="ALX Wraps home"><span class="brand-logo" role="img" aria-label="ALX Wraps"></span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="detail.html#products">The Line</a><a href="shop.html" class="active">Shop</a><a href="detail.html#story">Our Story</a><a href="detail.html#science">The Science</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-sm" href="#kit">Complete Kit</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-panel" id="mobilePanel">
+  <a href="detail.html#products">The Line</a><a href="shop.html">Shop</a><a href="detail.html#story">Our Story</a><a href="#kit">Complete Kit</a><a href="detail.html">Home</a>
+</div>
+
+<main>
+  <section class="shophead">
+    <div class="wrap">
+      <div class="kicker">Shop <b>/</b> ALX Wraps Wrap Care</div>
+      <h1>Order The <em>Line</em></h1>
+      <p>Everything your wrap, PPF, or color PPF needs — buy the complete kit and save, or grab exactly what you need. Formulated and tested in the ALX wrap bay.</p>
+    </div>
+  </section>
+
+  <!-- COMPLETE KIT -->
+  <section id="kit">
+    <div class="wrap">
+      <div class="kitfeat">
+        <div class="kitfeat-media">
+          <span class="kitfeat-badge">Best Value</span>
+          <img src="assets/products/lineup.png?v=3" alt="The ALX Wraps complete wrap-care kit — five products" />
+        </div>
+        <div class="kitfeat-body">
+          <div class="kicker" style="color:var(--brand)">The Complete System</div>
+          <h2 style="margin-top:12px">The Full <em>Wrap Care</em> Kit</h2>
+          <p>All five formulas in one box — Wash, Detailer, Matte + Satin Cleaner, Sealant, and Waterless Wash. The complete routine to keep any finish showroom-fresh, start to finish.</p>
+          <div class="kitfeat-price">
+            <span class="now">$99.99</span>
+            <span class="was">$124.95</span>
+            <span class="save">Save $25</span>
+          </div>
+          <div class="kitfeat-ctas">
+            <a class="btn btn-primary" href="mailto:info@alxwraps.com?subject=Order%20%E2%80%94%20ALX%20Wraps%20Complete%20Kit&body=I'd%20like%20to%20order%20the%20Complete%20Wrap%20Care%20Kit.%0A%0AName%3A%0AShipping%20address%3A%0AQuantity%3A%201">Order The Kit <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-ghost" href="#individual">Shop Individually</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDIVIDUAL PRODUCTS -->
+  <section class="shop-sec" id="individual">
+    <div class="wrap">
+      <div class="shop-lab">Shop <b>/</b> Individual Products</div>
+      <div class="shop-grid" id="grid"></div>
+      <div class="ordernote">Secure online checkout is coming soon. For now, tap <b>Order Now</b> to send your order and we'll confirm pricing, availability, and shipping by email.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-flex">
+      <div>
+        <a href="detail.html" class="brand" aria-label="ALX Wraps home"><span class="brand-logo" style="height:30px;width:202px" role="img" aria-label="ALX Wraps"></span></a>
+        <p style="margin-top:14px">Finish-safe wrap, PPF &amp; color-PPF care — engineered and tested in the wrap bay. Queen Creek &amp; the Phoenix East Valley.</p>
+      </div>
+      <div class="footer-links">
+        <a href="detail.html">Home</a><a href="detail.html#products">The Line</a><a href="#kit">Complete Kit</a><a href="mailto:info@alxwraps.com">info@alxwraps.com</a><a href="tel:+14807400428">(480) 740-0428</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 ALX Wraps — Wrap, PPF &amp; Color-PPF Care</div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn=document.getElementById('menuBtn'),mp=document.getElementById('mobilePanel');
+  menuBtn.addEventListener('click',()=>{const o=mp.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(o));});
+  mp.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mp.classList.remove('open')));
+
+  const PRODUCTS=[
+    {pre:'Wrap + PPF',name:'Wash',tag:'Shampoo',desc:'pH-neutral, wax-free shampoo with built-in lubricity — clean, lubricate, rinse.',acc:'#2b9bf4',img:'wash',price:'24.99'},
+    {pre:'Wrap + PPF',name:'Detailer',tag:'Detail Spray',desc:'Spray-and-wipe reset that cleans, adds gloss, and leaves light protection.',acc:'#cc3df0',img:'detailer',price:'24.99'},
+    {pre:'Matte + Satin',name:'Cleaner',tag:'Matte Care',desc:'Cleans flat finishes with zero added shine — clean, preserve, no shine.',acc:'#57cf62',img:'cleaner',price:'24.99'},
+    {pre:'Wrap + PPF',name:'Sealant',tag:'Sealant',desc:'Spray-on hydrophobic protection — shield, bead, defend for months.',acc:'#f0333e',img:'sealant',price:'27.99'},
+    {pre:'Waterless',name:'Wash',tag:'Waterless',desc:'Rinseless wash that encapsulates dirt so it wipes away scratch-free.',acc:'#8b5cf6',img:'waterless',price:'22.99'}
+  ];
+  const grid=document.getElementById('grid');
+  PRODUCTS.forEach(p=>{
+    const subject=encodeURIComponent(`Order — ALX Wraps ${p.pre} ${p.name}`);
+    const body=encodeURIComponent(`I'd like to order the ${p.pre} ${p.name} (16 FL OZ).\n\nName:\nShipping address:\nQuantity: 1`);
+    grid.insertAdjacentHTML('beforeend',`
+      <article class="pcard" style="--acc:${p.acc}">
+        <div class="pcard-media">
+          <span class="pcard-icon"><img src="assets/icons/${p.img}.png" alt="" loading="lazy" /></span>
+          <img src="assets/products/${p.img}.png?v=3" alt="ALX Wraps ${p.pre} ${p.name}" onerror="this.closest('.pcard-media').classList.add('noimg')" />
+          <div class="pcard-ph"><span class="d"></span><span class="n">${p.pre}<br>${p.name}</span><span class="t">Photo coming soon</span></div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-pre">${p.pre}</div>
+          <h3 class="pcard-name"><em>${p.name}</em></h3>
+          <p class="pcard-tag">${p.desc}</p>
+          <div class="pcard-foot">
+            <div class="pcard-price">$${p.price} <small>/ 16oz</small></div>
+            <a class="btn btn-primary btn-sm" href="mailto:info@alxwraps.com?subject=${subject}&body=${body}">Order Now</a>
+          </div>
+        </div>
+      </article>`);
+  });
+</script>
+</body>
+</html>
