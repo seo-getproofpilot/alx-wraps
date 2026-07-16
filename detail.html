@@ -231,22 +231,30 @@
   .sci-list{border-top:1px solid rgba(255,255,255,.08)}
   .sci-row{--ac:#b026ff;position:relative;border-bottom:1px solid rgba(255,255,255,.08);transition:background .4s var(--ease)}
   .sci-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(180deg,transparent,var(--ac),transparent);box-shadow:0 0 14px var(--ac);transition:width .4s var(--ease)}
-  .sci-row:hover{background:linear-gradient(90deg,color-mix(in srgb,var(--ac) 9%,transparent),transparent 62%)}
-  .sci-row:hover::before{width:3px}
+  .sci-row:hover,.sci-row.is-open{background:linear-gradient(90deg,color-mix(in srgb,var(--ac) 9%,transparent),transparent 62%)}
+  .sci-row:hover::before,.sci-row.is-open::before{width:3px}
   .sci-head2{display:flex;align-items:center;gap:22px;padding:26px 24px 26px 30px}
   .sci-ic{flex:none;width:54px;height:54px;border-radius:15px;display:grid;place-items:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);transition:border-color .35s var(--ease),background .35s,transform .35s var(--ease)}
   .sci-ic svg{width:25px;height:25px;color:var(--ac);stroke:var(--ac);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-  .sci-row:hover .sci-ic{border-color:color-mix(in srgb,var(--ac) 55%,transparent);background:color-mix(in srgb,var(--ac) 13%,transparent);transform:scale(1.07) rotate(-3deg)}
+  .sci-row:hover .sci-ic,.sci-row.is-open .sci-ic{border-color:color-mix(in srgb,var(--ac) 55%,transparent);background:color-mix(in srgb,var(--ac) 13%,transparent);transform:scale(1.07) rotate(-3deg)}
   .sci-head2 h3{flex:1;min-width:0;font-size:clamp(20px,2.7vw,32px);font-weight:800;color:#d9dbdf;letter-spacing:-.02em;line-height:1.1;transition:color .3s}
-  .sci-row:hover .sci-head2 h3{color:#fff}
+  .sci-row:hover .sci-head2 h3,.sci-row.is-open .sci-head2 h3{color:#fff}
   .sci-arrow{flex:none;width:34px;height:34px;display:grid;place-items:center;color:#7c7f86;transition:transform .45s var(--ease),color .3s}
   .sci-arrow svg{width:20px;height:20px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-  .sci-row:hover .sci-arrow{transform:rotate(90deg);color:var(--ac)}
+  .sci-row:hover .sci-arrow,.sci-row.is-open .sci-arrow{transform:rotate(90deg);color:var(--ac)}
   .sci-drawer{display:grid;grid-template-rows:0fr;transition:grid-template-rows .48s var(--ease)}
-  .sci-row:hover .sci-drawer{grid-template-rows:1fr}
+  .sci-row:hover .sci-drawer,.sci-row.is-open .sci-drawer{grid-template-rows:1fr}
   .sci-drawer-in{overflow:hidden}
   .sci-drawer p{margin:0 30px 30px 106px;color:#b8bbc1;font-size:16.5px;line-height:1.72;max-width:640px;opacity:0;transform:translateY(6px);transition:opacity .4s var(--ease) .08s,transform .4s var(--ease) .08s}
-  .sci-row:hover .sci-drawer p{opacity:1;transform:none}
+  .sci-row:hover .sci-drawer p,.sci-row.is-open .sci-drawer p{opacity:1;transform:none}
+  /* once the user hovers any other row, the default-open first row folds back up */
+  .sci-list:hover .sci-row.is-open:not(:hover){background:transparent}
+  .sci-list:hover .sci-row.is-open:not(:hover)::before{width:0}
+  .sci-list:hover .sci-row.is-open:not(:hover) .sci-ic{border-color:rgba(255,255,255,.1);background:rgba(255,255,255,.03);transform:none}
+  .sci-list:hover .sci-row.is-open:not(:hover) .sci-head2 h3{color:#d9dbdf}
+  .sci-list:hover .sci-row.is-open:not(:hover) .sci-arrow{transform:none;color:#7c7f86}
+  .sci-list:hover .sci-row.is-open:not(:hover) .sci-drawer{grid-template-rows:0fr}
+  .sci-list:hover .sci-row.is-open:not(:hover) .sci-drawer p{opacity:0;transform:translateY(6px)}
 
   /* ===== WORKS ON ===== */
   .works{padding:80px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
@@ -450,7 +458,7 @@
         <p>Six reasons ALX care outperforms generic detailers on wrap, PPF &amp; color PPF — engineered and proven where the film actually lives.</p>
       </div>
       <div class="sci-list">
-        <article class="sci-row" style="--ac:#3fa2f6">
+        <article class="sci-row is-open" style="--ac:#3fa2f6">
           <div class="sci-head2">
             <span class="sci-ic"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M12 6.4c-2.7 3.2-4.1 5.1-4.1 7a4.1 4.1 0 0 0 8.2 0c0-1.9-1.4-3.8-4.1-7Z" fill="currentColor" fill-opacity=".2"/><path d="M9.9 13.2l1.4 1.4 2.7-2.8"/></svg></span>
             <h3>pH-Neutral &amp; Film-Safe</h3>
