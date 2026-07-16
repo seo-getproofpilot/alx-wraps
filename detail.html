@@ -56,14 +56,14 @@
   .btn svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;transition:transform .25s}
   .btn:hover svg{transform:translateX(4px)}
   /* subtle light sweep on hover */
-  .btn::before{content:"";position:absolute;top:0;left:-85%;width:38%;height:100%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);transition:left .6s var(--ease);pointer-events:none}
-  .btn:hover::before{left:145%}
-  /* PRIMARY — clean light button, high contrast on the dark UI */
+  .btn::before{content:"";position:absolute;top:0;left:-85%;width:40%;height:100%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-20deg);transition:left .55s var(--ease);pointer-events:none}
+  .btn:hover::before{left:150%}
+  /* PRIMARY — clean light button with a brand-colored halo on hover */
   .btn-primary{color:#0a0a0d;border-color:transparent;background:linear-gradient(180deg,#ffffff,#e7e9ee);box-shadow:0 6px 18px rgba(0,0,0,.4)}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,0,0,.5)}
-  /* SECONDARY — clean glass outline */
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.5),0 6px 30px rgba(176,38,255,.32)}
+  /* SECONDARY — glass outline that lights up on the brand gradient */
   .btn-ghost{color:#fff;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.045);backdrop-filter:blur(6px)}
-  .btn-ghost:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.85);background:rgba(255,255,255,.1)}
+  .btn-ghost:hover{transform:translateY(-2px);border-color:rgba(206,150,255,.75);background:rgba(255,255,255,.09);box-shadow:0 10px 28px rgba(176,38,255,.26)}
   .btn-sm{min-height:46px;padding:0 20px;font-size:14px}
 
   /* nav */
@@ -185,20 +185,27 @@
   .kit-copy h2 em{font-style:normal;color:var(--brand)}
   .kit-copy p{color:#c4c7cd;font-size:17px;max-width:500px;margin-top:20px;line-height:1.75}
   .kit-list{list-style:none;margin-top:26px;display:grid;gap:10px}
-  .kit-list li{--c:#b026ff;position:relative;display:flex;align-items:center;gap:17px;padding:15px 18px;border-radius:15px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.032),rgba(255,255,255,.008));transition:border-color .25s,background .25s,transform .25s,box-shadow .25s}
-  .kit-list li:hover{transform:translateX(4px);border-color:color-mix(in srgb,var(--c) 55%,transparent);background:color-mix(in srgb,var(--c) 8%,transparent);box-shadow:0 10px 26px color-mix(in srgb,var(--c) 15%,transparent)}
-  .kit-list .kicon{width:62px;height:62px;flex:none;border-radius:16px;display:grid;place-items:center;background:linear-gradient(158deg,#17171c,#0b0b0e);border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 5px 14px rgba(0,0,0,.35)}
-  .kit-list li:hover .kicon{border-color:color-mix(in srgb,var(--c) 42%,transparent)}
-  .kit-list .kicon img{width:44px;height:44px;object-fit:contain;display:block}
+  .kit-list li{--c:#b026ff;position:relative;display:flex;align-items:center;gap:16px;padding:12px 16px 12px 15px;border-radius:14px;border:1px solid transparent;background:transparent;transition:background .3s,border-color .3s,transform .3s}
+  .kit-list li::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:0;border-radius:3px;background:var(--c);box-shadow:0 0 12px var(--c);transition:height .3s var(--ease)}
+  .kit-list li:hover{transform:translateX(5px);border-color:color-mix(in srgb,var(--c) 28%,transparent);background:color-mix(in srgb,var(--c) 9%,transparent)}
+  .kit-list li:hover::before{height:58%}
+  /* no chip — icon floats with a soft product-color glow, and plays on hover */
+  .kit-list .kicon{width:58px;height:58px;flex:none;position:relative;display:grid;place-items:center}
+  .kit-list .kicon::before{content:"";position:absolute;width:50px;height:50px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--c) 45%,transparent),transparent 72%);opacity:.5;filter:blur(3px);transition:opacity .35s var(--ease),transform .35s var(--ease)}
+  .kit-list .kicon img{width:50px;height:50px;object-fit:contain;display:block;position:relative;z-index:1;transition:transform .4s var(--ease);filter:drop-shadow(0 3px 9px color-mix(in srgb,var(--c) 42%,transparent))}
+  .kit-list li:hover .kicon::before{opacity:.95;transform:scale(1.2)}
+  .kit-list li:hover .kicon img{transform:scale(1.12) rotate(-5deg)}
   .kit-list .kbody{display:flex;flex-direction:column;gap:1px;min-width:0}
   .kit-list b{font-family:var(--body);font-weight:700;font-size:16px;color:#fff}
   .kit-list .kdesc{font-family:var(--body);font-size:14px;color:#a9adb4}
   .kit-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
   .kit-stage{position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#050506}
   .kit-img{width:100%;height:auto;display:block}
-  .kit-badge{position:absolute;top:16px;left:16px;z-index:4;display:inline-flex;align-items:center;gap:8px;font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#fff;padding:8px 14px 8px 12px;border:1px solid color-mix(in srgb,var(--brand) 55%,transparent);border-radius:999px;background:rgba(176,38,255,.16);backdrop-filter:blur(8px)}
-  .kit-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:#d47bff;box-shadow:0 0 0 0 rgba(212,123,255,.65);animation:kbpulse 2s var(--ease) infinite}
-  @keyframes kbpulse{0%{box-shadow:0 0 0 0 rgba(212,123,255,.6)}70%{box-shadow:0 0 0 7px rgba(212,123,255,0)}100%{box-shadow:0 0 0 0 rgba(212,123,255,0)}}
+  .kit-badge{position:absolute;top:16px;left:16px;z-index:4;overflow:hidden;display:inline-flex;align-items:center;gap:8px;font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#fff;padding:9px 16px 9px 13px;border:none;border-radius:999px;background:linear-gradient(100deg,#ff8a1e,#ff3da6 48%,#b026ff);box-shadow:0 8px 24px rgba(176,38,255,.5),0 2px 6px rgba(0,0,0,.3)}
+  .kit-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 8px rgba(255,255,255,.9);animation:kbpulse 1.5s ease-in-out infinite;flex:none}
+  .kit-badge::after{content:"";position:absolute;top:0;left:-60%;width:36%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:kbshine 3.4s ease-in-out infinite}
+  @keyframes kbpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.66)}}
+  @keyframes kbshine{0%,55%{left:-60%}100%{left:170%}}
 
   /* ===== STORY ===== */
   .story{padding:130px 0}
