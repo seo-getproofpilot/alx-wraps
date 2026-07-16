@@ -128,9 +128,7 @@
 
   /* ===== FEATURED intro ===== */
   .prodhead{padding:120px 0 20px}
-  .prodhead-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end}
-  .prodhead h2{font-size:clamp(34px,5vw,72px);color:#fff;margin-top:20px}
-  .prodhead p{color:var(--muted);font-size:16px;line-height:1.7;max-width:460px;justify-self:end}
+  .prodhead-h{font-size:clamp(34px,5.4vw,74px);color:#fff;margin-top:16px;letter-spacing:-.025em;line-height:1}
 
   /* ===== SHOWCASE (big cinematic product blocks) ===== */
   .show{padding:0;border-top:1px solid var(--line)}
@@ -230,21 +228,23 @@
   .sci-head h2 em{font-style:normal;color:var(--brand)}
   .sci-head p{color:#b7bbc2;font-size:17px;margin-top:18px;line-height:1.7}
   .sci-stack{display:flex;flex-direction:column;gap:24px}
-  .sci-card{position:sticky;top:calc(92px + var(--i) * 15px);min-height:clamp(300px,46vh,400px);border-radius:22px;
-    border:1px solid rgba(255,255,255,.1);overflow:hidden;
-    background:radial-gradient(90% 130% at 90% 8%,color-mix(in srgb,var(--ac) 22%,transparent),transparent 58%),linear-gradient(158deg,#15151b,#0a0a0d);
-    padding:clamp(30px,3.6vw,54px);display:grid;grid-template-columns:1.12fr .88fr;gap:30px;align-items:center;
-    box-shadow:0 -14px 46px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05)}
-  .sci-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ac),transparent 70%)}
-  .sci-c-eyebrow{font-family:var(--label);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:color-mix(in srgb,var(--ac) 65%,#fff)}
-  .sci-c-body h3{font-size:clamp(25px,3.3vw,40px);font-weight:800;color:#fff;margin-top:15px;letter-spacing:-.02em;line-height:1.03}
-  .sci-c-body p{margin-top:16px;color:#c4c7cd;font-size:16.5px;line-height:1.72;max-width:460px}
+  .sci-card{position:sticky;top:calc(92px + var(--i) * 15px);min-height:clamp(300px,46vh,400px);border-radius:20px;
+    border:1px solid rgba(255,255,255,.06);overflow:hidden;
+    background:linear-gradient(162deg,#151519,#0b0b0e 72%);
+    padding:clamp(32px,3.8vw,56px);display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center;
+    box-shadow:0 -16px 50px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.04)}
+  /* restrained vertical accent instead of a templated top bar + color wash */
+  .sci-card::before{content:"";position:absolute;top:24%;bottom:24%;left:0;width:3px;border-radius:0 4px 4px 0;background:linear-gradient(180deg,transparent,var(--ac),transparent)}
+  .sci-c-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--label);font-weight:700;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:color-mix(in srgb,var(--ac) 55%,#e6e7ea)}
+  .sci-c-eyebrow::before{content:"";width:20px;height:1px;background:color-mix(in srgb,var(--ac) 65%,transparent)}
+  .sci-c-body h3{font-size:clamp(25px,3.3vw,40px);font-weight:800;color:#fff;margin-top:18px;letter-spacing:-.02em;line-height:1.03}
+  .sci-c-body p{margin-top:16px;color:#b8bbc1;font-size:16.5px;line-height:1.72;max-width:460px}
   .sci-c-visual{position:relative;display:grid;place-items:center;height:100%;min-height:170px}
-  .sci-c-num{position:absolute;right:-1%;top:50%;transform:translateY(-50%);font-family:var(--display);font-weight:800;font-size:clamp(130px,19vw,230px);line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px color-mix(in srgb,var(--ac) 42%,transparent);opacity:.55;pointer-events:none;user-select:none}
-  .sci-c-icon{position:relative;z-index:1;width:clamp(84px,9vw,112px);height:clamp(84px,9vw,112px);border-radius:26px;display:grid;place-items:center;
-    background:linear-gradient(150deg,color-mix(in srgb,var(--ac) 32%,transparent),color-mix(in srgb,var(--ac) 8%,transparent));
-    border:1px solid color-mix(in srgb,var(--ac) 45%,transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 12px 32px color-mix(in srgb,var(--ac) 20%,transparent)}
-  .sci-c-icon svg{width:50%;height:50%;color:var(--ac);stroke:#fff;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .sci-c-num{position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:var(--display);font-weight:800;font-size:clamp(120px,17vw,210px);line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.3px color-mix(in srgb,var(--ac) 34%,transparent);opacity:.65;pointer-events:none;user-select:none}
+  .sci-c-icon{position:relative;z-index:1;width:clamp(74px,7.6vw,96px);height:clamp(74px,7.6vw,96px);border-radius:20px;display:grid;place-items:center;
+    background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.014));
+    border:1px solid color-mix(in srgb,var(--ac) 26%,rgba(255,255,255,.12));box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+  .sci-c-icon svg{width:46%;height:46%;color:var(--ac);stroke:var(--ac);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 
   /* ===== WORKS ON ===== */
   .works{padding:80px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
@@ -302,7 +302,6 @@
     /* content is present immediately on mobile so a fast scroll can't skip it before it animates in */
     .fade,.slide-l,.fade-o{opacity:1;transform:none;transition:none}
     .mask>span{transform:none;transition:none}
-    .prodhead-grid{grid-template-columns:1fr;gap:14px}.prodhead p{justify-self:start}
     .kit-grid,.story-grid{grid-template-columns:1fr}.kit-stage{order:-1}
     .sci-card{grid-template-columns:1fr;gap:0;min-height:auto;padding:26px 24px 30px}
     .sci-c-visual{order:-1;min-height:112px;place-items:center;justify-items:start;margin-bottom:6px}
@@ -384,11 +383,9 @@
 
   <!-- FEATURED INTRO -->
   <section class="prodhead" id="products">
-    <div class="wrap prodhead-grid">
-      <div>
-        <h2><span class="mask"><span>Five Pieces,</span></span><span class="mask" data-a="1"><span>One System</span></span></h2>
-      </div>
-      <p class="fade" data-a="2">Wash, refresh, protect, prep, and seal. Every formula is pH-smart and finish-safe — engineered around vinyl, PPF, and color PPF so nothing dulls a matte panel or strips a gloss.</p>
+    <div class="wrap">
+      <div class="sec-label fade"><b>The Line</b></div>
+      <h2 class="prodhead-h"><span class="mask"><span>Five Pieces,</span></span> <span class="mask" data-a="1"><span>One System</span></span></h2>
     </div>
   </section>
 
