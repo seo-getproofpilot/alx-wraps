@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ALX Wraps — Wrap, PPF & Color PPF Care Products</title>
-<meta name="description" content="ALX Detail is a five-piece wrap-care system — pH-neutral wash, quick detailer, ceramic coating, surface prep, and hydrophobic seal — engineered for vinyl wraps, paint protection film, and color PPF by the shop that installs them." />
+<meta name="description" content="ALX Wraps wrap-care — a five-piece, finish-safe system: Wrap + PPF Wash, Detailer, Matte + Satin Cleaner, Sealant, and Waterless Wash. Engineered for vinyl wraps, paint protection film, and color PPF by the shop that installs them." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23070708'/%3E%3Cpath d='M12 46 26 18h9L21 46H12Zm22 0 7-16 12 16H43l-5-7-3 7h-1Z' fill='%23b026ff'/%3E%3Cpath d='M43 18h10L40 46H29l14-28Z' fill='%23e7e8ea'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -58,12 +58,12 @@
   /* bright light sweep on hover */
   .btn::before{content:"";position:absolute;top:0;left:-90%;width:46%;height:100%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg);transition:left .6s var(--ease);pointer-events:none}
   .btn:hover::before{left:155%}
-  /* PRIMARY — white pill that pops on hover: lifts, scales, gains a purple ring + glow */
-  .btn-primary{color:#0a0a0d;border-color:transparent;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.4)}
-  .btn-primary:hover{transform:translateY(-3px) scale(1.035);box-shadow:0 0 0 2px rgba(176,38,255,.65),0 16px 44px rgba(176,38,255,.5),0 8px 20px rgba(0,0,0,.4)}
-  /* SECONDARY — glass pill with a brand gradient outline; clearly visible over the hero video */
-  .btn-ghost{color:#fff;border:1.6px solid transparent;background:linear-gradient(rgba(11,10,16,.62),rgba(11,10,16,.62)) padding-box,linear-gradient(100deg,#ff8a1e,#ff3da6 50%,#b026ff) border-box;backdrop-filter:blur(10px);box-shadow:0 6px 18px rgba(0,0,0,.4)}
-  .btn-ghost:hover{transform:translateY(-3px) scale(1.035);background:linear-gradient(rgba(28,18,40,.72),rgba(28,18,40,.72)) padding-box,linear-gradient(100deg,#ff8a1e,#ff3da6 50%,#b026ff) border-box;box-shadow:0 0 26px rgba(176,38,255,.5),0 14px 34px rgba(0,0,0,.45)}
+  /* PRIMARY — solid brand-purple pill; accents the black and stands out */
+  .btn-primary{color:#fff;border-color:transparent;background:linear-gradient(180deg,#b64bff,#8d22d4);box-shadow:0 6px 20px rgba(176,38,255,.45),inset 0 1px 0 rgba(255,255,255,.28)}
+  .btn-primary:hover{transform:translateY(-3px) scale(1.035);background:linear-gradient(180deg,#c25dff,#9a2ae2);box-shadow:0 16px 44px rgba(176,38,255,.6),inset 0 1px 0 rgba(255,255,255,.34)}
+  /* SECONDARY — brushed "white chrome" pill, solid (not see-through) */
+  .btn-ghost{color:#16161c;border:1px solid rgba(255,255,255,.5);background:linear-gradient(180deg,#ffffff 0%,#edeef1 40%,#c9ccd3 51%,#dfe1e6 62%,#f6f7f9 100%);box-shadow:0 6px 18px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(0,0,0,.12)}
+  .btn-ghost:hover{transform:translateY(-3px) scale(1.035);background:linear-gradient(180deg,#ffffff 0%,#f2f3f5 40%,#d3d6dc 51%,#e7e9ed 62%,#ffffff 100%);box-shadow:0 14px 32px rgba(0,0,0,.5),inset 0 1px 0 #fff,inset 0 -1px 0 rgba(0,0,0,.14)}
   .btn-sm{min-height:46px;padding:0 20px;font-size:14px}
 
   /* nav */
@@ -86,7 +86,8 @@
   .nav-links a:hover{color:#d98bff;text-shadow:0 0 14px rgba(176,38,255,.5)}
   .nav-links a:hover::after{right:0}
   .nav-actions{display:flex;align-items:center;gap:14px}
-  .menu-btn{display:none;width:44px;height:44px;border:1px solid var(--line-2);border-radius:2px;background:transparent;color:#fff;align-items:center;justify-content:center}
+  .menu-btn{display:none;width:46px;height:46px;border:1px solid var(--line-2);border-radius:12px;background:rgba(255,255,255,.04);color:#fff;align-items:center;justify-content:center;transition:background .2s,border-color .2s}
+  .menu-btn:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.3)}
   .menu-btn svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;fill:none}
   .mobile-panel{position:fixed;inset:74px 0 auto;z-index:39;display:none;background:rgba(6,6,7,.98);border-bottom:1px solid var(--line);padding:14px 22px 24px}
   .mobile-panel.open{display:block}
@@ -207,19 +208,21 @@
 
   /* ===== STORY ===== */
   .story{padding:130px 0}
-  .story-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,6vw,80px);align-items:center}
-  .story-role{margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--brand)}
-  .story-copy h2{font-size:clamp(34px,4.6vw,58px);color:#fff;margin-top:14px}
-  .story-copy .loc{margin-top:16px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);display:flex;align-items:center;gap:10px}
-  .story-copy .loc svg{width:14px;height:14px;stroke:var(--brand);stroke-width:2;fill:none}
-  .story-copy p{color:#c1c4c9;font-size:17px;margin-top:22px;max-width:560px;line-height:1.8}
-  .story-sign{margin-top:28px;font-family:var(--display);font-weight:700;color:#fff;font-size:20px}
-  .story-sign span{display:block;font-family:var(--mono);color:var(--soft);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-top:6px;font-weight:400}
-  .story-card{border:1px solid var(--line);border-radius:6px;padding:44px 40px;background:var(--bg)}
-  .story-stats{display:grid;grid-template-columns:1fr 1fr;gap:36px 28px}
-  .stat b{display:block;font-family:var(--display);font-weight:800;font-size:48px;color:#fff;line-height:1}
+  .story-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(30px,6vw,72px);align-items:center}
+  .story-copy h2{font-size:clamp(36px,4.8vw,60px);color:#fff;margin-top:14px;letter-spacing:-.025em;line-height:1}
+  .story-copy .loc{margin-top:18px;font-family:var(--body);font-weight:600;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#c7cbd1;display:flex;align-items:center;gap:9px}
+  .story-copy .loc svg{width:15px;height:15px;stroke:var(--brand);stroke-width:2;fill:none}
+  .story-copy p{color:#c4c8ce;font-size:16.5px;margin-top:20px;max-width:560px;line-height:1.8}
+  .story-sign{margin-top:30px;font-family:var(--display);font-weight:700;color:#fff;font-size:19px}
+  .story-sign span{display:block;font-family:var(--body);color:#9a9ea5;font-size:13px;letter-spacing:.01em;margin-top:7px;font-weight:500}
+  /* stats — self-contained bordered boxes so they read as intentional */
+  .story-card{border:none;padding:0;background:transparent}
+  .story-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .stat{border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:26px 24px;background:linear-gradient(162deg,rgba(255,255,255,.035),rgba(255,255,255,.008));transition:border-color .3s,transform .3s}
+  .stat:hover{border-color:rgba(176,38,255,.4);transform:translateY(-3px)}
+  .stat b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(38px,4.4vw,50px);color:#fff;line-height:1}
   .stat b i{font-style:normal;color:var(--brand)}
-  .stat span{font-family:var(--mono);color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-top:10px;display:block}
+  .stat span{font-family:var(--body);color:#aeb2b9;font-size:13px;letter-spacing:.01em;margin-top:12px;display:block;font-weight:500}
 
   /* ===== SCIENCE — scroll-stacking cards ===== */
   .science{padding:20px 0 130px}
@@ -227,34 +230,24 @@
   .sci-head h2{font-size:clamp(34px,5vw,60px);color:#fff;margin-top:14px;letter-spacing:-.025em;line-height:1}
   .sci-head h2 em{font-style:normal;color:var(--brand)}
   .sci-head p{color:#b7bbc2;font-size:17px;margin-top:18px;line-height:1.7}
-  /* vertical accordion — rows unravel on hover */
-  .sci-list{border-top:1px solid rgba(255,255,255,.08)}
-  .sci-row{--ac:#b026ff;position:relative;border-bottom:1px solid rgba(255,255,255,.08);transition:background .4s var(--ease)}
-  .sci-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(180deg,transparent,var(--ac),transparent);box-shadow:0 0 14px var(--ac);transition:width .4s var(--ease)}
-  .sci-row:hover,.sci-row.is-open{background:linear-gradient(90deg,color-mix(in srgb,var(--ac) 9%,transparent),transparent 62%)}
-  .sci-row:hover::before,.sci-row.is-open::before{width:3px}
-  .sci-head2{display:flex;align-items:center;gap:22px;padding:26px 24px 26px 30px}
-  .sci-ic{flex:none;width:54px;height:54px;border-radius:15px;display:grid;place-items:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);transition:border-color .35s var(--ease),background .35s,transform .35s var(--ease)}
-  .sci-ic svg{width:25px;height:25px;color:var(--ac);stroke:var(--ac);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-  .sci-row:hover .sci-ic,.sci-row.is-open .sci-ic{border-color:color-mix(in srgb,var(--ac) 55%,transparent);background:color-mix(in srgb,var(--ac) 13%,transparent);transform:scale(1.07) rotate(-3deg)}
-  .sci-head2 h3{flex:1;min-width:0;font-size:clamp(20px,2.7vw,32px);font-weight:800;color:#d9dbdf;letter-spacing:-.02em;line-height:1.1;transition:color .3s}
-  .sci-row:hover .sci-head2 h3,.sci-row.is-open .sci-head2 h3{color:#fff}
-  .sci-arrow{flex:none;width:34px;height:34px;display:grid;place-items:center;color:#7c7f86;transition:transform .45s var(--ease),color .3s}
-  .sci-arrow svg{width:20px;height:20px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-  .sci-row:hover .sci-arrow,.sci-row.is-open .sci-arrow{transform:rotate(90deg);color:var(--ac)}
-  .sci-drawer{display:grid;grid-template-rows:0fr;transition:grid-template-rows .48s var(--ease)}
-  .sci-row:hover .sci-drawer,.sci-row.is-open .sci-drawer{grid-template-rows:1fr}
-  .sci-drawer-in{overflow:hidden}
-  .sci-drawer p{margin:0 30px 30px 106px;color:#b8bbc1;font-size:16.5px;line-height:1.72;max-width:640px;opacity:0;transform:translateY(6px);transition:opacity .4s var(--ease) .08s,transform .4s var(--ease) .08s}
-  .sci-row:hover .sci-drawer p,.sci-row.is-open .sci-drawer p{opacity:1;transform:none}
-  /* once the user hovers any other row, the default-open first row folds back up */
-  .sci-list:hover .sci-row.is-open:not(:hover){background:transparent}
-  .sci-list:hover .sci-row.is-open:not(:hover)::before{width:0}
-  .sci-list:hover .sci-row.is-open:not(:hover) .sci-ic{border-color:rgba(255,255,255,.1);background:rgba(255,255,255,.03);transform:none}
-  .sci-list:hover .sci-row.is-open:not(:hover) .sci-head2 h3{color:#d9dbdf}
-  .sci-list:hover .sci-row.is-open:not(:hover) .sci-arrow{transform:none;color:#7c7f86}
-  .sci-list:hover .sci-row.is-open:not(:hover) .sci-drawer{grid-template-rows:0fr}
-  .sci-list:hover .sci-row.is-open:not(:hover) .sci-drawer p{opacity:0;transform:translateY(6px)}
+  /* horizontal carousel of blocks — swipe / scroll / arrow through them */
+  .sci-carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:6px 6px 20px}
+  .sci-carousel::-webkit-scrollbar{height:6px}
+  .sci-carousel::-webkit-scrollbar-track{background:rgba(255,255,255,.05);border-radius:99px}
+  .sci-carousel::-webkit-scrollbar-thumb{background:rgba(255,255,255,.16);border-radius:99px}
+  .sci-carousel::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.28)}
+  .sci-block{--ac:#b026ff;flex:0 0 clamp(272px,31vw,356px);scroll-snap-align:start;position:relative;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(162deg,#151519,#0b0b0e 78%);padding:30px 28px 32px;min-height:300px;display:flex;flex-direction:column;transition:transform .35s var(--ease),border-color .35s,box-shadow .35s}
+  .sci-block::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ac),transparent 75%);opacity:.75}
+  .sci-block:hover{transform:translateY(-6px);border-color:color-mix(in srgb,var(--ac) 45%,transparent);box-shadow:0 18px 42px rgba(0,0,0,.45)}
+  .sci-b-ic{width:56px;height:56px;border-radius:15px;display:grid;place-items:center;margin-bottom:22px;background:linear-gradient(160deg,color-mix(in srgb,var(--ac) 26%,transparent),color-mix(in srgb,var(--ac) 6%,transparent));border:1px solid color-mix(in srgb,var(--ac) 40%,transparent);transition:transform .35s var(--ease)}
+  .sci-block:hover .sci-b-ic{transform:scale(1.06) rotate(-3deg)}
+  .sci-b-ic svg{width:26px;height:26px;color:var(--ac);stroke:var(--ac);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .sci-block h3{font-size:22px;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1.14}
+  .sci-block p{margin-top:12px;color:#b8bbc1;font-size:15.5px;line-height:1.66}
+  .sci-ctrl{display:flex;gap:12px;margin-top:8px}
+  .sci-arrow-btn{width:50px;height:50px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);color:#e6e7ea;display:grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+  .sci-arrow-btn:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.36);transform:translateY(-2px)}
+  .sci-arrow-btn svg{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 
   /* ===== WORKS ON ===== */
   .works{padding:80px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
@@ -278,8 +271,6 @@
 
   /* ===== FOOTER ===== */
   .site-footer{position:relative;background:linear-gradient(180deg,#0a0a0d,#060607);border-top:1px solid var(--line);padding:60px 0 26px;overflow:hidden}
-  .site-footer::before{content:"";position:absolute;top:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#ff8a1e 22%,#ff3da6 50%,var(--brand) 78%,transparent)}
-  .site-footer::after{content:"";position:absolute;top:-90px;left:-40px;width:460px;height:340px;border-radius:50%;background:radial-gradient(closest-side,rgba(176,38,255,.13),transparent);pointer-events:none}
   .site-footer .wrap{position:relative;z-index:1}
   .footer-main{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:30px 40px}
   .footer-brand .brand{display:inline-block;margin-bottom:15px}
@@ -299,6 +290,7 @@
 
   @media(max-width:940px){
     .nav-links{display:none}.menu-btn{display:flex}
+    .nav-actions .btn-primary{display:none}
     .hero h1{font-size:clamp(40px,11vw,72px)}
     .hero-video video{object-position:50% 42%}
     .hero-veil{background:linear-gradient(180deg,rgba(5,5,6,.5) 0%,transparent 24%,transparent 40%,rgba(5,5,6,.8) 72%,rgba(5,5,6,.97) 100%)}
@@ -313,14 +305,9 @@
     .fade,.slide-l,.fade-o{opacity:1;transform:none;transition:none}
     .mask>span{transform:none;transition:none}
     .kit-grid,.story-grid{grid-template-columns:1fr}.kit-stage{order:-1}
-    /* mobile: no hover — show every row's description open, accent always on */
-    .sci-head2{gap:16px;padding:22px 4px 16px 18px}
-    .sci-ic{width:46px;height:46px;border-radius:12px}
-    .sci-ic svg{width:22px;height:22px}
-    .sci-arrow{display:none}
-    .sci-row::before{width:3px}
-    .sci-drawer{grid-template-rows:1fr}
-    .sci-drawer p{opacity:1;transform:none;margin:0 18px 24px 18px}
+    /* mobile: carousel swipes one card at a time */
+    .sci-block{flex-basis:80vw;min-height:262px;padding:26px 24px 28px}
+    .sci-block h3{font-size:20px}
     .footer-main{grid-template-columns:1fr 1fr;gap:32px 28px}
     .footer-brand{grid-column:1/-1}
     .footer-col:last-child{grid-column:1/-1}
@@ -432,18 +419,19 @@
   <section class="story" id="story">
     <div class="wrap story-grid">
       <div class="story-copy">
+        <div class="sec-label fade"><b>Our Story</b></div>
         <h2><span class="mask"><span>Born In The</span></span><span class="mask" data-a="1"><span>Wrap Bay</span></span></h2>
         <div class="loc fade" data-a="2"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg> Queen Creek, Arizona</div>
-        <p class="fade" data-a="2">ALX Detail started with a simple frustration: the shelves are full of car-care products made for paint, and almost none of them respect a wrap. Off-the-shelf soaps dull matte film. Cheap sprays leave matte panels blotchy. Aggressive cleaners lift edges and cut a wrap's life short.</p>
-        <p class="fade" data-a="3">So Alex Rapp and his partner built the line they wished existed — a complete, finish-safe system developed and tested on real installs, in the same bay where ALX wraps daily drivers, custom builds, and fleets across the Phoenix East Valley.</p>
-        <div class="story-sign fade" data-a="3">Alex Rapp &amp; Partners<span>Founders — ALX Detail</span></div>
+        <p class="fade" data-a="2">ALX Wraps started with a simple frustration: the shelves are full of car-care products made for paint, and almost none of them respect a wrap. Off-the-shelf soaps dull matte film. Cheap sprays leave matte panels blotchy. Aggressive cleaners lift edges and cut a wrap's life short.</p>
+        <p class="fade" data-a="3">So the ALX Wraps team built the line they wished existed — a complete, finish-safe system developed and tested on real installs, in the same bay where ALX wraps daily drivers, custom builds, and fleets across the Phoenix East Valley.</p>
+        <div class="story-sign fade" data-a="3">The ALX Wraps Team<span>Queen Creek &amp; the Phoenix East Valley</span></div>
       </div>
       <div class="story-card fade" data-a="1">
         <div class="story-stats">
-          <div class="stat"><b>5</b><span>Finish-Safe Formulas</span></div>
-          <div class="stat"><b>3</b><span>Film Types Covered</span></div>
-          <div class="stat"><b><i>0</i></b><span>Wax, Silicone Fillers</span></div>
-          <div class="stat"><b>100<i>%</i></b><span>Bay-Tested</span></div>
+          <div class="stat"><b>5</b><span>Finish-safe formulas</span></div>
+          <div class="stat"><b>3</b><span>Film types covered</span></div>
+          <div class="stat"><b><i>0</i></b><span>Wax &amp; silicone fillers</span></div>
+          <div class="stat"><b>100<i>%</i></b><span>Bay-tested</span></div>
         </div>
       </div>
     </div>
@@ -457,55 +445,41 @@
         <h2>Built On <em>Real Chemistry</em></h2>
         <p>Six reasons ALX care outperforms generic detailers on wrap, PPF &amp; color PPF — engineered and proven where the film actually lives.</p>
       </div>
-      <div class="sci-list">
-        <article class="sci-row is-open" style="--ac:#3fa2f6">
-          <div class="sci-head2">
-            <span class="sci-ic"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M12 6.4c-2.7 3.2-4.1 5.1-4.1 7a4.1 4.1 0 0 0 8.2 0c0-1.9-1.4-3.8-4.1-7Z" fill="currentColor" fill-opacity=".2"/><path d="M9.9 13.2l1.4 1.4 2.7-2.8"/></svg></span>
-            <h3>pH-Neutral &amp; Film-Safe</h3>
-            <span class="sci-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-          <div class="sci-drawer"><div class="sci-drawer-in"><p>Balanced chemistry that cleans hard but never strips finishes or attacks wrap adhesive — safe on every panel, every wash.</p></div></div>
+      <div class="sci-carousel" id="sciCarousel">
+        <article class="sci-block" style="--ac:#3fa2f6">
+          <span class="sci-b-ic"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M12 6.4c-2.7 3.2-4.1 5.1-4.1 7a4.1 4.1 0 0 0 8.2 0c0-1.9-1.4-3.8-4.1-7Z" fill="currentColor" fill-opacity=".2"/><path d="M9.9 13.2l1.4 1.4 2.7-2.8"/></svg></span>
+          <h3>pH-Neutral &amp; Film-Safe</h3>
+          <p>Balanced chemistry that cleans hard but never strips finishes or attacks wrap adhesive — safe on every panel, every wash.</p>
         </article>
-        <article class="sci-row" style="--ac:#d76ae0">
-          <div class="sci-head2">
-            <span class="sci-ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.4" width="17" height="15.2" rx="3.4" fill="currentColor" fill-opacity=".16"/><path d="M7.4 16.8 15.2 8.6"/><path d="M11 17 16.6 11"/></svg></span>
-            <h3>Matte, Satin &amp; Gloss Safe</h3>
-            <span class="sci-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-          <div class="sci-drawer"><div class="sci-drawer-in"><p>Tuned to keep flat finishes flat and glossy finishes deep — no streaks, no haze, and never any unwanted shine on a matte wrap.</p></div></div>
+        <article class="sci-block" style="--ac:#d76ae0">
+          <span class="sci-b-ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.4" width="17" height="15.2" rx="3.4" fill="currentColor" fill-opacity=".16"/><path d="M7.4 16.8 15.2 8.6"/><path d="M11 17 16.6 11"/></svg></span>
+          <h3>Matte, Satin &amp; Gloss Safe</h3>
+          <p>Tuned to keep flat finishes flat and glossy finishes deep — no streaks, no haze, and never any unwanted shine on a matte wrap.</p>
         </article>
-        <article class="sci-row" style="--ac:#f6ac3c">
-          <div class="sci-head2">
-            <span class="sci-ic"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M6.6 20a5.4 5.4 0 0 1 10.8 0"/><circle cx="12" cy="7.8" r="2.5" fill="currentColor" fill-opacity=".24"/><path d="M12 2.3v1.7M6.1 3.9l1.15 1.3M17.9 3.9l-1.15 1.3M2.9 10.4l1.7.35M21.1 10.4l-1.7.35"/></svg></span>
-            <h3>UV &amp; Oxidation Defense</h3>
-            <span class="sci-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-          <div class="sci-drawer"><div class="sci-drawer-in"><p>Sealant layers shield against the sun that fades, chalks, and yellows unprotected film — keeping color and clarity locked in.</p></div></div>
+        <article class="sci-block" style="--ac:#f6ac3c">
+          <span class="sci-b-ic"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M6.6 20a5.4 5.4 0 0 1 10.8 0"/><circle cx="12" cy="7.8" r="2.5" fill="currentColor" fill-opacity=".24"/><path d="M12 2.3v1.7M6.1 3.9l1.15 1.3M17.9 3.9l-1.15 1.3M2.9 10.4l1.7.35M21.1 10.4l-1.7.35"/></svg></span>
+          <h3>UV &amp; Oxidation Defense</h3>
+          <p>Sealant layers shield against the sun that fades, chalks, and yellows unprotected film — keeping color and clarity locked in.</p>
         </article>
-        <article class="sci-row" style="--ac:#3fd98a">
-          <div class="sci-head2">
-            <span class="sci-ic"><svg viewBox="0 0 24 24"><path d="M9.5 3h5"/><path d="M10.6 3v5.2L6.1 16.6A2 2 0 0 0 7.9 19.6h8.2A2 2 0 0 0 17.9 16.6L13.4 8.2V3"/><path d="M7.6 13.6h8.8l1.5 3A2 2 0 0 1 16.1 19.6H7.9A2 2 0 0 1 6.1 16.6Z" fill="currentColor" fill-opacity=".24" stroke="none"/><circle cx="10.6" cy="16.4" r=".8" fill="currentColor" stroke="none"/></svg></span>
-            <h3>Tested In The Wrap Bay</h3>
-            <span class="sci-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-          <div class="sci-drawer"><div class="sci-drawer-in"><p>Developed and proven on the exact same wraps, PPF, and color PPF that ALX installs every single day — not in a lab far from the film.</p></div></div>
+        <article class="sci-block" style="--ac:#3fd98a">
+          <span class="sci-b-ic"><svg viewBox="0 0 24 24"><path d="M9.5 3h5"/><path d="M10.6 3v5.2L6.1 16.6A2 2 0 0 0 7.9 19.6h8.2A2 2 0 0 0 17.9 16.6L13.4 8.2V3"/><path d="M7.6 13.6h8.8l1.5 3A2 2 0 0 1 16.1 19.6H7.9A2 2 0 0 1 6.1 16.6Z" fill="currentColor" fill-opacity=".24" stroke="none"/><circle cx="10.6" cy="16.4" r=".8" fill="currentColor" stroke="none"/></svg></span>
+          <h3>Tested In The Wrap Bay</h3>
+          <p>Developed and proven on the exact same wraps, PPF, and color PPF that ALX installs every single day — not in a lab far from the film.</p>
         </article>
-        <article class="sci-row" style="--ac:#38cfd4">
-          <div class="sci-head2">
-            <span class="sci-ic"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M12 6.4c-2.7 3.2-4.1 5.1-4.1 7a4.1 4.1 0 0 0 8.2 0c0-1.9-1.4-3.8-4.1-7Z" fill="currentColor" fill-opacity=".22"/><path d="M5.4 16.8a2.4 2.4 0 0 0 2.1-1.4M18.6 16.8a2.4 2.4 0 0 1-2.1-1.4"/></svg></span>
-            <h3>Hydrophobic By Design</h3>
-            <span class="sci-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-          <div class="sci-drawer"><div class="sci-drawer-in"><p>Water sheets and beads straight off treated panels, so dirt rinses free, spotting drops, and drying is dramatically faster.</p></div></div>
+        <article class="sci-block" style="--ac:#38cfd4">
+          <span class="sci-b-ic"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M12 6.4c-2.7 3.2-4.1 5.1-4.1 7a4.1 4.1 0 0 0 8.2 0c0-1.9-1.4-3.8-4.1-7Z" fill="currentColor" fill-opacity=".22"/><path d="M5.4 16.8a2.4 2.4 0 0 0 2.1-1.4M18.6 16.8a2.4 2.4 0 0 1-2.1-1.4"/></svg></span>
+          <h3>Hydrophobic By Design</h3>
+          <p>Water sheets and beads straight off treated panels, so dirt rinses free, spotting drops, and drying is dramatically faster.</p>
         </article>
-        <article class="sci-row" style="--ac:#b06bff">
-          <div class="sci-head2">
-            <span class="sci-ic"><svg viewBox="0 0 24 24"><path d="M4.5 6.5A2.5 2.5 0 0 1 7 4h7l6 6v7.5a2.5 2.5 0 0 1-2.5 2.5h-10A2.5 2.5 0 0 1 4.5 17.5Z" fill="currentColor" fill-opacity=".16"/><path d="M14 4v3.5A2.5 2.5 0 0 0 16.5 10H20"/><path d="M8.5 14.5l2.4 2.4 4.6-4.8"/></svg></span>
-            <h3>Made For Wraps &amp; PPF</h3>
-            <span class="sci-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-          <div class="sci-drawer"><div class="sci-drawer-in"><p>Formulated from the ground up for vinyl, paint protection film, and color PPF — every product in the line, start to finish.</p></div></div>
+        <article class="sci-block" style="--ac:#b06bff">
+          <span class="sci-b-ic"><svg viewBox="0 0 24 24"><path d="M4.5 6.5A2.5 2.5 0 0 1 7 4h7l6 6v7.5a2.5 2.5 0 0 1-2.5 2.5h-10A2.5 2.5 0 0 1 4.5 17.5Z" fill="currentColor" fill-opacity=".16"/><path d="M14 4v3.5A2.5 2.5 0 0 0 16.5 10H20"/><path d="M8.5 14.5l2.4 2.4 4.6-4.8"/></svg></span>
+          <h3>Made For Wraps &amp; PPF</h3>
+          <p>Formulated from the ground up for vinyl, paint protection film, and color PPF — every product in the line, start to finish.</p>
         </article>
+      </div>
+      <div class="sci-ctrl">
+        <button class="sci-arrow-btn" id="sciPrev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="sci-arrow-btn" id="sciNext" type="button" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
       </div>
     </div>
   </section>
@@ -542,6 +516,13 @@
   const mobilePanel=document.getElementById('mobilePanel'),menuBtn=document.getElementById('menuBtn');
   menuBtn.addEventListener('click',()=>{const o=mobilePanel.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(o));});
   mobilePanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobilePanel.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+
+  /* science carousel — prev/next arrows scroll one card at a time */
+  (function(){const sc=document.getElementById('sciCarousel');if(!sc)return;
+    const step=()=>{const b=sc.querySelector('.sci-block');return b?b.getBoundingClientRect().width+20:340;};
+    const p=document.getElementById('sciPrev'),n=document.getElementById('sciNext');
+    if(p)p.addEventListener('click',()=>sc.scrollBy({left:-step(),behavior:'smooth'}));
+    if(n)n.addEventListener('click',()=>sc.scrollBy({left:step(),behavior:'smooth'}));})();
 
   /* ---- product data ---- */
   const P={

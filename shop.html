@@ -36,10 +36,10 @@
   .btn:hover svg{transform:translateX(5px)}
   .btn::before{content:"";position:absolute;top:0;left:-90%;width:46%;height:100%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg);transition:left .6s var(--ease);pointer-events:none}
   .btn:hover::before{left:155%}
-  .btn-primary{color:#0a0a0d;border-color:transparent;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.4)}
-  .btn-primary:hover{transform:translateY(-3px) scale(1.035);box-shadow:0 0 0 2px rgba(176,38,255,.65),0 16px 44px rgba(176,38,255,.5),0 8px 20px rgba(0,0,0,.4)}
-  .btn-ghost{color:#fff;border:1.6px solid transparent;background:linear-gradient(rgba(11,10,16,.62),rgba(11,10,16,.62)) padding-box,linear-gradient(100deg,#ff8a1e,#ff3da6 50%,#b026ff) border-box;backdrop-filter:blur(10px);box-shadow:0 6px 18px rgba(0,0,0,.4)}
-  .btn-ghost:hover{transform:translateY(-3px) scale(1.035);background:linear-gradient(rgba(28,18,40,.72),rgba(28,18,40,.72)) padding-box,linear-gradient(100deg,#ff8a1e,#ff3da6 50%,#b026ff) border-box;box-shadow:0 0 26px rgba(176,38,255,.5),0 14px 34px rgba(0,0,0,.45)}
+  .btn-primary{color:#fff;border-color:transparent;background:linear-gradient(180deg,#b64bff,#8d22d4);box-shadow:0 6px 20px rgba(176,38,255,.45),inset 0 1px 0 rgba(255,255,255,.28)}
+  .btn-primary:hover{transform:translateY(-3px) scale(1.035);background:linear-gradient(180deg,#c25dff,#9a2ae2);box-shadow:0 16px 44px rgba(176,38,255,.6),inset 0 1px 0 rgba(255,255,255,.34)}
+  .btn-ghost{color:#16161c;border:1px solid rgba(255,255,255,.5);background:linear-gradient(180deg,#ffffff 0%,#edeef1 40%,#c9ccd3 51%,#dfe1e6 62%,#f6f7f9 100%);box-shadow:0 6px 18px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(0,0,0,.12)}
+  .btn-ghost:hover{transform:translateY(-3px) scale(1.035);background:linear-gradient(180deg,#ffffff 0%,#f2f3f5 40%,#d3d6dc 51%,#e7e9ed 62%,#ffffff 100%);box-shadow:0 14px 32px rgba(0,0,0,.5),inset 0 1px 0 #fff,inset 0 -1px 0 rgba(0,0,0,.14)}
   .btn-sm{min-height:44px;padding:0 18px;font-size:12px}
   .btn-full{width:100%}
 
@@ -56,7 +56,8 @@
   .nav-links a:hover::after,.nav-links a.active::after{right:0}
   .nav-links a.active{color:#d98bff}
   .nav-actions{display:flex;align-items:center;gap:14px}
-  .menu-btn{display:none;width:44px;height:44px;border:1px solid var(--line-2);border-radius:2px;background:transparent;color:#fff;align-items:center;justify-content:center}
+  .menu-btn{display:none;width:46px;height:46px;border:1px solid var(--line-2);border-radius:12px;background:rgba(255,255,255,.04);color:#fff;align-items:center;justify-content:center;transition:background .2s,border-color .2s}
+  .menu-btn:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.3)}
   .menu-btn svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;fill:none}
   .mobile-panel{position:fixed;inset:74px 0 auto;z-index:39;display:none;background:rgba(6,6,7,.98);border-bottom:1px solid var(--line);padding:14px 22px 24px}
   .mobile-panel.open{display:block}
@@ -120,8 +121,6 @@
 
   /* footer */
   .site-footer{position:relative;overflow:hidden;background:linear-gradient(180deg,#0a0a0d,#060607);border-top:1px solid var(--line);padding:60px 0 30px;margin-top:20px}
-  .site-footer::before{content:"";position:absolute;top:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#ff8a1e 22%,#ff3da6 50%,var(--brand) 78%,transparent)}
-  .site-footer::after{content:"";position:absolute;top:-90px;left:-40px;width:460px;height:340px;border-radius:50%;background:radial-gradient(closest-side,rgba(176,38,255,.13),transparent);pointer-events:none}
   .site-footer .wrap{position:relative;z-index:1}
   .footer-flex{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
   .footer-flex p{color:var(--muted);font-size:14px;max-width:320px;line-height:1.6}
@@ -132,6 +131,7 @@
 
   @media(max-width:940px){
     .nav-links{display:none}.menu-btn{display:flex}
+    .nav-actions .btn-primary{display:none}
     .kitfeat{grid-template-columns:1fr}.kitfeat-media{aspect-ratio:16/10}
     .kitfeat-body{padding:0 clamp(24px,4vw,40px) clamp(28px,4vw,44px)}
     .shop-grid{grid-template-columns:repeat(2,1fr)}
