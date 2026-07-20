@@ -186,8 +186,10 @@
   .kit-list{list-style:none;margin-top:26px;display:grid;gap:10px}
   .kit-list li{--c:#b026ff;position:relative;display:flex;align-items:center;gap:16px;padding:12px 16px 12px 15px;border-radius:14px;border:1px solid transparent;background:transparent;transition:background .3s,border-color .3s,transform .3s}
   .kit-list li::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:0;border-radius:3px;background:var(--c);box-shadow:0 0 12px var(--c);transition:height .3s var(--ease)}
-  .kit-list li:hover{transform:translateX(5px);border-color:color-mix(in srgb,var(--c) 28%,transparent);background:color-mix(in srgb,var(--c) 9%,transparent)}
-  .kit-list li:hover::before{height:58%}
+  .kit-list li:hover{transform:translateX(5px);border-color:rgba(255,255,255,.55);background:linear-gradient(180deg,#ffffff 0%,#edeef1 42%,#c9ccd3 51%,#dfe1e6 62%,#f6f7f9 100%);box-shadow:0 12px 28px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.95)}
+  .kit-list li:hover::before{height:0}
+  .kit-list li:hover b{color:#14141a}
+  .kit-list li:hover .kdesc{color:#40444c}
   /* no chip — icon floats with a soft product-color glow, and plays on hover */
   .kit-list .kicon{width:58px;height:58px;flex:none;position:relative;display:grid;place-items:center}
   .kit-list .kicon::before{content:"";position:absolute;width:50px;height:50px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--c) 45%,transparent),transparent 72%);opacity:.5;filter:blur(3px);transition:opacity .35s var(--ease),transform .35s var(--ease)}
@@ -195,8 +197,8 @@
   .kit-list li:hover .kicon::before{opacity:.95;transform:scale(1.2)}
   .kit-list li:hover .kicon img{transform:scale(1.12) rotate(-5deg)}
   .kit-list .kbody{display:flex;flex-direction:column;gap:1px;min-width:0}
-  .kit-list b{font-family:var(--body);font-weight:700;font-size:16px;color:#fff}
-  .kit-list .kdesc{font-family:var(--body);font-size:14px;color:#a9adb4}
+  .kit-list b{font-family:var(--body);font-weight:700;font-size:16px;color:#fff;transition:color .3s}
+  .kit-list .kdesc{font-family:var(--body);font-size:14px;color:#a9adb4;transition:color .3s}
   .kit-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
   .kit-stage{position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#050506}
   .kit-img{width:100%;height:auto;display:block}
@@ -207,8 +209,9 @@
   @keyframes kbshine{0%,55%{left:-60%}100%{left:170%}}
 
   /* ===== STORY ===== */
-  .story{padding:130px 0}
-  .story-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(30px,6vw,72px);align-items:center}
+  .story{position:relative;padding:130px 0;overflow:hidden}
+  .story::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(70% 55% at 84% 26%,rgba(255,255,255,.035),transparent 55%),repeating-linear-gradient(135deg,rgba(255,255,255,.014) 0 1px,transparent 1px 9px)}
+  .story-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(30px,6vw,72px);align-items:center}
   .story-copy h2{font-size:clamp(36px,4.8vw,60px);color:#fff;margin-top:14px;letter-spacing:-.025em;line-height:1}
   .story-copy .loc{margin-top:18px;font-family:var(--body);font-weight:600;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#c7cbd1;display:flex;align-items:center;gap:9px}
   .story-copy .loc svg{width:15px;height:15px;stroke:var(--brand);stroke-width:2;fill:none}
@@ -218,8 +221,10 @@
   /* stats — self-contained bordered boxes so they read as intentional */
   .story-card{border:none;padding:0;background:transparent}
   .story-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  .stat{border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:26px 24px;background:linear-gradient(162deg,rgba(255,255,255,.035),rgba(255,255,255,.008));transition:border-color .3s,transform .3s}
-  .stat:hover{border-color:rgba(176,38,255,.4);transform:translateY(-3px)}
+  .stat{position:relative;overflow:hidden;border:1.5px solid transparent;border-radius:16px;padding:26px 24px;
+    background:repeating-linear-gradient(135deg,rgba(255,255,255,.03) 0 1px,transparent 1px 8px) padding-box,linear-gradient(162deg,rgba(255,255,255,.05),rgba(255,255,255,.012)) padding-box,linear-gradient(140deg,rgba(176,38,255,.55),rgba(255,255,255,.05) 50%,rgba(176,38,255,.18)) border-box;
+    transition:box-shadow .3s,transform .3s}
+  .stat:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.4),0 0 22px rgba(176,38,255,.22)}
   .stat b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(38px,4.4vw,50px);color:#fff;line-height:1}
   .stat b i{font-style:normal;color:var(--brand)}
   .stat span{font-family:var(--body);color:#aeb2b9;font-size:13px;letter-spacing:.01em;margin-top:12px;display:block;font-weight:500}
@@ -236,9 +241,10 @@
   .sci-carousel::-webkit-scrollbar-track{background:rgba(255,255,255,.05);border-radius:99px}
   .sci-carousel::-webkit-scrollbar-thumb{background:rgba(255,255,255,.16);border-radius:99px}
   .sci-carousel::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.28)}
-  .sci-block{--ac:#b026ff;flex:0 0 clamp(272px,31vw,356px);scroll-snap-align:start;position:relative;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(162deg,#151519,#0b0b0e 78%);padding:30px 28px 32px;min-height:300px;display:flex;flex-direction:column;transition:transform .35s var(--ease),border-color .35s,box-shadow .35s}
-  .sci-block::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ac),transparent 75%);opacity:.75}
-  .sci-block:hover{transform:translateY(-6px);border-color:color-mix(in srgb,var(--ac) 45%,transparent);box-shadow:0 18px 42px rgba(0,0,0,.45)}
+  .sci-block{--ac:#b026ff;flex:0 0 clamp(272px,31vw,356px);scroll-snap-align:start;position:relative;overflow:hidden;border-radius:18px;border:1.5px solid transparent;
+    background:repeating-linear-gradient(135deg,rgba(255,255,255,.03) 0 1px,transparent 1px 8px) padding-box,linear-gradient(162deg,#16161b,#0b0b0e 80%) padding-box,linear-gradient(140deg,color-mix(in srgb,var(--ac) 72%,transparent),rgba(255,255,255,.05) 48%,color-mix(in srgb,var(--ac) 24%,transparent)) border-box;
+    padding:30px 28px 32px;min-height:300px;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s}
+  .sci-block:hover{transform:translateY(-6px);box-shadow:0 20px 46px rgba(0,0,0,.5),0 0 26px color-mix(in srgb,var(--ac) 26%,transparent)}
   .sci-b-ic{width:56px;height:56px;border-radius:15px;display:grid;place-items:center;margin-bottom:22px;background:linear-gradient(160deg,color-mix(in srgb,var(--ac) 26%,transparent),color-mix(in srgb,var(--ac) 6%,transparent));border:1px solid color-mix(in srgb,var(--ac) 40%,transparent);transition:transform .35s var(--ease)}
   .sci-block:hover .sci-b-ic{transform:scale(1.06) rotate(-3deg)}
   .sci-b-ic svg{width:32px;height:32px;display:block}
