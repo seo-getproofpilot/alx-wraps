@@ -297,10 +297,13 @@
   @media(max-width:940px){
     .nav-links{display:none}.menu-btn{display:flex}
     .nav-actions .btn-primary{display:none}
+    /* mobile: stack — full video frame in a band right under the nav, then the copy below (no empty/cut-off space) */
+    .hero{height:auto;min-height:0;padding-top:74px}
+    .hero-video{position:relative;inset:auto;aspect-ratio:16/9;height:auto;transform:none;will-change:auto}
+    .hero-video video{object-fit:cover;object-position:center}
+    .hero-veil{display:none}
+    .hero-content{position:static;left:auto;right:auto;bottom:auto;padding:26px 0 48px}
     .hero h1{font-size:clamp(40px,11vw,72px)}
-    /* mobile: show the whole video frame (no heavy side-crop) so the product is always visible, seated in the upper area */
-    .hero-video video{object-fit:contain;object-position:center 34%}
-    .hero-veil{background:linear-gradient(180deg,rgba(5,5,6,.35) 0%,transparent 30%,transparent 52%,rgba(5,5,6,.72) 72%,rgba(5,5,6,.96) 100%)}
     /* mobile: same as desktop but scaled down — small sticky product on the left, description scrolls on the right */
     .show{min-height:0;padding:36px 0;border-top:1px solid var(--line)}
     .show-inner{grid-template-columns:40% 1fr;gap:16px;align-items:start}
@@ -645,7 +648,9 @@
 
     const videoEl=document.getElementById('heroVideo'),content=hero.querySelector('.hero-content');
     const cl=(v,a,b)=>Math.max(a,Math.min(b,v));let t=false;
-    function upd(){t=false;const p=cl(window.scrollY/window.innerHeight,0,1);
+    function upd(){t=false;
+      if(window.innerWidth<=940){videoEl.style.transform='';content.style.transform='';content.style.opacity='';return;}
+      const p=cl(window.scrollY/window.innerHeight,0,1);
       videoEl.style.transform=`translateY(${(p*6).toFixed(2)}vh)`;
       content.style.transform=`translateY(${(p*-3).toFixed(2)}vh)`;
       content.style.opacity=(1-cl(p*1.15,0,1)).toFixed(3);}
