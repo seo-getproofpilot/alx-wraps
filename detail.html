@@ -584,18 +584,36 @@
     // default — hex badge check
     check:{c:'#9aa0aa',p:'<circle cx="12" cy="12" r="8.6"/><path d="M8.4 12.2l2.6 2.6 4.8-5"/>'}
   };
+  /* the custom (client-supplied) gradient icons — reused from the Science section's gradient defs */
+  const BLOG={
+    ph:{c:'#19b6e8',g:'<g stroke="url(#phGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M64 19C57 30 46 43 46 59C46 72 54 81 64 81C74 81 82 72 82 59C82 43 71 30 64 19Z"/><path d="M22 79Q35 94 48 85"/><path d="M80 85Q93 94 106 79"/><path d="M22 101H54L64 110L74 101H106"/></g>'},
+    matte:{c:'#42d17a',g:'<g stroke="url(#matteGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M25 90H103"/><path d="M33 101H95"/><path d="M31 73Q43 60 56 70"/><path d="M72 70Q85 60 97 73"/><path d="M52 90L64 101L76 90"/></g>'},
+    satin:{c:'#2fd6a6',g:'<g stroke="url(#satinGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 93H104"/><path d="M29 80C44 56 58 56 72 78C84 96 94 87 103 67"/><path d="M33 103H95"/><path d="M56 93L64 103L72 93"/></g>'},
+    gloss:{c:'#7a5cf5',g:'<g stroke="url(#glossGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M64 18C61 36 54 44 37 51C54 55 61 62 64 84C68 63 75 56 92 51C75 44 68 36 64 18Z"/><path d="M28 88L64 69L100 88V102H28V88Z"/><path d="M51 96L64 106L77 96"/></g>'},
+    uv:{c:'#f78a2a',g:'<g stroke="url(#uvGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M35 45C35 35 43 28 53 28C63 28 71 35 71 45"/><path d="M53 18V11"/><path d="M32 29L27 24"/><path d="M74 29L79 24"/><path d="M85 48L101 55V75C101 92 91 105 75 114C59 105 49 92 49 75V55L65 48"/><path d="M61 94L75 83L89 94"/></g>'},
+    hydro:{c:'#1fbfe8',g:'<g stroke="url(#hydroGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M61 22C55 31 49 39 49 50C49 58 54 64 61 64C68 64 73 58 73 50C73 39 67 31 61 22Z"/><path d="M26 92L102 73"/><path d="M35 104L104 87"/><path d="M44 76L38 82"/><path d="M79 67L85 61"/></g>'},
+    ppf:{c:'#3f7bf5',g:'<g stroke="url(#ppfGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M30 28H89L103 42V87H45L30 72V28Z"/><path d="M23 42H82L96 56V101H37L23 87V42Z"/><path d="M30 28L45 42H103"/><path d="M23 42L37 56H96"/></g>'}
+  };
+  const blogHtml=k=>`<span class="si"><svg viewBox="0 0 128 128" fill="none">${BLOG[k].g}</svg></span>`;
   function specIcon(s){
-    const t=s.toLowerCase();let k='check';
-    if(/uv/.test(t))k='sun';
-    else if(/month|durab|lasting|day/.test(t))k='clock';
+    const t=s.toLowerCase();
+    /* custom client icons first, where the attribute maps cleanly */
+    if(/hydro|bead/.test(t))return{c:BLOG.hydro.c,html:blogHtml('hydro')};
+    if(/uv|oxidation/.test(t))return{c:BLOG.uv.c,html:blogHtml('uv')};
+    if(/ph.?neutral|film.?safe/.test(t))return{c:BLOG.ph.c,html:blogHtml('ph')};
+    if(/satin/.test(t))return{c:BLOG.satin.c,html:blogHtml('satin')};
+    if(/matte.?safe/.test(t))return{c:BLOG.matte.c,html:blogHtml('matte')};
+    if(/gloss/.test(t))return{c:BLOG.gloss.c,html:blogHtml('gloss')};
+    if(/scratch|protect/.test(t))return{c:BLOG.ppf.c,html:blogHtml('ppf')};
+    /* everything else falls back to the drawn gradient set */
+    let k='check';
+    if(/month|durab|lasting|day/.test(t))k='clock';
     else if(/hose|waterless|wax|solvent|residue/.test(t))k='dropoff';
-    else if(/matte|satin|gloss|stealth|shine|finish/.test(t))k='sheen';
-    else if(/hydro|bead/.test(t))k='drop';
+    else if(/matte|stealth|shine|finish/.test(t))k='sheen';
     else if(/encapsul/.test(t))k='capsule';
     else if(/streak|clean/.test(t))k='spark';
     else if(/static|quick|instant|fast/.test(t))k='bolt';
-    else if(/scratch|protect|shield|defen|coat/.test(t))k='shield';
-    else if(/ph|lubric|slick|foam/.test(t))k='drop';
+    else if(/lubric|slick|foam/.test(t))k='drop';
     const ic=SVGI[k];
     return {c:ic.c,key:k,html:`<span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="url(#gs-${k})" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${ic.p}</svg></span>`};
   }
