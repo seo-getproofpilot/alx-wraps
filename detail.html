@@ -316,9 +316,6 @@
     .p-desc{font-size:13.5px;margin-top:12px;line-height:1.62}
     .p-specs{grid-template-columns:1fr;max-width:none;gap:11px;margin-top:16px}
     .p-specs li{font-size:14px}
-    /* content is present immediately on mobile so a fast scroll can't skip it before it animates in */
-    .fade,.slide-l,.fade-o{opacity:1;transform:none;transition:none}
-    .mask>span{transform:none;transition:none}
     .kit-grid,.story-grid{grid-template-columns:1fr}.kit-stage{order:-1}
     /* mobile: carousel swipes one card at a time */
     .sci-block{flex-basis:80vw;min-height:262px;padding:26px 24px 28px}
@@ -631,6 +628,9 @@
   /* ---- appear observer (janissne-style) ---- */
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.fade,.slide-l,.fade-o,.mask').forEach(el=>io.observe(el));
+  /* safety net: also reveal on scroll so nothing can ever stay stuck hidden if the observer is unavailable */
+  const revealInView=()=>{document.querySelectorAll('.fade:not(.in),.slide-l:not(.in),.fade-o:not(.in),.mask:not(.in)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight*0.94&&r.bottom>-40)el.classList.add('in');});};
+  window.addEventListener('scroll',revealInView,{passive:true});revealInView();
 
   /* ---- hero: cinematic video + reveal + parallax ---- */
   (function(){
@@ -679,7 +679,7 @@
     s.src='https://unpkg.com/lenis@1.1.14/dist/lenis.min.js';
     s.onload=()=>{
       if(!window.Lenis)return;
-      const lenis=new window.Lenis({duration:1.15,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true});
+      const lenis=new window.Lenis({duration:1.15,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true,syncTouch:true,touchMultiplier:1.6});
       window.__lenis=lenis;
       const raf=t=>{lenis.raf(t);requestAnimationFrame(raf);};requestAnimationFrame(raf);
       if(window.__heroOn)lenis.on('scroll',window.__heroOn);
