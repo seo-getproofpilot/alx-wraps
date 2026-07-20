@@ -298,15 +298,21 @@
     .nav-links{display:none}.menu-btn{display:flex}
     .nav-actions .btn-primary{display:none}
     .hero h1{font-size:clamp(40px,11vw,72px)}
-    .hero-video video{object-position:50% 42%}
-    .hero-veil{background:linear-gradient(180deg,rgba(5,5,6,.5) 0%,transparent 24%,transparent 40%,rgba(5,5,6,.8) 72%,rgba(5,5,6,.97) 100%)}
-    /* mobile: clean stacked product — image, then full readable description (no late reveals flying past) */
-    .show{min-height:0;padding:44px 0}
-    .show-inner{grid-template-columns:1fr;gap:24px}
+    /* mobile: show the whole video frame (no heavy side-crop) so the product is always visible, seated in the upper area */
+    .hero-video video{object-fit:contain;object-position:center 34%}
+    .hero-veil{background:linear-gradient(180deg,rgba(5,5,6,.35) 0%,transparent 30%,transparent 52%,rgba(5,5,6,.72) 72%,rgba(5,5,6,.96) 100%)}
+    /* mobile: same as desktop but scaled down — small sticky product on the left, description scrolls on the right */
+    .show{min-height:0;padding:36px 0;border-top:1px solid var(--line)}
+    .show-inner{grid-template-columns:40% 1fr;gap:16px;align-items:start}
     .show:nth-child(even) .show-media{order:0}
-    .show-media{order:-1;position:static;height:auto;aspect-ratio:4/5}
-    .show-info{min-height:auto;padding:0;justify-content:flex-start}
-    .p-specs{grid-template-columns:1fr 1fr;max-width:none;gap:16px 20px}
+    .show-media{order:0;position:sticky;top:76px;height:auto;aspect-ratio:3/4}
+    .show-info{min-height:auto;padding:4px 0;justify-content:flex-start}
+    .p-pre{font-size:clamp(12px,3.2vw,16px);margin-bottom:2px}
+    .p-name{font-size:clamp(26px,8.4vw,44px);letter-spacing:-.02em}
+    .p-tag{font-size:11px;margin-top:12px;letter-spacing:.06em}
+    .p-desc{font-size:13.5px;margin-top:12px;line-height:1.62}
+    .p-specs{grid-template-columns:1fr;max-width:none;gap:11px;margin-top:16px}
+    .p-specs li{font-size:14px}
     /* content is present immediately on mobile so a fast scroll can't skip it before it animates in */
     .fade,.slide-l,.fade-o{opacity:1;transform:none;transition:none}
     .mask>span{transform:none;transition:none}
