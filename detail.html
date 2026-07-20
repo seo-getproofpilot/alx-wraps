@@ -297,12 +297,10 @@
   @media(max-width:940px){
     .nav-links{display:none}.menu-btn{display:flex}
     .nav-actions .btn-primary{display:none}
-    /* mobile: stack — full video frame in a band right under the nav, then the copy below (no empty/cut-off space) */
-    .hero{height:auto;min-height:0;padding-top:74px}
-    .hero-video{position:relative;inset:auto;aspect-ratio:16/9;height:auto;transform:none;will-change:auto}
-    .hero-video video{object-fit:cover;object-position:center}
-    .hero-veil{display:none}
-    .hero-content{position:static;left:auto;right:auto;bottom:auto;padding:26px 0 48px}
+    /* mobile: full-screen cinematic hero — the portrait 9:16 video fills the phone, copy overlaid at the bottom */
+    .hero{height:100svh;min-height:560px}
+    .hero-content{bottom:9vh}
+    .hero-veil{background:linear-gradient(180deg,rgba(5,5,6,.34) 0%,transparent 24%,transparent 46%,rgba(5,5,6,.74) 76%,rgba(5,5,6,.97) 100%)}
     .hero h1{font-size:clamp(40px,11vw,72px)}
     /* mobile: same as desktop but scaled down — small sticky product on the left, description scrolls on the right */
     .show{min-height:0;padding:36px 0;border-top:1px solid var(--line)}
@@ -377,9 +375,8 @@
   <!-- HERO — auto-cycling cinematic showcase -->
   <section class="hero" id="hero">
     <div class="hero-video" id="heroVideo">
-      <video id="heroVid" autoplay loop muted playsinline preload="auto">
-        <source src="assets/products/hero.webm" type="video/webm" />
-      </video>
+      <video id="heroVid" autoplay loop muted playsinline preload="auto"></video>
+      <script>(function(){var v=document.getElementById('heroVid');v.src=(window.matchMedia&&window.matchMedia('(max-width:940px)').matches)?'assets/products/hero-mobile.webm':'assets/products/hero.webm';})();</script>
     </div>
     <div class="hero-veil"></div>
     <div class="hero-content">
@@ -667,7 +664,6 @@
     const videoEl=document.getElementById('heroVideo'),content=hero.querySelector('.hero-content');
     const cl=(v,a,b)=>Math.max(a,Math.min(b,v));let t=false;
     function upd(){t=false;
-      if(window.innerWidth<=940){videoEl.style.transform='';content.style.transform='';content.style.opacity='';return;}
       const p=cl(window.scrollY/window.innerHeight,0,1);
       videoEl.style.transform=`translateY(${(p*6).toFixed(2)}vh)`;
       content.style.transform=`translateY(${(p*-3).toFixed(2)}vh)`;
