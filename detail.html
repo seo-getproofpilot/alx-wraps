@@ -276,7 +276,8 @@
             mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 42%,transparent 88%)}
   .sci-block>*{position:relative;z-index:1}
   @media (hover:hover){.sci-block:hover{transform:translateY(-6px);box-shadow:0 20px 46px rgba(0,0,0,.5),0 0 26px color-mix(in srgb,var(--ac) 26%,transparent)}}
-  .sci-b-ic{width:56px;height:56px;border-radius:15px;display:grid;place-items:center;margin-bottom:22px;background:linear-gradient(160deg,color-mix(in srgb,var(--ac) 26%,transparent),color-mix(in srgb,var(--ac) 6%,transparent));border:1px solid color-mix(in srgb,var(--ac) 40%,transparent);transition:transform .35s var(--ease)}
+  /* neutral chip — the colour lives on the card border and in the icon itself, not glowing around it */
+  .sci-b-ic{width:56px;height:56px;border-radius:15px;display:grid;place-items:center;margin-bottom:22px;background:linear-gradient(160deg,rgba(255,255,255,.085),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.13);transition:transform .35s var(--ease)}
   @media (hover:hover){.sci-block:hover .sci-b-ic{transform:scale(1.06) rotate(-3deg)}}
   .sci-b-ic svg{width:32px;height:32px;display:block}
   .sci-block h3{font-size:22px;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1.14}
@@ -360,7 +361,17 @@
   }
   @media(max-width:600px){
     .footer-bottom{flex-direction:column;align-items:flex-start;gap:10px}
-    .kit-list li b{min-width:0}.kit-list li{flex-wrap:wrap}
+    .kit-list li b{min-width:0}
+    /* mobile only: black-grey chrome, on all the time — same polished light-band as the white
+       chrome buttons, inverted into blacks. Tapping lifts the sheen rather than changing colour. */
+    .kit-list li{flex-wrap:wrap;
+      border:1px solid rgba(255,255,255,.26);
+      background:linear-gradient(180deg,#4a4e57 0%,#292d34 40%,#14161a 51%,#2e323a 62%,#4d515a 100%);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.3),inset 0 -1px 0 rgba(0,0,0,.6),0 5px 14px rgba(0,0,0,.5)}
+    .kit-list li:active{
+      background:linear-gradient(180deg,#5f646e 0%,#373c45 40%,#1e2128 51%,#3d424c 62%,#646a74 100%);
+      border-color:rgba(255,255,255,.42);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.46),0 0 20px rgba(255,255,255,.16),0 6px 18px rgba(0,0,0,.5)}
   }
 </style>
 </head>
@@ -491,47 +502,47 @@
         <p>Every finish, every film — here's what ALX care is built for, engineered and proven where the film actually lives.</p>
       </div>
       <div class="sci-carousel" id="sciCarousel">
-        <article class="sci-block" style="--ac:#19b6e8;--ph:url(assets/cards/civic-blue.webp)">
+        <article class="sci-block" style="--ac:#19b6e8;--ph:url(assets/cards/ph.webp)">
           <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="phGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#1689F8"/><stop offset="1" stop-color="#14D8E6"/></linearGradient></defs><g stroke="url(#phGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M64 19C57 30 46 43 46 59C46 72 54 81 64 81C74 81 82 72 82 59C82 43 71 30 64 19Z"/><path d="M22 79Q35 94 48 85"/><path d="M80 85Q93 94 106 79"/><path d="M22 101H54L64 110L74 101H106"/></g></svg></span>
           <h3>pH-Neutral &amp; Film-Safe</h3>
           <p>Balanced, wax-free chemistry that cleans hard but never strips finishes or attacks wrap adhesive.</p>
         </article>
-        <article class="sci-block" style="--ac:#42d17a;--ph:url(assets/cards/tesla-satin.webp)">
+        <article class="sci-block" style="--ac:#42d17a;--ph:url(assets/cards/matte.webp)">
           <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="matteGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#12A86F"/><stop offset="1" stop-color="#78E74F"/></linearGradient></defs><g stroke="url(#matteGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M25 90H103"/><path d="M33 101H95"/><path d="M31 73Q43 60 56 70"/><path d="M72 70Q85 60 97 73"/><path d="M52 90L64 101L76 90"/></g></svg></span>
           <h3>Matte-Safe</h3>
           <p>Cleans and refreshes flat matte film without ever adding gloss or leaving a sheen.</p>
         </article>
-        <article class="sci-block" style="--ac:#2fd6a6;--ph:url(assets/cards/corolla-gr.webp)">
+        <article class="sci-block" style="--ac:#2fd6a6;--ph:url(assets/cards/satin.webp)">
           <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="satinGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#0CB899"/><stop offset="1" stop-color="#74E9B0"/></linearGradient></defs><g stroke="url(#satinGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 93H104"/><path d="M29 80C44 56 58 56 72 78C84 96 94 87 103 67"/><path d="M33 103H95"/><path d="M56 93L64 103L72 93"/></g></svg></span>
           <h3>Satin-Safe</h3>
           <p>Keeps satin finishes evenly soft — no blotching, no hot spots, no gloss creep.</p>
         </article>
-        <article class="sci-block" style="--ac:#7a5cf5;--ph:url(assets/cards/jeep-tint.webp)">
+        <article class="sci-block" style="--ac:#7a5cf5;--ph:url(assets/cards/gloss.webp)">
           <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="glossGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#2778FF"/><stop offset="1" stop-color="#A544F5"/></linearGradient></defs><g stroke="url(#glossGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M64 18C61 36 54 44 37 51C54 55 61 62 64 84C68 63 75 56 92 51C75 44 68 36 64 18Z"/><path d="M28 88L64 69L100 88V102H28V88Z"/><path d="M51 96L64 106L77 96"/></g></svg></span>
           <h3>Gloss-Safe</h3>
           <p>Deepens glossy wraps and PPF with streak-free clarity and zero haze.</p>
         </article>
-        <article class="sci-block" style="--ac:#f78a2a;--ph:url(assets/cards/chevy-hd.webp)">
+        <article class="sci-block" style="--ac:#f78a2a;--ph:url(assets/cards/uv.webp)">
           <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="uvGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#F4A21C"/><stop offset="1" stop-color="#FF5D24"/></linearGradient></defs><g stroke="url(#uvGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M35 45C35 35 43 28 53 28C63 28 71 35 71 45"/><path d="M53 18V11"/><path d="M32 29L27 24"/><path d="M74 29L79 24"/><path d="M85 48L101 55V75C101 92 91 105 75 114C59 105 49 92 49 75V55L65 48"/><path d="M61 94L75 83L89 94"/></g></svg></span>
           <h3>UV &amp; Oxidation Defense</h3>
           <p>Sealant layers shield against the sun that fades, chalks, and yellows unprotected film.</p>
         </article>
-        <article class="sci-block" style="--ac:#b23fe0;--ph:url(assets/cards/corolla-gr.webp)">
+        <article class="sci-block" style="--ac:#b23fe0;--ph:url(assets/cards/bay.webp)">
           <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="bayGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#7B36F2"/><stop offset="1" stop-color="#EE20C6"/></linearGradient></defs><g stroke="url(#bayGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 20H106"/><path d="M30 20V42"/><path d="M98 20V42"/><path d="M37 42H91"/><path d="M42 85L52 70H76L86 85"/><path d="M31 87H97"/><path d="M47 99H81"/><circle cx="64" cy="54" r="9"/><path d="M60 54L63 57L69 50"/></g></svg></span>
           <h3>Tested In The Wrap Bay</h3>
           <p>Developed and proven on the exact wraps, PPF, and color PPF that ALX installs every day.</p>
         </article>
-        <article class="sci-block" style="--ac:#1fbfe8;--ph:url(assets/cards/civic-blue.webp)">
+        <article class="sci-block" style="--ac:#1fbfe8;--ph:url(assets/cards/hydro.webp)">
           <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="hydroGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#14D8E6"/><stop offset="1" stop-color="#1689F8"/></linearGradient></defs><g stroke="url(#hydroGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M61 22C55 31 49 39 49 50C49 58 54 64 61 64C68 64 73 58 73 50C73 39 67 31 61 22Z"/><path d="M26 92L102 73"/><path d="M35 104L104 87"/><path d="M44 76L38 82"/><path d="M79 67L85 61"/></g></svg></span>
           <h3>Hydrophobic By Design</h3>
           <p>Water sheets and beads straight off treated panels, so dirt rinses free and drying is faster.</p>
         </article>
-        <article class="sci-block" style="--ac:#f7548a;--ph:url(assets/cards/tesla-satin.webp)">
+        <article class="sci-block" style="--ac:#f7548a;--ph:url(assets/cards/wraps.webp)">
           <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="wrapsGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#EE20C6"/><stop offset="1" stop-color="#FF6E4B"/></linearGradient></defs><g stroke="url(#wrapsGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M26 35H78L102 57V96H50L26 74V35Z"/><path d="M26 35L50 57H102"/><path d="M50 57V96"/><path d="M53 83Q73 67 96 80"/><path d="M26 74L38 86"/></g></svg></span>
           <h3>Made For Wraps</h3>
           <p>Formulated around vinyl wrap — chemistry that respects the film and its edges.</p>
         </article>
-        <article class="sci-block" style="--ac:#3f7bf5;--ph:url(assets/cards/chevy-hd.webp)">
+        <article class="sci-block" style="--ac:#3f7bf5;--ph:url(assets/cards/ppf.webp)">
           <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="ppfGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#0C8AF6"/><stop offset="1" stop-color="#5B5FEF"/></linearGradient></defs><g stroke="url(#ppfGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M30 28H89L103 42V87H45L30 72V28Z"/><path d="M23 42H82L96 56V101H37L23 87V42Z"/><path d="M30 28L45 42H103"/><path d="M23 42L37 56H96"/></g></svg></span>
           <h3>Made For PPF</h3>
           <p>Tuned for paint protection film and color PPF — protecting the layer that protects your paint.</p>
@@ -697,6 +708,9 @@
   window.addEventListener('resize',sizePins,{passive:true});
   window.addEventListener('load',sizePins);
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(sizePins);
+
+  /* iOS only honours :active when a touch listener exists — this enables the kit tiles' tap sheen */
+  document.addEventListener('touchstart',()=>{},{passive:true});
 
   /* ---- convert section labels to left-slide (janissne slides these in from the left) ---- */
   document.querySelectorAll('.sec-label').forEach(el=>{el.classList.remove('fade');el.classList.add('slide-l');});
