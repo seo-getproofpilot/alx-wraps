@@ -64,6 +64,14 @@
   /* SECONDARY — brushed "white chrome" pill, solid (not see-through) */
   .btn-ghost{color:#16161c;border:1px solid rgba(255,255,255,.5);background:linear-gradient(180deg,#ffffff 0%,#edeef1 40%,#c9ccd3 51%,#dfe1e6 62%,#f6f7f9 100%);box-shadow:0 6px 18px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(0,0,0,.12)}
   .btn-ghost:hover{transform:translateY(-3px) scale(1.035);background:linear-gradient(180deg,#ffffff 0%,#f2f3f5 40%,#d3d6dc 51%,#e7e9ed 62%,#ffffff 100%);box-shadow:0 14px 32px rgba(0,0,0,.5),inset 0 1px 0 #fff,inset 0 -1px 0 rgba(0,0,0,.14)}
+  /* per-product CTA: chrome like "Why It Works", lettering split like the wordmark —
+     "Order" near-black, "Now" running the orange→pink→purple gradient */
+  .p-buy{margin-top:26px}
+  .btn-order{min-height:50px;padding:0 28px;font-size:15.5px;gap:0}
+  .btn-order .ord{white-space:nowrap}
+  .btn-order em{font-style:normal;font-weight:800;
+    background:linear-gradient(90deg,#ff8a1e 0%,#ff3da6 55%,#b026ff 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
   .btn-sm{min-height:46px;padding:0 20px;font-size:14px}
 
   /* nav */
@@ -306,15 +314,16 @@
     .hero-veil{background:linear-gradient(180deg,rgba(5,5,6,.34) 0%,transparent 24%,transparent 46%,rgba(5,5,6,.74) 76%,rgba(5,5,6,.97) 100%)}
     .hero h1{font-size:clamp(40px,11vw,72px)}
     /* mobile: same as desktop but scaled down — small sticky product on the left, description scrolls on the right */
-    .show{padding:0;border-top:1px solid var(--line)}
+    .show{padding:9vh 0 11vh;border-top:1px solid var(--line)}
     .show-inner{grid-template-columns:40% 1fr;gap:16px;align-items:start}
     .show:nth-child(even) .show-media{order:0}
-    /* same staging as desktop: the product pins first, the copy scrolls up beside it and reveals */
-    /* the wrapper bounds the pin so the photo releases ~halfway down the copy and clears out
-       before the next product arrives, instead of running into it */
-    .show-media-wrap{display:block;height:92vh}
-    .show-media{order:0;position:sticky;top:20vh;height:auto;aspect-ratio:3/4}
-    .show-info{min-height:112vh;padding:10vh 0;justify-content:center}
+    /* photo sits level with the eyebrow so it reads as part of that description, then holds
+       only until the last spec callout clears its bottom (height measured in JS) */
+    .show-media-wrap{display:block}
+    .show-media{order:0;position:sticky;top:90px;height:auto;aspect-ratio:3/4}
+    .show-info{min-height:0;padding:0;justify-content:flex-start}
+    .p-buy{margin-top:18px}
+    .btn-order{min-height:44px;padding:0 18px;font-size:13.5px}
     .p-pre{font-size:clamp(12px,3.2vw,16px);margin-bottom:2px}
     .p-name{font-size:clamp(26px,8.4vw,44px);letter-spacing:-.02em}
     .p-tag{font-size:11px;margin-top:12px;letter-spacing:.06em}
@@ -641,10 +650,33 @@
             <div class="p-tag fade" data-a="2">${TAGLINE[key]}</div>
             <p class="p-desc fade" data-a="3">${DESC[key]}</p>
             <ul class="p-specs fade" data-a="3">${SPECS[key].map(s=>{const ic=specIcon(s);return `<li>${ic.html}<span>${s}</span></li>`;}).join('')}</ul>
+            <div class="p-buy fade" data-a="4"><a class="btn btn-ghost btn-order" href="shop.html"><span class="ord">Order <em>Now</em></span></a></div>
           </div>
         </div>
       </section>`);
   });
+
+  /* ---- mobile: hold each product photo only for the length of its own description ----
+     the photo starts level with the eyebrow and releases the moment the last line of the
+     copy clears its bottom, so the next product comes up instead of the two colliding.
+     offsetHeight is used (not getBoundingClientRect) so the reveal transforms don't skew it. */
+  const syncPin=sec=>{
+    if(!sec)return;
+    const wrap=sec.querySelector('.show-media-wrap'),info=sec.querySelector('.show-info');
+    if(!wrap||!info)return;
+    wrap.style.height=window.matchMedia('(max-width:940px)').matches?info.offsetHeight+'px':'';
+  };
+  const showSecs=[...document.querySelectorAll('.show')];
+  const sizePins=()=>showSecs.forEach(syncPin);
+  sizePins();
+  /* re-sync whenever the copy reflows — font swap, rotation, resize */
+  if(window.ResizeObserver){
+    const ro=new ResizeObserver(es=>es.forEach(e=>syncPin(e.target.closest('.show'))));
+    showSecs.forEach(s=>{const i=s.querySelector('.show-info');if(i)ro.observe(i);});
+  }
+  window.addEventListener('resize',sizePins,{passive:true});
+  window.addEventListener('load',sizePins);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(sizePins);
 
   /* ---- convert section labels to left-slide (janissne slides these in from the left) ---- */
   document.querySelectorAll('.sec-label').forEach(el=>{el.classList.remove('fade');el.classList.add('slide-l');});
