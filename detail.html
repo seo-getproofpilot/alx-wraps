@@ -136,6 +136,8 @@
   .show-inner{width:min(100% - 44px,var(--max));margin-inline:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,80px);align-items:start}
   .show:nth-child(even) .show-media{order:2}
   .show-info{min-height:120vh;display:flex;flex-direction:column;justify-content:center;padding:10vh 0}
+  /* wrapper exists only to bound how long the photo stays pinned; transparent to layout on desktop */
+  .show-media-wrap{display:contents}
   /* light studio card that blends with the product-photo background */
   .show-media{position:sticky;top:11vh;height:78vh;border-radius:8px;overflow:hidden;background:#08080a;
     box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06)}
@@ -308,6 +310,9 @@
     .show-inner{grid-template-columns:40% 1fr;gap:16px;align-items:start}
     .show:nth-child(even) .show-media{order:0}
     /* same staging as desktop: the product pins first, the copy scrolls up beside it and reveals */
+    /* the wrapper bounds the pin so the photo releases ~halfway down the copy and clears out
+       before the next product arrives, instead of running into it */
+    .show-media-wrap{display:block;height:92vh}
     .show-media{order:0;position:sticky;top:20vh;height:auto;aspect-ratio:3/4}
     .show-info{min-height:112vh;padding:10vh 0;justify-content:center}
     .p-pre{font-size:clamp(12px,3.2vw,16px);margin-bottom:2px}
@@ -624,9 +629,11 @@
     shows.insertAdjacentHTML('beforeend',`
       <section class="show" data-product="${key}" style="--acc:${p.acc}">
         <div class="show-inner">
-          <div class="show-media fade-o">
-            <img class="pimg" loading="lazy" decoding="async" data-par="-12" src="assets/products/${p.img}.webp?v=4" alt="ALX Wraps ${p.pre} ${p.name}" onerror="this.closest('.show-media').classList.add('noimg')" />
-            <div class="ph"><span class="ph-dot"></span><span class="ph-name">${p.pre}<br>${p.name}</span><span class="ph-t">Product photo coming soon</span></div>
+          <div class="show-media-wrap">
+            <div class="show-media fade-o">
+              <img class="pimg" loading="lazy" decoding="async" data-par="-12" src="assets/products/${p.img}.webp?v=4" alt="ALX Wraps ${p.pre} ${p.name}" onerror="this.closest('.show-media').classList.add('noimg')" />
+              <div class="ph"><span class="ph-dot"></span><span class="ph-name">${p.pre}<br>${p.name}</span><span class="ph-t">Product photo coming soon</span></div>
+            </div>
           </div>
           <div class="show-info">
             <div class="p-pre mask" data-a="1"><span>${p.pre}</span></div>
@@ -695,7 +702,9 @@
     s.src='https://unpkg.com/lenis@1.1.14/dist/lenis.min.js';
     s.onload=()=>{
       if(!window.Lenis)return;
-      const lenis=new window.Lenis({duration:1.15,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true,syncTouch:true,touchMultiplier:1.6});
+      /* slower + more precise: less travel per gesture, and native touch momentum on phones
+         (syncTouch hijacks the finger and is what made mobile feel sticky) */
+      const lenis=new window.Lenis({duration:1.2,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true,wheelMultiplier:0.8,syncTouch:false,touchMultiplier:1});
       window.__lenis=lenis;
       const raf=t=>{lenis.raf(t);requestAnimationFrame(raf);};requestAnimationFrame(raf);
       if(window.__heroOn)lenis.on('scroll',window.__heroOn);
