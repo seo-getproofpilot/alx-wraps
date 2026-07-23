@@ -140,7 +140,8 @@
   .show-media{position:sticky;top:11vh;height:78vh;border-radius:8px;overflow:hidden;background:#08080a;
     box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06)}
   .show-media::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;z-index:4;background:var(--acc)}
-  .pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;z-index:2;will-change:transform}
+  /* a touch taller than the card so the ±12px parallax can never expose a bare edge */
+  .pimg{position:absolute;inset:0;top:-16px;width:100%;height:calc(100% + 32px);object-fit:cover;object-position:50% 42%;z-index:2;will-change:transform}
   .show-num{position:absolute;top:24px;left:28px;z-index:3;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.2em;color:rgba(18,18,22,.5)}
   .show-tag-badge{position:absolute;top:24px;right:28px;z-index:3;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:6px 12px;background:rgba(0,0,0,.35);backdrop-filter:blur(6px)}
   /* placeholder shown only if a photo is missing */
@@ -421,7 +422,7 @@
           <a class="btn btn-ghost" href="#science">Why It Works</a>
         </div>
       </div>
-      <div class="kit-stage fade" data-a="1"><span class="kit-badge">Launching Soon</span><img class="kit-img" src="assets/products/lineup.png?v=3" alt="The ALX Wraps five-product wrap-care lineup" /></div>
+      <div class="kit-stage fade" data-a="1"><span class="kit-badge">Launching Soon</span><img class="kit-img" loading="lazy" decoding="async" src="assets/products/lineup.webp?v=4" alt="The ALX Wraps five-product wrap-care lineup" /></div>
     </div>
   </section>
 
@@ -624,7 +625,7 @@
       <section class="show" data-product="${key}" style="--acc:${p.acc}">
         <div class="show-inner">
           <div class="show-media fade-o">
-            <img class="pimg" data-par="-12" src="assets/products/${p.img}.png?v=3" alt="ALX Wraps ${p.pre} ${p.name}" onerror="this.closest('.show-media').classList.add('noimg')" />
+            <img class="pimg" loading="lazy" decoding="async" data-par="-12" src="assets/products/${p.img}.webp?v=4" alt="ALX Wraps ${p.pre} ${p.name}" onerror="this.closest('.show-media').classList.add('noimg')" />
             <div class="ph"><span class="ph-dot"></span><span class="ph-name">${p.pre}<br>${p.name}</span><span class="ph-t">Product photo coming soon</span></div>
           </div>
           <div class="show-info">
