@@ -195,18 +195,24 @@
   .kit-copy h2 em{font-style:normal;color:var(--brand)}
   .kit-copy p{color:#c4c7cd;font-size:17px;max-width:500px;margin-top:20px;line-height:1.75}
   .kit-list{list-style:none;margin-top:26px;display:grid;gap:10px}
-  .kit-list li{--c:#b026ff;position:relative;display:flex;align-items:center;gap:16px;padding:12px 16px 12px 15px;border-radius:14px;border:1px solid transparent;background:transparent;transition:background .3s,border-color .3s,transform .3s}
-  .kit-list li::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:0;border-radius:3px;background:var(--c);box-shadow:0 0 12px var(--c);transition:height .3s var(--ease)}
-  .kit-list li:hover{transform:translateX(5px);border-color:rgba(255,255,255,.55);background:linear-gradient(180deg,#ffffff 0%,#edeef1 42%,#c9ccd3 51%,#dfe1e6 62%,#f6f7f9 100%);box-shadow:0 12px 28px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.95)}
-  .kit-list li:hover::before{height:0}
-  .kit-list li:hover b{color:#14141a}
-  .kit-list li:hover .kdesc{color:#40444c}
+  /* permanent chrome-white edge — no glow bar, nothing that lights up as you scroll past */
+  .kit-list li{--c:#b026ff;position:relative;display:flex;align-items:center;gap:16px;padding:12px 16px 12px 15px;border-radius:14px;
+    border:1px solid rgba(255,255,255,.34);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.014));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.16);transition:background .3s,border-color .3s,transform .3s,box-shadow .3s}
+  /* hover only where there's a real pointer, so a tap on mobile can't leave a card stuck lit */
+  @media (hover:hover){
+    .kit-list li:hover{transform:translateX(5px);border-color:rgba(255,255,255,.7);background:linear-gradient(180deg,#ffffff 0%,#edeef1 42%,#c9ccd3 51%,#dfe1e6 62%,#f6f7f9 100%);box-shadow:0 12px 28px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.95)}
+    .kit-list li:hover b{color:#14141a}
+    .kit-list li:hover .kdesc{color:#40444c}
+  }
   /* no chip — icon floats with a soft product-color glow, and plays on hover */
   .kit-list .kicon{width:58px;height:58px;flex:none;position:relative;display:grid;place-items:center}
   .kit-list .kicon::before{content:"";position:absolute;width:50px;height:50px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--c) 45%,transparent),transparent 72%);opacity:.5;filter:blur(3px);transition:opacity .35s var(--ease),transform .35s var(--ease)}
   .kit-list .kicon img{width:50px;height:50px;object-fit:contain;display:block;position:relative;z-index:1;transition:transform .4s var(--ease);filter:drop-shadow(0 3px 9px color-mix(in srgb,var(--c) 42%,transparent))}
-  .kit-list li:hover .kicon::before{opacity:.95;transform:scale(1.2)}
-  .kit-list li:hover .kicon img{transform:scale(1.12) rotate(-5deg)}
+  @media (hover:hover){
+    .kit-list li:hover .kicon::before{opacity:.95;transform:scale(1.2)}
+    .kit-list li:hover .kicon img{transform:scale(1.12) rotate(-5deg)}
+  }
   .kit-list .kbody{display:flex;flex-direction:column;gap:1px;min-width:0}
   .kit-list b{font-family:var(--body);font-weight:700;font-size:16px;color:#fff;transition:color .3s}
   .kit-list .kdesc{font-family:var(--body);font-size:14px;color:#a9adb4;transition:color .3s}
@@ -232,13 +238,19 @@
   /* stats — self-contained bordered boxes so they read as intentional */
   .story-card{border:none;padding:0;background:transparent}
   .story-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  .stat{position:relative;overflow:hidden;border:1.5px solid transparent;border-radius:16px;padding:26px 24px;
-    background:repeating-linear-gradient(135deg,rgba(255,255,255,.03) 0 1px,transparent 1px 8px) padding-box,linear-gradient(162deg,rgba(255,255,255,.05),rgba(255,255,255,.012)) padding-box,linear-gradient(140deg,rgba(176,38,255,.55),rgba(255,255,255,.05) 50%,rgba(176,38,255,.18)) border-box;
-    transition:box-shadow .3s,transform .3s}
-  .stat:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.4),0 0 22px rgba(176,38,255,.22)}
+  /* four distinct colour fades instead of the line texture — the colour sits up top and drops
+     into black where the number and label are, so the white copy always reads */
+  .stat{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.17);border-radius:16px;padding:26px 24px;
+    background:var(--sg);transition:box-shadow .3s,transform .3s}
+  .story-stats .stat:nth-child(1){--sg:linear-gradient(150deg,#8b3bff 0%,#3a1160 46%,#0b0b0e 100%)}
+  .story-stats .stat:nth-child(2){--sg:linear-gradient(150deg,#ff3da6 0%,#6d1246 46%,#0b0b0e 100%)}
+  /* chrome kept in the top-right corner, away from the left-aligned copy */
+  .story-stats .stat:nth-child(3){--sg:linear-gradient(220deg,#eef0f4 0%,#d0343c 16%,#5c1016 48%,#0b0b0e 100%)}
+  .story-stats .stat:nth-child(4){--sg:linear-gradient(150deg,#19b6e8 0%,#0d4a63 46%,#0b0b0e 100%)}
+  @media (hover:hover){.stat:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.5)}}
   .stat b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(38px,4.4vw,50px);color:#fff;line-height:1}
-  .stat b i{font-style:normal;color:var(--brand)}
-  .stat span{font-family:var(--body);color:#aeb2b9;font-size:13px;letter-spacing:.01em;margin-top:12px;display:block;font-weight:500}
+  .stat b i{font-style:normal;color:rgba(255,255,255,.72)}
+  .stat span{font-family:var(--body);color:rgba(255,255,255,.84);font-size:13px;letter-spacing:.01em;margin-top:12px;display:block;font-weight:500}
 
   /* ===== SCIENCE — scroll-stacking cards ===== */
   .science{padding:20px 0 130px}
@@ -252,12 +264,13 @@
   .sci-carousel::-webkit-scrollbar-track{background:rgba(255,255,255,.05);border-radius:99px}
   .sci-carousel::-webkit-scrollbar-thumb{background:rgba(255,255,255,.16);border-radius:99px}
   .sci-carousel::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.28)}
-  .sci-block{--ac:#b026ff;flex:0 0 clamp(272px,31vw,356px);scroll-snap-align:start;position:relative;overflow:hidden;border-radius:18px;border:1.5px solid transparent;
-    background:repeating-linear-gradient(135deg,rgba(255,255,255,.03) 0 1px,transparent 1px 8px) padding-box,linear-gradient(162deg,#16161b,#0b0b0e 80%) padding-box,linear-gradient(140deg,color-mix(in srgb,var(--ac) 72%,transparent),rgba(255,255,255,.05) 48%,color-mix(in srgb,var(--ac) 24%,transparent)) border-box;
+  /* one solid colour per card, dark body underneath so the white copy and icon stay legible */
+  .sci-block{--ac:#b026ff;flex:0 0 clamp(272px,31vw,356px);scroll-snap-align:start;position:relative;overflow:hidden;border-radius:18px;
+    border:1.5px solid var(--ac);background:linear-gradient(162deg,#16161b,#0b0b0e 80%);
     padding:30px 28px 32px;min-height:300px;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s}
-  .sci-block:hover{transform:translateY(-6px);box-shadow:0 20px 46px rgba(0,0,0,.5),0 0 26px color-mix(in srgb,var(--ac) 26%,transparent)}
+  @media (hover:hover){.sci-block:hover{transform:translateY(-6px);box-shadow:0 20px 46px rgba(0,0,0,.5),0 0 26px color-mix(in srgb,var(--ac) 26%,transparent)}}
   .sci-b-ic{width:56px;height:56px;border-radius:15px;display:grid;place-items:center;margin-bottom:22px;background:linear-gradient(160deg,color-mix(in srgb,var(--ac) 26%,transparent),color-mix(in srgb,var(--ac) 6%,transparent));border:1px solid color-mix(in srgb,var(--ac) 40%,transparent);transition:transform .35s var(--ease)}
-  .sci-block:hover .sci-b-ic{transform:scale(1.06) rotate(-3deg)}
+  @media (hover:hover){.sci-block:hover .sci-b-ic{transform:scale(1.06) rotate(-3deg)}}
   .sci-b-ic svg{width:32px;height:32px;display:block}
   .sci-block h3{font-size:22px;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1.14}
   .sci-block p{margin-top:12px;color:#b8bbc1;font-size:15.5px;line-height:1.66}
