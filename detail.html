@@ -303,11 +303,12 @@
     .hero-veil{background:linear-gradient(180deg,rgba(5,5,6,.34) 0%,transparent 24%,transparent 46%,rgba(5,5,6,.74) 76%,rgba(5,5,6,.97) 100%)}
     .hero h1{font-size:clamp(40px,11vw,72px)}
     /* mobile: same as desktop but scaled down — small sticky product on the left, description scrolls on the right */
-    .show{min-height:0;padding:36px 0;border-top:1px solid var(--line)}
+    .show{padding:0;border-top:1px solid var(--line)}
     .show-inner{grid-template-columns:40% 1fr;gap:16px;align-items:start}
     .show:nth-child(even) .show-media{order:0}
-    .show-media{order:0;position:sticky;top:76px;height:auto;aspect-ratio:3/4}
-    .show-info{min-height:auto;padding:4px 0;justify-content:flex-start}
+    /* same staging as desktop: the product pins first, the copy scrolls up beside it and reveals */
+    .show-media{order:0;position:sticky;top:20vh;height:auto;aspect-ratio:3/4}
+    .show-info{min-height:112vh;padding:10vh 0;justify-content:center}
     .p-pre{font-size:clamp(12px,3.2vw,16px);margin-bottom:2px}
     .p-name{font-size:clamp(26px,8.4vw,44px);letter-spacing:-.02em}
     .p-tag{font-size:11px;margin-top:12px;letter-spacing:.06em}
