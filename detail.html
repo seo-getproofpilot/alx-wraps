@@ -228,63 +228,46 @@
   .story-copy p{color:#c4c8ce;font-size:16.5px;margin-top:20px;max-width:560px;line-height:1.8}
   .story-sign{margin-top:30px;font-family:var(--display);font-weight:700;color:#fff;font-size:19px}
   .story-sign span{display:block;font-family:var(--body);color:#9a9ea5;font-size:13px;letter-spacing:.01em;margin-top:7px;font-weight:500}
-  /* stats — self-contained bordered boxes so they read as intentional */
+  /* stats — same seamless hairline spec-grid as the science elements, so the whole
+     lower zone reads as one engineered system (not four rainbow gradient boxes) */
   .story-card{border:none;padding:0;background:transparent}
-  .story-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  /* four distinct colour fades instead of the line texture — the colour sits up top and drops
-     into black where the number and label are, so the white copy always reads */
-  .stat{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.17);border-radius:16px;padding:26px 24px;
-    background:var(--sg);transition:box-shadow .3s,transform .3s}
-  .story-stats .stat:nth-child(1){--sg:linear-gradient(150deg,#8b3bff 0%,#3a1160 46%,#0b0b0e 100%)}
-  .story-stats .stat:nth-child(2){--sg:linear-gradient(150deg,#ff3da6 0%,#6d1246 46%,#0b0b0e 100%)}
-  /* chrome kept in the top-right corner, away from the left-aligned copy */
-  .story-stats .stat:nth-child(3){--sg:linear-gradient(220deg,#eef0f4 0%,#d0343c 16%,#5c1016 48%,#0b0b0e 100%)}
-  .story-stats .stat:nth-child(4){--sg:linear-gradient(150deg,#19b6e8 0%,#0d4a63 46%,#0b0b0e 100%)}
-  @media (hover:hover){.stat:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.5)}}
-  .stat b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(38px,4.4vw,50px);color:#fff;line-height:1}
-  .stat b i{font-style:normal;color:rgba(255,255,255,.72)}
-  .stat span{font-family:var(--body);color:rgba(255,255,255,.84);font-size:13px;letter-spacing:.01em;margin-top:12px;display:block;font-weight:500}
+  .story-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden}
+  .stat{position:relative;overflow:hidden;padding:28px 24px 26px;background:#0b0b0e;transition:background .3s}
+  .stat::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 100% 0,rgba(176,38,255,.1),transparent 62%)}
+  .stat>*{position:relative;z-index:1}
+  @media (hover:hover){.stat:hover{background:#101017}}
+  .stat b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(40px,4.4vw,52px);color:#fff;line-height:1}
+  .stat b i{font-style:normal;color:var(--brand)}
+  .stat span{font-family:var(--mono);color:var(--soft);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:14px;display:block;font-weight:600}
 
-  /* ===== SCIENCE — scroll-stacking cards ===== */
+  /* ===== SCIENCE — "The Elements of Wrap Care" (periodic / spec-table motif) ===== */
   .science{padding:20px 0 130px}
-  .sci-head{max-width:640px;margin-bottom:44px}
+  .sci-head{max-width:640px;margin-bottom:20px}
   .sci-head h2{font-size:clamp(34px,5vw,60px);color:#fff;margin-top:14px;letter-spacing:-.025em;line-height:1}
   .sci-head h2 em{font-style:normal;color:var(--brand)}
   .sci-head p{color:#b7bbc2;font-size:17px;margin-top:18px;line-height:1.7}
-  /* horizontal carousel of blocks — swipe / scroll / arrow through them */
-  .sci-carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:6px 6px 20px}
-  .sci-carousel::-webkit-scrollbar{height:6px}
-  .sci-carousel::-webkit-scrollbar-track{background:rgba(255,255,255,.05);border-radius:99px}
-  .sci-carousel::-webkit-scrollbar-thumb{background:rgba(255,255,255,.16);border-radius:99px}
-  .sci-carousel::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.28)}
-  /* one calm, uniform card for all nine — no rainbow of neon borders. The only per-card colour
-     is the icon chip and a faint accent hairline up top, so it reads sleek and consistent. */
-  .sci-block{--ac:#b026ff;flex:0 0 clamp(280px,30vw,338px);scroll-snap-align:start;position:relative;overflow:hidden;border-radius:16px;
-    border:1px solid rgba(255,255,255,.1);background:linear-gradient(165deg,#141418,#0b0b0e 82%);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 16px 40px rgba(0,0,0,.4);
-    padding:28px 26px 30px;min-height:300px;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
-  /* faint accent hairline at the very top, tinted to the icon's colour */
-  .sci-block::after{content:"";position:absolute;top:0;left:0;right:0;height:1px;z-index:2;
-    background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--ac) 75%,transparent),transparent)}
-  /* real ALX vehicle shot behind each card — uniformly darkened + faded so every card reads the same */
-  .sci-block::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-    background:var(--ph) center/cover no-repeat;opacity:.42;filter:grayscale(.6) brightness(.34) contrast(1.02);
-    -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.34) 50%,transparent 86%);
-            mask-image:linear-gradient(180deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.34) 50%,transparent 86%)}
-  .sci-block>*{position:relative;z-index:1}
-  @media (hover:hover){.sci-block:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.22);box-shadow:0 26px 54px rgba(0,0,0,.55)}}
-  /* icon chip carries the only real colour — a subtle tint of the card's accent */
-  .sci-b-ic{width:50px;height:50px;border-radius:13px;display:grid;place-items:center;margin-bottom:20px;
+  /* a thin technical caption tying the concept together */
+  .sci-cap{display:flex;align-items:center;gap:12px;margin:0 2px 16px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
+  .sci-cap::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.14),transparent)}
+  /* seamless hairline grid — reads like a spec / periodic table, not floating cards.
+     the 1px "gaps" show the container colour through, drawing the cell rules. */
+  .el-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden}
+  .el{--ac:#b026ff;position:relative;background:#0b0b0e;padding:24px 22px 26px;display:flex;flex-direction:column;min-height:212px;transition:background .35s}
+  /* faint blueprint wash so each cell has a hint of depth */
+  .el::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 100% 0,color-mix(in srgb,var(--ac) 9%,transparent),transparent 60%)}
+  .el>*{position:relative;z-index:1}
+  @media (hover:hover){.el:hover{background:#101017}}
+  .el-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+  .el-ic{width:48px;height:48px;flex:none;border-radius:12px;display:grid;place-items:center;
     background:linear-gradient(160deg,color-mix(in srgb,var(--ac) 24%,transparent),color-mix(in srgb,var(--ac) 6%,transparent));
     border:1px solid color-mix(in srgb,var(--ac) 32%,transparent);transition:transform .35s var(--ease)}
-  @media (hover:hover){.sci-block:hover .sci-b-ic{transform:scale(1.06) rotate(-3deg)}}
-  .sci-b-ic svg{width:30px;height:30px;display:block}
-  .sci-block h3{font-family:var(--display);font-size:15px;font-weight:700;color:#fff;letter-spacing:-.005em;line-height:1.32}
-  .sci-block p{margin-top:12px;color:#aeb2ba;font-size:14.5px;line-height:1.62}
-  .sci-ctrl{display:flex;gap:12px;margin-top:8px}
-  .sci-arrow-btn{width:50px;height:50px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);color:#e6e7ea;display:grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
-  .sci-arrow-btn:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.36);transform:translateY(-2px)}
-  .sci-arrow-btn svg{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  @media (hover:hover){.el:hover .el-ic{transform:translateY(-2px)}}
+  .el-ic svg{width:28px;height:28px;display:block}
+  .el-tag{text-align:right;font-family:var(--mono);line-height:1}
+  .el-tag .no{display:block;font-size:11px;color:var(--soft);letter-spacing:.14em}
+  .el-tag .sym{display:block;font-size:21px;font-weight:700;color:var(--ac);margin-top:6px;letter-spacing:.01em}
+  .el h3{font-family:var(--display);font-size:14.5px;font-weight:700;color:#fff;line-height:1.3;letter-spacing:-.005em}
+  .el p{margin-top:9px;color:#a6aab2;font-size:13.5px;line-height:1.55}
 
   /* ===== WORKS ON ===== */
   .works{padding:80px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
@@ -357,9 +340,12 @@
     .kit-head{text-align:left}
     .kit-head p{margin-left:0}
     .kit-ctas{justify-content:flex-start}
-    /* mobile: carousel swipes one card at a time */
-    .sci-block{flex-basis:80vw;min-height:262px;padding:26px 24px 28px}
-    .sci-block h3{font-size:20px}
+    /* elements: 2-up on mobile, last one spans the row so there's no empty cell */
+    .el-grid{grid-template-columns:1fr 1fr}
+    .el{min-height:0;padding:20px 18px 22px}
+    .el:last-child{grid-column:1/-1}
+    .el-ic{width:44px;height:44px}
+    .el-ic svg{width:26px;height:26px}
     .footer-main{grid-template-columns:1fr 1fr;gap:32px 28px}
     .footer-brand{grid-column:1/-1}
     .footer-col:last-child{grid-column:1/-1}
@@ -496,56 +482,53 @@
         <h2>Built On <em>Real Chemistry</em></h2>
         <p>Every finish, every film — here's what ALX care is built for, engineered and proven where the film actually lives.</p>
       </div>
-      <div class="sci-carousel" id="sciCarousel">
-        <article class="sci-block" style="--ac:#19b6e8;--ph:url(assets/cards/ph.webp)">
-          <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="phGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#1689F8"/><stop offset="1" stop-color="#14D8E6"/></linearGradient></defs><g stroke="url(#phGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M64 19C57 30 46 43 46 59C46 72 54 81 64 81C74 81 82 72 82 59C82 43 71 30 64 19Z"/><path d="M22 79Q35 94 48 85"/><path d="M80 85Q93 94 106 79"/><path d="M22 101H54L64 110L74 101H106"/></g></svg></span>
+      <div class="sci-cap fade">Nine elements · one finish-safe system</div>
+      <div class="el-grid fade">
+        <article class="el" style="--ac:#19b6e8">
+          <div class="el-head"><span class="el-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="phGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#1689F8"/><stop offset="1" stop-color="#14D8E6"/></linearGradient></defs><g stroke="url(#phGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M64 19C57 30 46 43 46 59C46 72 54 81 64 81C74 81 82 72 82 59C82 43 71 30 64 19Z"/><path d="M22 79Q35 94 48 85"/><path d="M80 85Q93 94 106 79"/><path d="M22 101H54L64 110L74 101H106"/></g></svg></span><span class="el-tag"><span class="no">01</span><span class="sym">pH</span></span></div>
           <h3>pH-Neutral &amp; Film-Safe</h3>
           <p>Balanced, wax-free chemistry that cleans hard but never strips finishes or attacks wrap adhesive.</p>
         </article>
-        <article class="sci-block" style="--ac:#42d17a;--ph:url(assets/cards/matte.webp)">
-          <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="matteGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#12A86F"/><stop offset="1" stop-color="#78E74F"/></linearGradient></defs><g stroke="url(#matteGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M25 90H103"/><path d="M33 101H95"/><path d="M31 73Q43 60 56 70"/><path d="M72 70Q85 60 97 73"/><path d="M52 90L64 101L76 90"/></g></svg></span>
+        <article class="el" style="--ac:#42d17a">
+          <div class="el-head"><span class="el-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="matteGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#12A86F"/><stop offset="1" stop-color="#78E74F"/></linearGradient></defs><g stroke="url(#matteGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M25 90H103"/><path d="M33 101H95"/><path d="M31 73Q43 60 56 70"/><path d="M72 70Q85 60 97 73"/><path d="M52 90L64 101L76 90"/></g></svg></span><span class="el-tag"><span class="no">02</span><span class="sym">Mt</span></span></div>
           <h3>Matte-Safe</h3>
           <p>Cleans and refreshes flat matte film without ever adding gloss or leaving a sheen.</p>
         </article>
-        <article class="sci-block" style="--ac:#2fd6a6;--ph:url(assets/cards/satin.webp)">
-          <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="satinGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#0CB899"/><stop offset="1" stop-color="#74E9B0"/></linearGradient></defs><g stroke="url(#satinGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 93H104"/><path d="M29 80C44 56 58 56 72 78C84 96 94 87 103 67"/><path d="M33 103H95"/><path d="M56 93L64 103L72 93"/></g></svg></span>
+        <article class="el" style="--ac:#2fd6a6">
+          <div class="el-head"><span class="el-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="satinGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#0CB899"/><stop offset="1" stop-color="#74E9B0"/></linearGradient></defs><g stroke="url(#satinGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 93H104"/><path d="M29 80C44 56 58 56 72 78C84 96 94 87 103 67"/><path d="M33 103H95"/><path d="M56 93L64 103L72 93"/></g></svg></span><span class="el-tag"><span class="no">03</span><span class="sym">St</span></span></div>
           <h3>Satin-Safe</h3>
           <p>Keeps satin finishes evenly soft — no blotching, no hot spots, no gloss creep.</p>
         </article>
-        <article class="sci-block" style="--ac:#7a5cf5;--ph:url(assets/cards/gloss.webp)">
-          <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="glossGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#2778FF"/><stop offset="1" stop-color="#A544F5"/></linearGradient></defs><g stroke="url(#glossGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M64 18C61 36 54 44 37 51C54 55 61 62 64 84C68 63 75 56 92 51C75 44 68 36 64 18Z"/><path d="M28 88L64 69L100 88V102H28V88Z"/><path d="M51 96L64 106L77 96"/></g></svg></span>
+        <article class="el" style="--ac:#7a5cf5">
+          <div class="el-head"><span class="el-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="glossGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#2778FF"/><stop offset="1" stop-color="#A544F5"/></linearGradient></defs><g stroke="url(#glossGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M64 18C61 36 54 44 37 51C54 55 61 62 64 84C68 63 75 56 92 51C75 44 68 36 64 18Z"/><path d="M28 88L64 69L100 88V102H28V88Z"/><path d="M51 96L64 106L77 96"/></g></svg></span><span class="el-tag"><span class="no">04</span><span class="sym">Gl</span></span></div>
           <h3>Gloss-Safe</h3>
           <p>Deepens glossy wraps and PPF with streak-free clarity and zero haze.</p>
         </article>
-        <article class="sci-block" style="--ac:#f78a2a;--ph:url(assets/cards/uv.webp)">
-          <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="uvGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#F4A21C"/><stop offset="1" stop-color="#FF5D24"/></linearGradient></defs><g stroke="url(#uvGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M35 45C35 35 43 28 53 28C63 28 71 35 71 45"/><path d="M53 18V11"/><path d="M32 29L27 24"/><path d="M74 29L79 24"/><path d="M85 48L101 55V75C101 92 91 105 75 114C59 105 49 92 49 75V55L65 48"/><path d="M61 94L75 83L89 94"/></g></svg></span>
+        <article class="el" style="--ac:#f78a2a">
+          <div class="el-head"><span class="el-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="uvGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#F4A21C"/><stop offset="1" stop-color="#FF5D24"/></linearGradient></defs><g stroke="url(#uvGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M35 45C35 35 43 28 53 28C63 28 71 35 71 45"/><path d="M53 18V11"/><path d="M32 29L27 24"/><path d="M74 29L79 24"/><path d="M85 48L101 55V75C101 92 91 105 75 114C59 105 49 92 49 75V55L65 48"/><path d="M61 94L75 83L89 94"/></g></svg></span><span class="el-tag"><span class="no">05</span><span class="sym">UV</span></span></div>
           <h3>UV &amp; Oxidation Defense</h3>
           <p>Sealant layers shield against the sun that fades, chalks, and yellows unprotected film.</p>
         </article>
-        <article class="sci-block" style="--ac:#b23fe0;--ph:url(assets/cards/bay.webp)">
-          <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="bayGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#7B36F2"/><stop offset="1" stop-color="#EE20C6"/></linearGradient></defs><g stroke="url(#bayGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 20H106"/><path d="M30 20V42"/><path d="M98 20V42"/><path d="M37 42H91"/><path d="M42 85L52 70H76L86 85"/><path d="M31 87H97"/><path d="M47 99H81"/><circle cx="64" cy="54" r="9"/><path d="M60 54L63 57L69 50"/></g></svg></span>
+        <article class="el" style="--ac:#b23fe0">
+          <div class="el-head"><span class="el-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="bayGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#7B36F2"/><stop offset="1" stop-color="#EE20C6"/></linearGradient></defs><g stroke="url(#bayGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 20H106"/><path d="M30 20V42"/><path d="M98 20V42"/><path d="M37 42H91"/><path d="M42 85L52 70H76L86 85"/><path d="M31 87H97"/><path d="M47 99H81"/><circle cx="64" cy="54" r="9"/><path d="M60 54L63 57L69 50"/></g></svg></span><span class="el-tag"><span class="no">06</span><span class="sym">Bay</span></span></div>
           <h3>Tested In The Wrap Bay</h3>
           <p>Developed and proven on the exact wraps, PPF, and color PPF that ALX installs every day.</p>
         </article>
-        <article class="sci-block" style="--ac:#1fbfe8;--ph:url(assets/cards/hydro.webp)">
-          <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="hydroGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#14D8E6"/><stop offset="1" stop-color="#1689F8"/></linearGradient></defs><g stroke="url(#hydroGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M61 22C55 31 49 39 49 50C49 58 54 64 61 64C68 64 73 58 73 50C73 39 67 31 61 22Z"/><path d="M26 92L102 73"/><path d="M35 104L104 87"/><path d="M44 76L38 82"/><path d="M79 67L85 61"/></g></svg></span>
+        <article class="el" style="--ac:#1fbfe8">
+          <div class="el-head"><span class="el-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="hydroGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#14D8E6"/><stop offset="1" stop-color="#1689F8"/></linearGradient></defs><g stroke="url(#hydroGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M61 22C55 31 49 39 49 50C49 58 54 64 61 64C68 64 73 58 73 50C73 39 67 31 61 22Z"/><path d="M26 92L102 73"/><path d="M35 104L104 87"/><path d="M44 76L38 82"/><path d="M79 67L85 61"/></g></svg></span><span class="el-tag"><span class="no">07</span><span class="sym">H₂O</span></span></div>
           <h3>Hydrophobic By Design</h3>
           <p>Water sheets and beads straight off treated panels, so dirt rinses free and drying is faster.</p>
         </article>
-        <article class="sci-block" style="--ac:#f7548a;--ph:url(assets/cards/wraps.webp)">
-          <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="wrapsGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#EE20C6"/><stop offset="1" stop-color="#FF6E4B"/></linearGradient></defs><g stroke="url(#wrapsGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M26 35H78L102 57V96H50L26 74V35Z"/><path d="M26 35L50 57H102"/><path d="M50 57V96"/><path d="M53 83Q73 67 96 80"/><path d="M26 74L38 86"/></g></svg></span>
+        <article class="el" style="--ac:#f7548a">
+          <div class="el-head"><span class="el-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="wrapsGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#EE20C6"/><stop offset="1" stop-color="#FF6E4B"/></linearGradient></defs><g stroke="url(#wrapsGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M26 35H78L102 57V96H50L26 74V35Z"/><path d="M26 35L50 57H102"/><path d="M50 57V96"/><path d="M53 83Q73 67 96 80"/><path d="M26 74L38 86"/></g></svg></span><span class="el-tag"><span class="no">08</span><span class="sym">Wr</span></span></div>
           <h3>Made For Wraps</h3>
           <p>Formulated around vinyl wrap — chemistry that respects the film and its edges.</p>
         </article>
-        <article class="sci-block" style="--ac:#3f7bf5;--ph:url(assets/cards/ppf.webp)">
-          <span class="sci-b-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="ppfGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#0C8AF6"/><stop offset="1" stop-color="#5B5FEF"/></linearGradient></defs><g stroke="url(#ppfGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M30 28H89L103 42V87H45L30 72V28Z"/><path d="M23 42H82L96 56V101H37L23 87V42Z"/><path d="M30 28L45 42H103"/><path d="M23 42L37 56H96"/></g></svg></span>
+        <article class="el" style="--ac:#3f7bf5">
+          <div class="el-head"><span class="el-ic"><svg viewBox="0 0 128 128" fill="none"><defs><linearGradient id="ppfGradient" x1="24" y1="104" x2="104" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#0C8AF6"/><stop offset="1" stop-color="#5B5FEF"/></linearGradient></defs><g stroke="url(#ppfGradient)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"><path d="M30 28H89L103 42V87H45L30 72V28Z"/><path d="M23 42H82L96 56V101H37L23 87V42Z"/><path d="M30 28L45 42H103"/><path d="M23 42L37 56H96"/></g></svg></span><span class="el-tag"><span class="no">09</span><span class="sym">PPF</span></span></div>
           <h3>Made For PPF</h3>
           <p>Tuned for paint protection film and color PPF — protecting the layer that protects your paint.</p>
         </article>
-      </div>
-      <div class="sci-ctrl">
-        <button class="sci-arrow-btn" id="sciPrev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
-        <button class="sci-arrow-btn" id="sciNext" type="button" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
       </div>
     </div>
   </section>
@@ -584,11 +567,6 @@
   mobilePanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobilePanel.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
 
   /* science carousel — prev/next arrows scroll one card at a time */
-  (function(){const sc=document.getElementById('sciCarousel');if(!sc)return;
-    const step=()=>{const b=sc.querySelector('.sci-block');return b?b.getBoundingClientRect().width+20:340;};
-    const p=document.getElementById('sciPrev'),n=document.getElementById('sciNext');
-    if(p)p.addEventListener('click',()=>sc.scrollBy({left:-step(),behavior:'smooth'}));
-    if(n)n.addEventListener('click',()=>sc.scrollBy({left:step(),behavior:'smooth'}));})();
 
   /* ---- product data ---- */
   const P={
